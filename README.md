@@ -47,3 +47,12 @@ jzero gen --home ~/.jzero/templates/rpc
 go mod tidy
 go run main.go server
 ```
+
+## cli
+
+```shell
+jzero new simplerpc--branch cli
+cd simplecli
+go mod tidy
+go run main.go server
+```
