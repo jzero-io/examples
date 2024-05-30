@@ -27,3 +27,13 @@ jzero gen --home ~/.jzero/templates/gateway
 go mod tidy
 go run main.go server
 ```
+
+## api
+
+```shell
+jzero new simpleapi--branch api
+cd simpleapi
+jzero gen --home ~/.jzero/templates/api
+go mod tidy
+go run main.go server
+```
