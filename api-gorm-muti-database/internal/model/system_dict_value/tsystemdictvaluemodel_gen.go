@@ -5,6 +5,7 @@ package system_dict_value
 import (
 	"context"
 	"github.com/SpectatorNan/gorm-zero/gormc"
+	"strings"
 
 	"time"
 
@@ -29,22 +30,20 @@ type (
 	}
 
 	TSystemDictValue struct {
-		Id          int64     `gorm:"column:id"`
-		KeyUuid     string    `gorm:"column:key_uuid"`    // key uuid
-		Uuid        string    `gorm:"column:uuid"`        // uuid
-		Label       string    `gorm:"column:label"`       // 字典名称（展示）
-		Value       string    `gorm:"column:value"`       // 字典值
-		Language    string    `gorm:"column:language"`    // 字典名称所属语言
-		Sort        int64     `gorm:"column:sort"`        // 排序（升序）
-		CreateTime  time.Time `gorm:"column:create_time"` // 创建时间
-		UpdateTime  time.Time `gorm:"column:update_time"` // 更新时间
-		Remarks     string    `gorm:"column:remarks"`
-		DefaultFlag int64     `gorm:"column:default_flag"` // 默认数据，0：默认  1：非默认
+		Id         int64     `gorm:"column:id"`
+		KeyUuid    string    `gorm:"column:key_uuid"`    // key uuid
+		Uuid       string    `gorm:"column:uuid"`        // uuid
+		Label      string    `gorm:"column:label"`       // 字典名称（展示）
+		Value      string    `gorm:"column:value"`       // 字典值
+		Sort       int64     `gorm:"column:sort"`        // 排序（升序）
+		CreateTime time.Time `gorm:"column:create_time"` // 创建时间
+		UpdateTime time.Time `gorm:"column:update_time"` // 更新时间
+		Remarks    string    `gorm:"column:remarks"`
 	}
 )
 
 func (TSystemDictValue) TableName() string {
-	return "`T_system_dict_value`"
+	return strings.ReplaceAll("`T_system_dict_value`", "`", "")
 }
 
 func newTSystemDictValueModel(conn *gorm.DB) *defaultTSystemDictValueModel {

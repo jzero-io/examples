@@ -1,5 +1,5 @@
 func ({{.upperStartCamelObject}}) TableName() string {
-    return {{.table}}
+    return strings.ReplaceAll({{.table}}, "`", "")
 }
 
 func new{{.upperStartCamelObject}}Model(conn *gorm.DB{{if .withCache}}, c cache.CacheConf{{end}}) *default{{.upperStartCamelObject}}Model {

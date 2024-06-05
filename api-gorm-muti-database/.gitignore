@@ -37,3 +37,6 @@ api-gorm-muti-database
 
 # unix sock
 *.sock
+
+dm8_data
+mysql_data

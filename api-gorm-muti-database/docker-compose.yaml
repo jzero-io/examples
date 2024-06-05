@@ -33,9 +33,3 @@ services:
       - ./dm8_data/dm8_data:/opt/dmdbms/data
     ports:
       - '30236:5236'
-
-  jaeger:
-    image: jaegertracing/all-in-one:1.6
-    ports:
-      - "14268:14268"
-      - "16686:16686"

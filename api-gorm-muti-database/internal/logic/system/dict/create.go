@@ -1,6 +1,7 @@
 package dict
 
 import (
+	"api-gorm-muti-database/internal/model/system_dict_key"
 	"context"
 
 	"api-gorm-muti-database/internal/svc"
@@ -24,7 +25,14 @@ func NewCreate(ctx context.Context, svcCtx *svc.ServiceContext) *Create {
 }
 
 func (l *Create) Create(req *types.CreateDictRequest) (resp *types.Empty, err error) {
-	// todo: add your logic here and delete this line
+	model := system_dict_key.NewTSystemDictKeyModel(l.svcCtx.GormConn)
+
+	err = model.Insert(l.ctx, nil, &system_dict_key.TSystemDictKey{
+		Uuid:         "uuid",
+		CategoryCode: req.CategoryCode,
+		CategoryDesc: req.CategoryDesc,
+		Sort:         int64(req.Sort),
+	})
 
 	return
 }

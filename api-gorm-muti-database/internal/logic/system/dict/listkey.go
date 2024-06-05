@@ -1,7 +1,9 @@
 package dict
 
 import (
+	"api-gorm-muti-database/internal/model/system_dict_key"
 	"context"
+	"fmt"
 
 	"api-gorm-muti-database/internal/svc"
 	"api-gorm-muti-database/internal/types"
@@ -24,7 +26,10 @@ func NewListKey(ctx context.Context, svcCtx *svc.ServiceContext) *ListKey {
 }
 
 func (l *ListKey) ListKey(req *types.ListDictKeyRequest) (resp *types.ListDictKeyResponse, err error) {
-	// todo: add your logic here and delete this line
 
+	var dictKey system_dict_key.TSystemDictKey
+	l.svcCtx.GormConn.First(&dictKey, 1)
+
+	fmt.Println(dictKey)
 	return
 }

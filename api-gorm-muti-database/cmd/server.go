@@ -41,6 +41,10 @@ func Start(cfgFile string) {
 	if err != nil {
 		panic(err)
 	}
+	err = engine.Migrate(gormConn)
+	if err != nil {
+		panic(err)
+	}
 
 	ctx := svc.NewServiceContext(c, sqlxConn, gormConn)
 	start(ctx)

@@ -5,6 +5,7 @@ package system_dict_key
 import (
 	"context"
 	"github.com/SpectatorNan/gorm-zero/gormc"
+	"strings"
 
 	"gorm.io/gorm"
 )
@@ -37,7 +38,7 @@ type (
 )
 
 func (TSystemDictKey) TableName() string {
-	return "`T_system_dict_key`"
+	return strings.ReplaceAll("`T_system_dict_key`", "`", "")
 }
 
 func newTSystemDictKeyModel(conn *gorm.DB) *defaultTSystemDictKeyModel {
