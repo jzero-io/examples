@@ -1,0 +1,493 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/system/dict/create": {
+      "post": {
+        "operationId": "CreateHandler",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateDictRequest"
+            }
+          }
+        ],
+        "tags": [
+          "system/dict"
+        ]
+      }
+    },
+    "/api/v1/system/dict/key/list": {
+      "get": {
+        "operationId": "ListKeyHandler",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ListDictKeyResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "system/dict"
+        ]
+      }
+    },
+    "/api/v1/system/dict/value/delete/{uuid}": {
+      "get": {
+        "operationId": "DeleteValueHandler",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "system/dict"
+        ]
+      }
+    },
+    "/api/v1/system/dict/value/edit/{uuid}": {
+      "post": {
+        "operationId": "EditValueHandler",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EditDictValueRequest"
+            }
+          }
+        ],
+        "tags": [
+          "system/dict"
+        ]
+      }
+    },
+    "/api/v1/system/dict/{uuid}/list": {
+      "get": {
+        "operationId": "ListValueHandler",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ListDictValueResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "uuid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "uuid",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "system/dict"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ]
+      }
+    },
+    "/api/v1/version": {
+      "get": {
+        "operationId": "GetHandler",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/Version"
+            }
+          }
+        },
+        "tags": [
+          "system/version"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "CreateDictRequest": {
+      "type": "object",
+      "properties": {
+        "categoryCode": {
+          "type": "string",
+          "description": " 字典类型"
+        },
+        "categoryDesc": {
+          "type": "string",
+          "description": " 类型描述"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 排序"
+        },
+        "label": {
+          "type": "string",
+          "description": " 字典项名称"
+        },
+        "value": {
+          "type": "string",
+          "description": " 字典值"
+        },
+        "language": {
+          "type": "string"
+        },
+        "remarks": {
+          "type": "string",
+          "description": " 备注"
+        }
+      },
+      "title": "CreateDictRequest",
+      "required": [
+        "categoryCode",
+        "sort"
+      ]
+    },
+    "DeleteDictValueRequest": {
+      "type": "object",
+      "title": "DeleteDictValueRequest"
+    },
+    "DictKey": {
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "type": "string"
+        },
+        "categoryCode": {
+          "type": "string",
+          "description": " 字典类型"
+        },
+        "categoryDesc": {
+          "type": "string",
+          "description": " 类型描述"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 排序"
+        }
+      },
+      "title": "DictKey",
+      "required": [
+        "uuid",
+        "categoryCode",
+        "categoryDesc",
+        "sort"
+      ]
+    },
+    "DictValue": {
+      "type": "object",
+      "properties": {
+        "keyUuid": {
+          "type": "string"
+        },
+        "uuid": {
+          "type": "string"
+        },
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 排序"
+        },
+        "label": {
+          "type": "string",
+          "description": " 字典项名称"
+        },
+        "value": {
+          "type": "string",
+          "description": " 字典值"
+        },
+        "language": {
+          "type": "string"
+        },
+        "remarks": {
+          "type": "string",
+          "description": " 备注"
+        },
+        "createTime": {
+          "type": "string"
+        },
+        "updateTime": {
+          "type": "string"
+        }
+      },
+      "title": "DictValue",
+      "required": [
+        "keyUuid",
+        "uuid",
+        "sort",
+        "label",
+        "value",
+        "language",
+        "remarks",
+        "createTime",
+        "updateTime"
+      ]
+    },
+    "EditDictValueRequest": {
+      "type": "object",
+      "properties": {
+        "sort": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 排序"
+        },
+        "label": {
+          "type": "string",
+          "description": " 字典项名称"
+        },
+        "value": {
+          "type": "string",
+          "description": " 字典值"
+        },
+        "language": {
+          "type": "string"
+        },
+        "remarks": {
+          "type": "string",
+          "description": " 备注"
+        }
+      },
+      "title": "EditDictValueRequest",
+      "required": [
+        "sort",
+        "label",
+        "value",
+        "language",
+        "remarks"
+      ]
+    },
+    "Empty": {
+      "type": "object",
+      "title": "Empty"
+    },
+    "ListDictKeyRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "ListDictKeyRequest"
+    },
+    "ListDictKeyResponse": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DictKey"
+          }
+        }
+      },
+      "title": "ListDictKeyResponse",
+      "required": [
+        "total",
+        "list"
+      ]
+    },
+    "ListDictValueRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "uuid": {
+          "type": "string"
+        }
+      },
+      "title": "ListDictValueRequest",
+      "required": [
+        "uuid"
+      ]
+    },
+    "ListDictValueResponse": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DictValue"
+          }
+        }
+      },
+      "title": "ListDictValueResponse",
+      "required": [
+        "total",
+        "list"
+      ]
+    },
+    "PageRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PageRequest",
+      "required": [
+        "page",
+        "size"
+      ]
+    },
+    "StrIdRequest": {
+      "type": "object",
+      "title": "StrIdRequest"
+    },
+    "StrIdResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "title": "StrIdResponse",
+      "required": [
+        "id"
+      ]
+    },
+    "Version": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "goVersion": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "title": "Version",
+      "required": [
+        "version",
+        "goVersion",
+        "commit",
+        "date"
+      ]
+    }
+  },
+  "securityDefinitions": {
+    "apiKey": {
+      "type": "apiKey",
+      "description": "Enter JWT Bearer token **_only_**",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}
