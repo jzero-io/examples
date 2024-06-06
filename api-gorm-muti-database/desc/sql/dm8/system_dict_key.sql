@@ -1,9 +1,0 @@
-CREATE TABLE IF NOT EXISTS T_system_dict_key
-(
-  id INT NOT NULL AUTO_INCREMENT,
-  uuid VARCHAR(36) NOT NULL,
-  category_code VARCHAR(100) NOT NULL,
-  category_desc VARCHAR(255) NOT NULL,
-  sort INT NOT NULL,
-  PRIMARY KEY(id)
-)

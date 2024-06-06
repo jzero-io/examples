@@ -1,0 +1,167 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/v1/pruduct/create": {
+      "post": {
+        "operationId": "CreateHandler",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateProductRequest"
+            }
+          }
+        ],
+        "tags": [
+          "product"
+        ]
+      }
+    },
+    "/api/v1/pruduct/{id}": {
+      "get": {
+        "operationId": "GetHandler",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GetProductResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "product"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "CreateProductRequest": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "remark": {
+          "type": "string"
+        }
+      },
+      "title": "CreateProductRequest",
+      "required": [
+        "code",
+        "price",
+        "remark"
+      ]
+    },
+    "Empty": {
+      "type": "object",
+      "title": "Empty"
+    },
+    "GetProductResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "code": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "remark": {
+          "type": "string"
+        }
+      },
+      "title": "GetProductResponse",
+      "required": [
+        "id",
+        "code",
+        "price",
+        "remark"
+      ]
+    },
+    "IntIdPathRequest": {
+      "type": "object",
+      "title": "IntIdPathRequest"
+    },
+    "PageRequest": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "size": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "PageRequest",
+      "required": [
+        "page",
+        "size"
+      ]
+    },
+    "StrIdPathRequest": {
+      "type": "object",
+      "title": "StrIdPathRequest"
+    },
+    "StrIdResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      },
+      "title": "StrIdResponse",
+      "required": [
+        "id"
+      ]
+    }
+  },
+  "securityDefinitions": {
+    "apiKey": {
+      "type": "apiKey",
+      "description": "Enter JWT Bearer token **_only_**",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

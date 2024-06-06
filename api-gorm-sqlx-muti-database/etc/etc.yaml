@@ -1,0 +1,23 @@
+APP: api-gorm-sqlx-muti-database
+Rest:
+    Name: api-gorm-sqlx-muti-database-api
+    Host: 0.0.0.0
+    Port: 8001
+
+Log:
+    encoding: plain
+
+DataBaseType: dm
+Mysql:
+    Path: "127.0.0.1"
+    Port: 33060
+    DbName: "ntls"
+    Password: "123456"
+    Username: "root"
+
+Dm:
+    Path: "127.0.0.1"
+    Port: 30236
+    DbName: "SYSDBA"
+    Password: "SYSDBA001"
+    Username: "SYSDBA"
