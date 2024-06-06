@@ -2,11 +2,9 @@ package product
 
 import (
 	"api-gorm-sqlx-muti-database/internal/model/products"
-	"context"
-	"fmt"
-
 	"api-gorm-sqlx-muti-database/internal/svc"
 	"api-gorm-sqlx-muti-database/internal/types"
+	"context"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -26,19 +24,19 @@ func NewGet(ctx context.Context, svcCtx *svc.ServiceContext) *Get {
 }
 
 func (l *Get) Get(req *types.IntIdPathRequest) (resp *types.GetProductResponse, err error) {
-	var data products.GormProduct
+	//var data products.GormProduct
 
-	err = l.svcCtx.GormConn.Where("id = ?", req.Id).First(&data).Error
-	if err != nil {
-		return nil, err
-	}
-
-	resp = &types.GetProductResponse{
-		Id:     int(data.ID),
-		Code:   data.Code,
-		Price:  int(data.Price),
-		Remark: data.Remark,
-	}
+	//err = l.svcCtx.GormConn.Where("id = ?", req.Id).First(&data).Error
+	//if err != nil {
+	//	return nil, err
+	//}
+	//
+	//resp = &types.GetProductResponse{
+	//	Id:     int(data.ID),
+	//	Code:   data.Code,
+	//	Price:  int(data.Price),
+	//	Remark: data.Remark,
+	//}
 
 	// use logx
 	model := products.NewProductsModel(l.svcCtx.SqlxConn)
@@ -46,7 +44,12 @@ func (l *Get) Get(req *types.IntIdPathRequest) (resp *types.GetProductResponse, 
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(one)
+	resp = &types.GetProductResponse{
+		Id:     int(one.Id),
+		Code:   one.Code.String,
+		Price:  int(one.Price.Int64),
+		Remark: one.Remark.String,
+	}
 
 	return
 }

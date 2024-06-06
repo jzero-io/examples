@@ -56,7 +56,7 @@ func BuildDataSource(c config.Config) string {
 			c.Mysql.Path+":"+cast.ToString(c.Mysql.Port),
 			c.Mysql.Dbname)
 	case "dm":
-		return fmt.Sprintf("dm://%s:%s@%s?compatibleMode=mysql&columnNameCase=lower",
+		return fmt.Sprintf("dm://%s:%s@%s?compatibleMode=mysql",
 			c.Dm.Username,
 			c.Dm.Password,
 			c.Dm.Path+":"+cast.ToString(c.Dm.Port),
