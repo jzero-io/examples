@@ -3,5 +3,5 @@ version: "3"
 tasks:
   gen:
     cmds:
-      - jzero gen --remove-suffix --change-replace-types --home ~/.jzero/templates/api
+      - jzero gen --remove-suffix --change-replace-types --model-mysql-cache --model-mysql-cache-prefix=jaronnie --home .template
       - jzero gen swagger
