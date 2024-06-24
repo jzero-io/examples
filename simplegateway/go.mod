@@ -3,7 +3,7 @@ module simplegateway
 go 1.22.2
 
 require (
-	github.com/jzero-io/jzero-contrib v0.0.3
+	github.com/jzero-io/jzero-contrib v0.0.5
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.18.2
