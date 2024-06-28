@@ -17,6 +17,4 @@ type RestConf struct {
 
 type LogConf struct {
 	logx.LogConf
-	// only Log.Mode is file or volume take effect
-	LogToConsole bool `json:",default=true"`
 }
