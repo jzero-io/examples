@@ -13,6 +13,7 @@ Gateway:
       Name: simplegateway.gw
       ProtoSets:
         - desc/proto/hello.pb
+        - desc/proto/v2/hello_v2.pb
 
 Log:
   encoding: plain

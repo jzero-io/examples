@@ -9,7 +9,7 @@ option go_package = "./pb/hellopb";
 message Empty {}
   
 message SayHelloResponse {
-      string message = 1;
+      string message = 1; // 消息
 }
 
 service hello {

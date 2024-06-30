@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package hellov2pb;
+
+import "google/api/annotations.proto";
+
+option go_package = "./pb/hellov2pb";
+
+message Empty {
+}
+
+message SayHelloResponse {
+  string message = 1; // 消息
+}
+
+service hellov2 {
+  rpc SayHello ( Empty ) returns ( SayHelloResponse ) {
+    option (google.api.http) = { get: "/api/v2/hello" };
+  }
+}
