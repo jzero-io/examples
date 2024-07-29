@@ -22,7 +22,7 @@ func NewHello(svcCtx *svc.ServiceContext) *Hello {
 	}
 }
 
-func (s *Hello) SayHello(ctx context.Context, in *hellopb.Empty) (*hellopb.SayHelloResponse, error) {
+func (s *Hello) SayHello(ctx context.Context, in *hellopb.SayHelloRequest) (*hellopb.SayHelloResponse, error) {
 	l := hellologic.NewSayHello(ctx, s.svcCtx)
 	return l.SayHello(in)
 }

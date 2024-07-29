@@ -35,40 +35,56 @@ var (
 	_ = sort.Sort
 )
 
-// Validate checks the field values on Empty with the rules defined in the
-// proto definition for this message. If any rules are violated, the first
-// error encountered is returned, or nil if there are no violations.
-func (m *Empty) Validate() error {
+// Validate checks the field values on SayHelloRequest with the rules defined
+// in the proto definition for this message. If any rules are violated, the
+// first error encountered is returned, or nil if there are no violations.
+func (m *SayHelloRequest) Validate() error {
 	return m.validate(false)
 }
 
-// ValidateAll checks the field values on Empty with the rules defined in the
-// proto definition for this message. If any rules are violated, the result is
-// a list of violation errors wrapped in EmptyMultiError, or nil if none found.
-func (m *Empty) ValidateAll() error {
+// ValidateAll checks the field values on SayHelloRequest with the rules
+// defined in the proto definition for this message. If any rules are
+// violated, the result is a list of violation errors wrapped in
+// SayHelloRequestMultiError, or nil if none found.
+func (m *SayHelloRequest) ValidateAll() error {
 	return m.validate(true)
 }
 
-func (m *Empty) validate(all bool) error {
+func (m *SayHelloRequest) validate(all bool) error {
 	if m == nil {
 		return nil
 	}
 
 	var errors []error
 
+	if utf8.RuneCountInString(m.GetMessage()) != 5 {
+
+		err := SayHelloRequestValidationError{
+			field:  "Message",
+			reason: "value length must be 5 runes",
+		}
+
+		if !all {
+			return err
+		}
+		errors = append(errors, err)
+
+	}
+
 	if len(errors) > 0 {
-		return EmptyMultiError(errors)
+		return SayHelloRequestMultiError(errors)
 	}
 
 	return nil
 }
 
-// EmptyMultiError is an error wrapping multiple validation errors returned by
-// Empty.ValidateAll() if the designated constraints aren't met.
-type EmptyMultiError []error
+// SayHelloRequestMultiError is an error wrapping multiple validation errors
+// returned by SayHelloRequest.ValidateAll() if the designated constraints
+// aren't met.
+type SayHelloRequestMultiError []error
 
 // Error returns a concatenation of all the error messages it wraps.
-func (m EmptyMultiError) Error() string {
+func (m SayHelloRequestMultiError) Error() string {
 	var msgs []string
 	for _, err := range m {
 		msgs = append(msgs, err.Error())
@@ -77,11 +93,11 @@ func (m EmptyMultiError) Error() string {
 }
 
 // AllErrors returns a list of validation violation errors.
-func (m EmptyMultiError) AllErrors() []error { return m }
+func (m SayHelloRequestMultiError) AllErrors() []error { return m }
 
-// EmptyValidationError is the validation error returned by Empty.Validate if
-// the designated constraints aren't met.
-type EmptyValidationError struct {
+// SayHelloRequestValidationError is the validation error returned by
+// SayHelloRequest.Validate if the designated constraints aren't met.
+type SayHelloRequestValidationError struct {
 	field  string
 	reason string
 	cause  error
@@ -89,22 +105,22 @@ type EmptyValidationError struct {
 }
 
 // Field function returns field value.
-func (e EmptyValidationError) Field() string { return e.field }
+func (e SayHelloRequestValidationError) Field() string { return e.field }
 
 // Reason function returns reason value.
-func (e EmptyValidationError) Reason() string { return e.reason }
+func (e SayHelloRequestValidationError) Reason() string { return e.reason }
 
 // Cause function returns cause value.
-func (e EmptyValidationError) Cause() error { return e.cause }
+func (e SayHelloRequestValidationError) Cause() error { return e.cause }
 
 // Key function returns key value.
-func (e EmptyValidationError) Key() bool { return e.key }
+func (e SayHelloRequestValidationError) Key() bool { return e.key }
 
 // ErrorName returns error name.
-func (e EmptyValidationError) ErrorName() string { return "EmptyValidationError" }
+func (e SayHelloRequestValidationError) ErrorName() string { return "SayHelloRequestValidationError" }
 
 // Error satisfies the builtin error interface
-func (e EmptyValidationError) Error() string {
+func (e SayHelloRequestValidationError) Error() string {
 	cause := ""
 	if e.cause != nil {
 		cause = fmt.Sprintf(" | caused by: %v", e.cause)
@@ -116,14 +132,14 @@ func (e EmptyValidationError) Error() string {
 	}
 
 	return fmt.Sprintf(
-		"invalid %sEmpty.%s: %s%s",
+		"invalid %sSayHelloRequest.%s: %s%s",
 		key,
 		e.field,
 		e.reason,
 		cause)
 }
 
-var _ error = EmptyValidationError{}
+var _ error = SayHelloRequestValidationError{}
 
 var _ interface {
 	Field() string
@@ -131,7 +147,7 @@ var _ interface {
 	Key() bool
 	Cause() error
 	ErrorName() string
-} = EmptyValidationError{}
+} = SayHelloRequestValidationError{}
 
 // Validate checks the field values on SayHelloResponse with the rules defined
 // in the proto definition for this message. If any rules are violated, the

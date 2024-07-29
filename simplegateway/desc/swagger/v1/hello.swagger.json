@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "hello.proto",
+    "title": "v1/hello.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "hello"
+      "name": "Hello"
     }
   ],
   "consumes": [
@@ -15,30 +15,7 @@
   "produces": [
     "application/json"
   ],
-  "paths": {
-    "/api/v1/hello": {
-      "get": {
-        "operationId": "hello_SayHello",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/hellopbSayHelloResponse"
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/rpcStatus"
-            }
-          }
-        },
-        "tags": [
-          "hello"
-        ]
-      }
-    }
-  },
+  "paths": {},
   "definitions": {
     "hellopbSayHelloResponse": {
       "type": "object",

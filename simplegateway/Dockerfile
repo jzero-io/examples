@@ -13,7 +13,6 @@ FROM --platform=$TARGETPLATFORM alpine:latest
 WORKDIR /app
 COPY --from=builder /app .
 COPY etc/etc.yaml /app/etc/etc.yaml
-COPY desc/proto/*.pb /app/desc/proto/
-EXPOSE 8000 8001
+EXPOSE 8000
 ENTRYPOINT ["./app"]
 CMD ["server"]

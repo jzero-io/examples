@@ -23,7 +23,7 @@ func NewSayHello(ctx context.Context, svcCtx *svc.ServiceContext) *SayHello {
 	}
 }
 
-func (l *SayHello) SayHello(in *hellopb.Empty) (*hellopb.SayHelloResponse, error) {
+func (l *SayHello) SayHello(in *hellopb.SayHelloRequest) (*hellopb.SayHelloResponse, error) {
 	// todo: add your logic here and delete this line
 
 	return &hellopb.SayHelloResponse{}, nil

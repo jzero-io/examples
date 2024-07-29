@@ -1,19 +1,7 @@
-APP: simplegateway
-Zrpc:
-  ListenOn: 0.0.0.0:8000
-  Mode: dev
-  Name: simplegateway.rpc
-Gateway:
-  Name: simplegateway.gw
-  Port: 8001
-  Upstreams:
-    - Grpc:
-        Endpoints:
-          - 0.0.0.0:8000
-      Name: simplegateway.gw
-      ProtoSets:
-        - desc/proto/hello.pb
-        - desc/proto/v2/hello_v2.pb
+zrpc:
+    listenOn: 0.0.0.0:8000
+    mode: dev
+    name: simplegateway.rpc
 
-Log:
-  encoding: plain
+log:
+    encoding: plain
