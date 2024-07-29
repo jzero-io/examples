@@ -16,7 +16,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			{
 				Method:  http.MethodGet,
 				Path:    "/version",
-				Handler: version.GetVersionHandler(serverCtx),
+				Handler: version.GetVersion(serverCtx),
 			},
 		},
 		rest.WithPrefix("/api/v1"),

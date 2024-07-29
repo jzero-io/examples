@@ -1,18 +1,15 @@
-APP: quickstart
-Zrpc:
-  ListenOn: 0.0.0.0:8000
-  Mode: dev
-  Name: quickstart.rpc
-Gateway:
-  Name: quickstart.gw
-  Port: 8001
-  Upstreams:
-    - Grpc:
-        Endpoints:
+zrpc:
+  listenOn: 0.0.0.0:8000
+  mode: dev
+  name: quickstart.rpc
+gateway:
+  name: quickstart.gw
+  port: 8001
+  upstreams:
+    - grpc:
+        endpoints:
           - 0.0.0.0:8000
-      Name: quickstart.gw
-      ProtoSets:
-        - desc/proto/hello.pb
+      name: quickstart.gw
 
-Log:
+log:
   encoding: plain

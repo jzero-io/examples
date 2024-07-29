@@ -11,18 +11,18 @@ import (
 	"quickstart/internal/svc"
 )
 
-type HelloServer struct {
+type Hello struct {
 	svcCtx *svc.ServiceContext
 	hellopb.UnimplementedHelloServer
 }
 
-func NewHelloServer(svcCtx *svc.ServiceContext) *HelloServer {
-	return &HelloServer{
+func NewHello(svcCtx *svc.ServiceContext) *Hello {
+	return &Hello{
 		svcCtx: svcCtx,
 	}
 }
 
-func (s *HelloServer) SayHello(ctx context.Context, in *hellopb.Empty) (*hellopb.SayHelloResponse, error) {
-	l := hellologic.NewSayHelloLogic(ctx, s.svcCtx)
+func (s *Hello) SayHello(ctx context.Context, in *hellopb.SayHelloRequest) (*hellopb.SayHelloResponse, error) {
+	l := hellologic.NewSayHello(ctx, s.svcCtx)
 	return l.SayHello(in)
 }

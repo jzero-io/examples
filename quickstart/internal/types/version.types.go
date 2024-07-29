@@ -13,8 +13,8 @@ type GetVersionRequest struct {
 }
 
 type GetVersionResponse struct {
-	Version   string
-	GoVersion string
-	Commit    string
-	Date      string
+	Version   string `json:"version"`
+	GoVersion string `json:"goVersion"`
+	Commit    string `json:"commit"`
+	Date      string `json:"date"`
 }
