@@ -1,8 +1,7 @@
-APP: simplerpc
-Zrpc:
-    ListenOn: 0.0.0.0:8000
-    Mode: dev
-    Name: simplerpc.rpc
+zrpc:
+    listenOn: 0.0.0.0:8000
+    mode: dev
+    name: simplerpc.rpc
 
-Log:
+log:
     encoding: plain

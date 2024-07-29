@@ -11,15 +11,15 @@ import (
 	"simplerpc/internal/config"
 	"simplerpc/internal/svc"
 
-	credentialsvr "simplerpc/internal/server/credential"
+	hellosvr "simplerpc/internal/server/hello"
 
-	"simplerpc/internal/pb/credentialpb"
+	"simplerpc/internal/pb/hellopb"
 )
 
 func RegisterZrpc(c config.Config, ctx *svc.ServiceContext) *zrpc.RpcServer {
 	s := zrpc.MustNewServer(c.Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
 	    
-		credentialpb.RegisterCredentialServer(grpcServer, credentialsvr.NewCredentialServer(ctx))
+		hellopb.RegisterHelloServer(grpcServer, hellosvr.NewHello(ctx))
 
 		if c.Zrpc.Mode == service.DevMode || c.Zrpc.Mode == service.TestMode {
 			reflection.Register(grpcServer)
