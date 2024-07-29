@@ -1,4 +1,4 @@
-# quickstartg
+# quickstart
 
 ## Install Jzero Framework
 
