@@ -7,27 +7,31 @@ import (
 	"github.com/jzero-io/restc"
 	"simplegateway/simplegateway-go/typed"
 
-	
+	"simplegateway/simplegateway-go/typed/simplegateway"
 )
 
 type Interface interface {
 	Direct() typed.DirectInterface
 
-	
+	Simplegateway() simplegateway.SimplegatewayInterface
 }
 
 type Clientset struct {
 	// direct client to request
 	direct *typed.DirectClient
 
-	
+	simplegateway *simplegateway.SimplegatewayClient
 }
 
 func (x *Clientset) Direct() typed.DirectInterface {
 	return x.direct
 }
 
-func NewClientWithOptions(ops ...restc.Opt) (*Clientset, error) {
+func (x *Clientset) Simplegateway() simplegateway.SimplegatewayInterface {
+	return x.simplegateway
+}
+
+func NewClientWithOptions(ops ...restc.Opt) (simplegateway.SimplegatewayInterface, error) {
 	c := &restc.RESTClient{}
 	for _, op := range ops {
 		if err := op(c); err != nil {
@@ -41,6 +45,10 @@ func NewClientWithOptions(ops ...restc.Opt) (*Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
+	cs.simplegateway, err = simplegateway.NewForConfig(&configShallowCopy)
+	if err != nil {
+		return nil, err
+	}
 	
-	return &cs, nil
+	return cs.Simplegateway(), nil
 }

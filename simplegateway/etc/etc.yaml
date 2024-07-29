@@ -1,7 +1,15 @@
 zrpc:
-    listenOn: 0.0.0.0:8000
-    mode: dev
-    name: simplegateway.rpc
+  listenOn: 0.0.0.0:8000
+  mode: dev
+  name: simplegateway.rpc
+gateway:
+  name: simplegateway.gw
+  port: 8001
+  upstreams:
+    - grpc:
+        endpoints:
+          - 0.0.0.0:8000
+      name: simplegateway.gw
 
 log:
-    encoding: plain
+  encoding: plain

@@ -2,17 +2,21 @@ package cmd
 
 import (
 	"os"
+	"simplegateway/desc/pb"
 	"simplegateway/internal/config"
 	"simplegateway/internal/middlewares"
 	"simplegateway/internal/server"
 	"simplegateway/internal/svc"
 
 	"github.com/common-nighthawk/go-figure"
+	"github.com/jzero-io/jzero-contrib/gwx"
+	"github.com/jzero-io/jzero-contrib/swaggerv2"
 	"github.com/spf13/cobra"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/proc"
 	"github.com/zeromicro/go-zero/core/service"
+	"github.com/zeromicro/go-zero/gateway"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -31,8 +35,15 @@ func Start(cfgFile string) {
 	conf.MustLoad(cfgFile, &c)
 	config.C = c
 
+	// write pb to local
+	var err error
+	c.Gateway.Upstreams[0].ProtoSets, err = gwx.WritePbToLocal(pb.Embed)
+	if err != nil {
+		logx.Must(err)
+	}
+
 	// set up logger
-	if err := logx.SetUp(c.Log.LogConf); err != nil {
+	if err = logx.SetUp(c.Log.LogConf); err != nil {
 		logx.Must(err)
 	}
 	if c.Log.LogConf.Mode != "console" {
@@ -44,11 +55,20 @@ func Start(cfgFile string) {
 }
 
 func start(svcCtx *svc.ServiceContext) {
-	s := server.RegisterZrpc(svcCtx.Config, svcCtx)
-	s.AddUnaryInterceptors(middlewares.ServerValidationUnaryInterceptor)
+	zrpc := server.RegisterZrpc(svcCtx.Config, svcCtx)
+	middlewares.RegisterGrpc(zrpc)
+
+	gw := gateway.MustNewServer(svcCtx.Config.Gateway.GatewayConf)
+	middlewares.RegisterGateway(gw)
+
+	// gw add swagger routes. If you do not want it, you can delete this line
+	swaggerv2.RegisterRoutes(gw.Server)
+	// gw add routes
+	// You can use gw.Server.AddRoutes()
 
 	group := service.NewServiceGroup()
-	group.Add(s)
+	group.Add(zrpc)
+	group.Add(gw)
 
 	// shutdown listener
 	waitExit := proc.AddShutdownListener(svcCtx.Custom.Stop)
@@ -57,6 +77,7 @@ func start(svcCtx *svc.ServiceContext) {
 	eg.Go(func() error {
 		printBanner(svcCtx.Config)
 		logx.Infof("Starting rpc server at %s...", svcCtx.Config.Zrpc.ListenOn)
+		logx.Infof("Starting gateway server at %s:%d...", svcCtx.Config.Gateway.Host, svcCtx.Config.Gateway.Port)
 		group.Start()
 		return nil
 	})

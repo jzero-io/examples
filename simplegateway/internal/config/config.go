@@ -2,20 +2,26 @@ package config
 
 import (
 	"github.com/zeromicro/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/gateway"
 	"github.com/zeromicro/go-zero/zrpc"
 )
 
 var C Config
 
 type Config struct {
-	Zrpc ZrpcConf
-	Log  LogConf
+	Zrpc    ZrpcConf
+	Gateway GatewayConf
+	Log     LogConf
 
 	Banner BannerConf
 }
 
 type ZrpcConf struct {
 	zrpc.RpcServerConf
+}
+
+type GatewayConf struct {
+	gateway.GatewayConf
 }
 
 type LogConf struct {
