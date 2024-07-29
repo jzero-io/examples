@@ -31,7 +31,7 @@ go run main.go server
 ## api
 
 ```shell
-jzero new simpleapi--branch api
+jzero new simpleapi --branch api
 cd simpleapi
 jzero gen
 go mod tidy
@@ -41,7 +41,7 @@ go run main.go server
 ## rpc
 
 ```shell
-jzero new simplerpc--branch rpc
+jzero new simplerpc --branch rpc
 cd simplerpc
 jzero gen
 go mod tidy
@@ -51,7 +51,7 @@ go run main.go server
 ## cli
 
 ```shell
-jzero new simplerpc--branch cli
+jzero new simplecli --branch cli
 cd simplecli
 go mod tidy
 go run main.go server
