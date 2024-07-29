@@ -1,8 +1,7 @@
-APP: simpleapi
-Rest:
-    Name: simpleapi-api
-    Host: 0.0.0.0
-    Port: 8001
+rest:
+    name: simpleapi-api
+    host: 0.0.0.0
+    port: 8001
 
-Log:
+log:
     encoding: plain

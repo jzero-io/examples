@@ -16,6 +16,7 @@ var (
 	Date    string
 )
 
+// versionCmd represents the version command
 var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "simpleapi version",
