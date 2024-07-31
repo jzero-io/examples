@@ -8,6 +8,7 @@ import (
 
 func RegisterZrpc(z *zrpc.RpcServer) {
 	z.AddUnaryInterceptors(ServerValidationUnaryInterceptor)
+	z.AddUnaryInterceptors(WithUnaryInterceptorValue)
 }
 
 func RegisterGateway(g *gateway.Server) {
