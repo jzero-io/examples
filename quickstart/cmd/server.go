@@ -5,7 +5,7 @@ import (
 	"quickstart/desc/pb"
 	"quickstart/internal/config"
 	"quickstart/internal/handler"
-	"quickstart/internal/middlewares"
+	"quickstart/internal/middleware"
 	"quickstart/internal/server"
 	"quickstart/internal/svc"
 
@@ -57,10 +57,10 @@ func Start(cfgFile string) {
 
 func start(svcCtx *svc.ServiceContext) {
 	zrpc := server.RegisterZrpc(svcCtx.Config, svcCtx)
-	middlewares.RegisterGrpc(zrpc)
+	middleware.RegisterZrpc(zrpc)
 
 	gw := gateway.MustNewServer(svcCtx.Config.Gateway.GatewayConf)
-	middlewares.RegisterGateway(gw)
+	middleware.RegisterGateway(gw)
 
 	// gw add api routes
 	handler.RegisterHandlers(gw.Server, svcCtx)
