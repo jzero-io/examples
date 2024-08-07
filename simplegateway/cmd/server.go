@@ -4,6 +4,7 @@ import (
 	"os"
 	"simplegateway/desc/pb"
 	"simplegateway/internal/config"
+	"simplegateway/internal/handler"
 	"simplegateway/internal/middleware"
 	"simplegateway/internal/server"
 	"simplegateway/internal/svc"
@@ -58,8 +59,11 @@ func start(svcCtx *svc.ServiceContext) {
 	zrpc := server.RegisterZrpc(svcCtx.Config, svcCtx)
 	middleware.RegisterZrpc(zrpc)
 
-	gw := gateway.MustNewServer(svcCtx.Config.Gateway.GatewayConf, middleware.WithHeaderProcessor())
+	gw := gateway.MustNewServer(svcCtx.Config.Gateway.GatewayConf)
 	middleware.RegisterGateway(gw)
+
+	// gw add api routes
+	handler.RegisterHandlers(gw.Server, svcCtx)
 
 	// gw add swagger routes. If you do not want it, you can delete this line
 	swaggerv2.RegisterRoutes(gw.Server)
