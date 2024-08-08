@@ -1,4 +1,5 @@
 # examples
+
 jzero examples
 
 ## Install
@@ -18,7 +19,7 @@ go mod tidy
 go run main.go server
 ```
 
-## grpc + grpc-gateway
+## gateway
 
 ```shell
 jzero new simplegateway --branch gateway
@@ -38,6 +39,16 @@ go mod tidy
 go run main.go server
 ```
 
+## api-goctl
+
+```shell
+jzero new simpleapi-goctl --branch api
+cd simpleapi-goctl
+jzero gen
+go mod tidy
+go run main.go server
+```
+
 ## rpc
 
 ```shell
@@ -47,6 +58,19 @@ jzero gen
 go mod tidy
 go run main.go server
 ```
+
+## rpc-goctl
+
+与原生 goctl 的 rpc 模板保持一致
+
+```shell
+jzero new simplerpc-goctl --branch rpc-goctl
+cd simplerpc-goctl
+jzero gen
+go mod tidy
+go run main.go server
+```
+
 
 ## cli
 
