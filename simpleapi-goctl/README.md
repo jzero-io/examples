@@ -1,4 +1,4 @@
-# simplegateway
+# simpleapi-goctl
 
 ## Install Jzero Framework
 
@@ -16,23 +16,13 @@ jzero check
 jzero gen
 ```
 
-### Generate http client go code
-
-```shell
-jzero gen sdk
-```
-
-### Generate zrpc client go code
-
-```shell
-jzero gen zrpcclient
-```
-
 ### Generate swagger code
 
 ```shell
 jzero gen swagger
 ```
+
+you can see generated swagger json in `desc/swagger`
 
 ## Build docker image
 
@@ -41,7 +31,7 @@ jzero gen swagger
 docker buildx create --use --name=mybuilder --driver docker-container --driver-opt image=dockerpracticesig/buildkit:master
 
 # build and load
-docker buildx build --platform linux/amd64 --progress=plain -t simplegateway:latest . --load
+docker buildx build --platform linux/amd64 --progress=plain -t simpleapi-goctl:latest . --load
 ```
 
 ## Documents

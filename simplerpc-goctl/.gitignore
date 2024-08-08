@@ -28,3 +28,12 @@ go.work
 
 # logs
 logs
+
+# goreleaser output
+dist
+
+# binary
+simplerpc-goctl
+
+# unix sock
+*.sock

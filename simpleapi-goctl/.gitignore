@@ -28,3 +28,9 @@ go.work
 
 # logs
 logs
+
+# goreleaser output
+dist
+
+# unix sock
+*.sock
