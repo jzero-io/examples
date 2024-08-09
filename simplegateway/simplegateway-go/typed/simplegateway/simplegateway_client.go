@@ -11,7 +11,6 @@ type SimplegatewayInterface interface {
 	RESTClient() restc.Interface
 	
 	HelloGetter
-	VersionGetter
 	
 }
 
@@ -28,10 +27,6 @@ func (x *SimplegatewayClient) RESTClient() restc.Interface {
 
 func (x *SimplegatewayClient) Hello() HelloInterface {
 	return newHelloClient(x)
-}
-
-func (x *SimplegatewayClient) Version() VersionInterface {
-	return newVersionClient(x)
 }
 
 
