@@ -10,7 +10,6 @@ import (
 
 	"github.com/common-nighthawk/go-figure"
 	"github.com/jzero-io/jzero-contrib/gwx"
-	"github.com/jzero-io/jzero-contrib/swaggerv2"
 	"github.com/spf13/cobra"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"
@@ -61,10 +60,8 @@ func start(svcCtx *svc.ServiceContext) {
 	gw := gateway.MustNewServer(svcCtx.Config.Gateway.GatewayConf, middleware.WithHeaderProcessor())
 	middleware.RegisterGateway(gw)
 
-	// gw add swagger routes. If you do not want it, you can delete this line
-	swaggerv2.RegisterRoutes(gw.Server)
-	// gw add routes
-	// You can use gw.Server.AddRoutes()
+	// gw add custom routes. If you do not want it, you can delete this line
+	svcCtx.Custom.AddRoutes(gw)
 
 	group := service.NewServiceGroup()
 	group.Add(zrpc)
