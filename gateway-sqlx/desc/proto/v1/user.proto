@@ -5,6 +5,8 @@ package userpb;
 import "google/api/annotations.proto";
 import "validate/validate.proto";
 import "grpc-gateway/protoc-gen-openapiv2/options/annotations.proto";
+import "jzero/api/http.proto";
+import "jzero/api/zrpc.proto";
 
 option go_package = "./pb/userpb";
 
@@ -52,10 +54,23 @@ message CreateUserResponse {
 }
 
 service User {
+    option (jzero.api.http_group) = {
+        middleware: "Auth",
+    };
+    option (jzero.api.zrpc_group) = {
+        middleware: "Auth",
+    };
+
     rpc CreateUser(CreateUserRequest) returns(CreateUserResponse) {
         option (google.api.http) = {
             post: "/api/v1/user/create",
             body: "*"
+        };
+        option (jzero.api.http) = {
+            middleware: "Auth",
+        };
+        option (jzero.api.zrpc) = {
+            middleware: "Auth",
         };
     };
 
