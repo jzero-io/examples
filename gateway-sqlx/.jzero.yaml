@@ -1,0 +1,12 @@
+version: v1
+
+gen:
+  hooks:
+    before:
+      - go run tools/migrate/main.go
+    after:
+      - jzero gen swagger
+
+  model-mysql-datasource: true
+  model-mysql-datasource-url: "root:123456@tcp(127.0.0.1:3306)/test"
+  model-mysql-ignore-columns: []

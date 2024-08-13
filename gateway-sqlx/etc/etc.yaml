@@ -1,0 +1,26 @@
+zrpc:
+  listenOn: 0.0.0.0:8000
+  mode: dev
+  name: gateway-sqlx.rpc
+gateway:
+  name: gateway-sqlx.gw
+  port: 8001
+  upstreams:
+    - grpc:
+        endpoints:
+          - 0.0.0.0:8000
+      name: gateway-sqlx.gw
+
+log:
+  encoding: plain
+
+# 选择数据库类型
+dataBaseType: mysql
+
+# mysql 数据源配置
+mysql:
+  path: "127.0.0.1"
+  port: 3306
+  username: "root"
+  password: "123456"
+  dbname: "test"
