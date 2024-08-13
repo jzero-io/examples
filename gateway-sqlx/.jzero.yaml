@@ -1,4 +1,4 @@
-version: v1
+syntax: v1
 
 gen:
   hooks:
