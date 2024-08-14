@@ -6,12 +6,10 @@ import (
 	"github.com/zeromicro/go-zero/zrpc"
 )
 
-func RegisterZrpc(z *zrpc.RpcServer) {
-	z.AddUnaryInterceptors(ServerValidationUnaryInterceptor)
-	z.AddUnaryInterceptors(WithUnaryInterceptorValue)
-}
+func Register(z *zrpc.RpcServer, gw *gateway.Server) {
+	z.AddUnaryInterceptors(ValidatorMiddleware)
+	z.AddUnaryInterceptors(WithValueMiddleware)
 
-func RegisterGateway(g *gateway.Server) {
-	httpx.SetErrorHandler(ErrorHandler)
-	g.Use(ResponseHandler)
+	httpx.SetErrorHandler(ErrorMiddleware)
+	gw.Use(ResponseMiddleware)
 }

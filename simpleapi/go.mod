@@ -4,7 +4,7 @@ go 1.22.3
 
 require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/jzero-io/jzero-contrib v0.2.0
+	github.com/jzero-io/jzero-contrib v0.4.0
 	github.com/jzero-io/restc v0.1.1
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/cobra v1.8.1
@@ -30,7 +30,7 @@ require (
 	github.com/gorilla/websocket v1.5.3 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/huandu/xstrings v1.3.3 // indirect
+	github.com/huandu/xstrings v1.4.0 // indirect
 	github.com/imdario/mergo v0.3.11 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect

@@ -22,7 +22,7 @@ func WithHeaderProcessor() gateway.Option {
 	})
 }
 
-func WithUnaryInterceptorValue(ctx context.Context, req any, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (resp any, err error) {
+func WithValueMiddleware(ctx context.Context, req any, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (resp any, err error) {
 	//md, b := metadata.FromIncomingContext(ctx)
 	//if !b {
 	//	return handler(ctx, req)

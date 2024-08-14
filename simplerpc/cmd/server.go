@@ -45,7 +45,7 @@ func Start(cfgFile string) {
 
 func start(svcCtx *svc.ServiceContext) {
 	zrpc := server.RegisterZrpc(svcCtx.Config, svcCtx)
-	middleware.RegisterZrpc(zrpc)
+	middleware.Register(zrpc)
 
 	group := service.NewServiceGroup()
 	group.Add(zrpc)

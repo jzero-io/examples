@@ -11,7 +11,7 @@ type Body struct {
 	Message string      `json:"message"`
 }
 
-func OKHandler(_ context.Context, data any) any {
+func ResponseMiddleware(_ context.Context, data any) any {
 	return Body{
 		Data:    data,
 		Code:    http.StatusOK,
