@@ -47,7 +47,7 @@ func Start(cfgFile string) {
 
 func start(svcCtx *svc.ServiceContext) {
 	server := rest.MustNewServer(svcCtx.Config.Rest.RestConf)
-	middleware.RegisterMiddlewares(server)
+	middleware.Register(server)
 
 	// server add api handlers
 	handler.RegisterHandlers(server, svcCtx)

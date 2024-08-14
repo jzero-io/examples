@@ -5,7 +5,7 @@ import (
 	"github.com/zeromicro/go-zero/rest/httpx"
 )
 
-func RegisterMiddlewares(server *rest.Server) {
-	httpx.SetOkHandler(OKHandler)
-	httpx.SetErrorHandler(ErrorHandler)
+func Register(server *rest.Server) {
+	httpx.SetOkHandler(ResponseMiddleware)
+	httpx.SetErrorHandler(ErrorMiddleware)
 }
