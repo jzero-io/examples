@@ -4,6 +4,6 @@ import (
 	"github.com/zeromicro/go-zero/zrpc"
 )
 
-func RegisterZrpc(z *zrpc.RpcServer) {
-	z.AddUnaryInterceptors(ServerValidationUnaryInterceptor)
+func Register(z *zrpc.RpcServer) {
+	z.AddUnaryInterceptors(ValidatorMiddleware)
 }
