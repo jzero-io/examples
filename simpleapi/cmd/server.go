@@ -52,11 +52,8 @@ func start(svcCtx *svc.ServiceContext) {
 	// server add api handlers
 	handler.RegisterHandlers(server, svcCtx)
 
-	// server add swagger routes. If you do not want it, you can delete this line
+	// server add custom routes
 	swaggerv2.RegisterRoutes(server)
-
-	// server add routes
-	// You can use server.AddRoutes() to add your own handler
 
 	group := service.NewServiceGroup()
 	group.Add(server)
