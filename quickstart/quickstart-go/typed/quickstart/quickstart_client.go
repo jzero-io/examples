@@ -10,8 +10,8 @@ import (
 type QuickstartInterface interface {
 	RESTClient() restc.Interface
 	
-	VersionGetter
 	HelloGetter
+	VersionGetter
 	
 }
 
@@ -26,12 +26,12 @@ func (x *QuickstartClient) RESTClient() restc.Interface {
 	return x.restClient
 }
 
-func (x *QuickstartClient) Version() VersionInterface {
-	return newVersionClient(x)
-}
-
 func (x *QuickstartClient) Hello() HelloInterface {
 	return newHelloClient(x)
+}
+
+func (x *QuickstartClient) Version() VersionInterface {
+	return newVersionClient(x)
 }
 
 
