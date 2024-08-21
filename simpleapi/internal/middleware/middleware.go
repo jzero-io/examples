@@ -8,4 +8,5 @@ import (
 func Register(server *rest.Server) {
 	httpx.SetOkHandler(ResponseMiddleware)
 	httpx.SetErrorHandler(ErrorMiddleware)
+	httpx.SetValidator(NewValidator())
 }
