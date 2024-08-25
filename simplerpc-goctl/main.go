@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"simplerpc-goctl/internal/config"
 	"simplerpc-goctl/internal/server"
 	"simplerpc-goctl/internal/svc"

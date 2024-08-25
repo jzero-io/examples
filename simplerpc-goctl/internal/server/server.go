@@ -17,11 +17,11 @@ import (
 )
 
 func RegisterZrpc(c config.Config, ctx *svc.ServiceContext) *zrpc.RpcServer {
-	s := zrpc.MustNewServer(c.Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
+	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
 	    
 		hellopb.RegisterHelloServer(grpcServer, hellosvr.NewHello(ctx))
 
-		if c.Zrpc.Mode == service.DevMode || c.Zrpc.Mode == service.TestMode {
+		if c.Mode == service.DevMode || c.Mode == service.TestMode {
 			reflection.Register(grpcServer)
 		}
 	})
