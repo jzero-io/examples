@@ -4,16 +4,16 @@ package jzero.api;
 
 option go_package = "github.com/jzero-io/desc/proto/jzero/api";
 
-import "google/protobuf/descriptor.proto";
+import "third_party/google/protobuf/descriptor.proto";
 
 extend google.protobuf.MethodOptions {
-  ZrpcRule zrpc = 10002;
+  HttpRule http = 10000;
 }
 
 extend google.protobuf.ServiceOptions {
-  ZrpcRule zrpc_group = 10003;
+  HttpRule http_group = 10001;
 }
 
-message ZrpcRule {
+message HttpRule {
   string middleware = 1;
 }
