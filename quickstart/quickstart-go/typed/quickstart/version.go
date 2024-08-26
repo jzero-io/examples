@@ -42,7 +42,6 @@ func (x *versionClient) GetVersion(ctx context.Context, param types.GetVersionRe
 			"/api/v1/version",
 		).
 		Params().
-		Body(nil).
 		Do(ctx).
 		Into(&resp, true)
 

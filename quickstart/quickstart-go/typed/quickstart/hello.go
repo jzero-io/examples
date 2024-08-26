@@ -44,7 +44,6 @@ func (x *HelloClient) SayHello(ctx context.Context, param *hellopb.SayHelloReque
 		Params(
 			restc.QueryParam{Name: "message", Value: param.Message},
 		).
-		Body(nil).
 		Do(ctx).
 		Into(&resp, true)
 
