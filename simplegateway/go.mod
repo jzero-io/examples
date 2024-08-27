@@ -7,7 +7,7 @@ require (
 	github.com/envoyproxy/protoc-gen-validate v1.0.4
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.22.0
 	github.com/jzero-io/jzero-contrib v0.5.0
-	github.com/jzero-io/restc v0.1.1
+	github.com/jzero-io/restc v0.2.0
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.18.2
