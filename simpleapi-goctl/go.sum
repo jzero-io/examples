@@ -38,8 +38,8 @@ github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0 h1:bkypFPDjIYGfCYD5mRBvpqxfYX1
 github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0/go.mod h1:P+Lt/0by1T8bfcF3z737NnSbmxQAppXMRziHUxPOC8k=
 github.com/h2non/parth v0.0.0-20190131123155-b4df798d6542 h1:2VTzZjLZBgl62/EtslCrtky5vbi9dd7HrQPQIx6wqiw=
 github.com/h2non/parth v0.0.0-20190131123155-b4df798d6542/go.mod h1:Ow0tF8D4Kplbc8s8sSb3V2oUCygFHVp8gC3Dn6U4MNI=
-github.com/jzero-io/restc v0.1.1 h1:bE6eWMyjCKCGZf/3Re5MuVWOnmYH6K0GHZ9WyuVd5m0=
-github.com/jzero-io/restc v0.1.1/go.mod h1:88wCepjLz+531f/2qznAWvPgf/5glrZEqpeY0KYW4Ks=
+github.com/jzero-io/restc v0.2.0 h1:YhHZH0cYGRfNT3DoJZbGe4CNL8LDwfYU+NzjdJJ1+z0=
+github.com/jzero-io/restc v0.2.0/go.mod h1:88wCepjLz+531f/2qznAWvPgf/5glrZEqpeY0KYW4Ks=
 github.com/kr/pretty v0.3.1 h1:flRD4NNwYAUpkphVc1HcthR4KEIFJ65n8Mw5qdRn3LE=
 github.com/kr/pretty v0.3.1/go.mod h1:hoEshYVHaxMs3cyo3Yncou5ZscifuDolrwPKZanG3xk=
 github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
