@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
+
 	"quickstart/internal/logic/version"
 	"quickstart/internal/svc"
 	"quickstart/internal/types"
