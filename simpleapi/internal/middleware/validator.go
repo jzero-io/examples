@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"reflect"
+	"strings"
 
 	"github.com/go-playground/locales/zh_Hans_CN"
 	unTrans "github.com/go-playground/universal-translator"
@@ -82,5 +83,8 @@ func translate(trans unTrans.Translator, fe validator.FieldError) string {
 	if err != nil {
 		panic(fe.(error).Error())
 	}
-	return fmt.Sprintf("%s: %s", fe.Field(), msg)
+	if len(strings.Split(fe.Namespace(), ".")) >= 2 {
+		return fmt.Sprintf("%s%s", strings.Split(fe.Namespace(), ".")[1], msg)
+	}
+	return msg
 }
