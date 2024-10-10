@@ -2,19 +2,19 @@
 package types
 
 import (
-    "time"
+	"time"
 )
 
 var (
-    _ = time.Now()
+	_ = time.Now()
 )
 
 type GetVersionRequest struct {
 }
 
 type GetVersionResponse struct {
-	Version string `json:"version"`
+	Version   string `json:"version"`
 	GoVersion string `json:"goVersion"`
-	Commit string `json:"commit"`
-	Date string `json:"date"`
+	Commit    string `json:"commit"`
+	Date      string `json:"date"`
 }
