@@ -1,7 +1,8 @@
 syntax: v1
 
 gen:
-  # add custom gen flags
+    hooks:
+        after:
+            - jzero gen swagger
 
-  # add custom gen sdk flags
-  sdk:
+    spilt-api-types-dir: true
