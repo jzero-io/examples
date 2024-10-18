@@ -17,7 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "hellopbSayHelloResponse": {
+    "hellopbSayResponse": {
       "type": "object",
       "properties": {
         "message": {

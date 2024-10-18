@@ -9,22 +9,22 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type SayHello struct {
+type Say struct {
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 	logx.Logger
 }
 
-func NewSayHello(ctx context.Context, svcCtx *svc.ServiceContext) *SayHello {
-	return &SayHello{
+func NewSay(ctx context.Context, svcCtx *svc.ServiceContext) *Say {
+	return &Say{
 		ctx:    ctx,
 		svcCtx: svcCtx,
 		Logger: logx.WithContext(ctx),
 	}
 }
 
-func (l *SayHello) SayHello(in *hellopb.SayHelloRequest) (*hellopb.SayHelloResponse, error) {
+func (l *Say) Say(in *hellopb.SayRequest) (*hellopb.SayResponse, error) {
 	// todo: add your logic here and delete this line
 
-	return &hellopb.SayHelloResponse{}, nil
+	return &hellopb.SayResponse{}, nil
 }
