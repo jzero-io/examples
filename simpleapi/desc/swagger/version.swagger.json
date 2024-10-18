@@ -16,12 +16,12 @@
   "paths": {
     "/api/v1/version": {
       "get": {
-        "operationId": "GetVersionHandler",
+        "operationId": "GetHandler",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/GetVersionResponse"
+              "$ref": "#/definitions/GetResponse"
             }
           }
         },
@@ -32,11 +32,11 @@
     }
   },
   "definitions": {
-    "GetVersionRequest": {
+    "GetRequest": {
       "type": "object",
-      "title": "GetVersionRequest"
+      "title": "GetRequest"
     },
-    "GetVersionResponse": {
+    "GetResponse": {
       "type": "object",
       "properties": {
         "version": {
@@ -52,7 +52,7 @@
           "type": "string"
         }
       },
-      "title": "GetVersionResponse",
+      "title": "GetResponse",
       "required": [
         "version",
         "goVersion",
