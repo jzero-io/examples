@@ -45,7 +45,7 @@ go run main.go server
 jzero new simplecli --branch cli
 cd simplecli
 go mod tidy
-go run main.go server
+go run main.go
 ```
 
 ## api-goctl
