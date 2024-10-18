@@ -14,11 +14,11 @@ import (
 )
 
 type (
-	SayHelloRequest  = hellopb.SayHelloRequest
-	SayHelloResponse = hellopb.SayHelloResponse
+	SayRequest  = hellopb.SayRequest
+	SayResponse = hellopb.SayResponse
 
 	Hello interface {
-		SayHello(ctx context.Context, in *SayHelloRequest, opts ...grpc.CallOption) (*SayHelloResponse, error)
+		Say(ctx context.Context, in *SayRequest, opts ...grpc.CallOption) (*SayResponse, error)
 	}
 
 	defaultHello struct {
@@ -32,7 +32,7 @@ func NewHello(cli zrpc.Client) Hello {
 	}
 }
 
-func (m *defaultHello) SayHello(ctx context.Context, in *SayHelloRequest, opts ...grpc.CallOption) (*SayHelloResponse, error) {
+func (m *defaultHello) Say(ctx context.Context, in *SayRequest, opts ...grpc.CallOption) (*SayResponse, error) {
 	client := hellopb.NewHelloClient(m.cli.Conn())
-	return client.SayHello(ctx, in, opts...)
+	return client.Say(ctx, in, opts...)
 }

@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/api/v1/hello": {
+    "/api/v1/hello/say": {
       "get": {
-        "operationId": "Hello_SayHello",
+        "operationId": "Hello_Say",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/hellopbSayHelloResponse"
+              "$ref": "#/definitions/hellopbSayResponse"
             }
           },
           "default": {
@@ -48,7 +48,7 @@
     }
   },
   "definitions": {
-    "hellopbSayHelloResponse": {
+    "hellopbSayResponse": {
       "type": "object",
       "properties": {
         "message": {

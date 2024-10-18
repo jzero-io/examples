@@ -19,8 +19,8 @@ type HelloGetter interface {
 }
 
 type HelloInterface interface {
-	// API /api/v1/hello
-	SayHello(ctx context.Context, param *hellopb.SayHelloRequest) (*hellopb.SayHelloResponse, error)
+	// API /api/v1/hello/say
+	Say(ctx context.Context, param *hellopb.SayRequest) (*hellopb.SayResponse, error)
 
 	HelloExpansion
 }
@@ -35,11 +35,11 @@ func newHelloClient(c *SimplegatewayClient) *HelloClient {
 	}
 }
 
-func (x *HelloClient) SayHello(ctx context.Context, param *hellopb.SayHelloRequest) (*hellopb.SayHelloResponse, error) {
-	var resp *hellopb.SayHelloResponse
+func (x *HelloClient) Say(ctx context.Context, param *hellopb.SayRequest) (*hellopb.SayResponse, error) {
+	var resp *hellopb.SayResponse
 	err := x.client.Verb("GET").
 		SubPath(
-			"/api/v1/hello",
+			"/api/v1/hello/say",
 		).
 		Params(
 			restc.QueryParam{Name: "message", Value: param.Message},
