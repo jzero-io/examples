@@ -1,20 +1,22 @@
 module simplegateway
 
-go 1.22.5
+go 1.22.7
+
+toolchain go1.22.9
 
 require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/envoyproxy/protoc-gen-validate v1.1.0
-	github.com/grpc-ecosystem/grpc-gateway/v2 v2.23.0
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.24.0
 	github.com/jzero-io/jzero-contrib v0.12.0
 	github.com/jzero-io/restc v0.2.0
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.18.2
 	github.com/zeromicro/go-zero v1.7.3
-	google.golang.org/genproto/googleapis/api v0.0.0-20241021214115-324edc3d5d38
-	google.golang.org/grpc v1.67.1
-	google.golang.org/protobuf v1.35.1
+	google.golang.org/genproto/googleapis/api v0.0.0-20241118233622-e639e219e697
+	google.golang.org/grpc v1.68.0
+	google.golang.org/protobuf v1.35.2
 )
 
 require (
@@ -26,7 +28,7 @@ require (
 	github.com/bufbuild/protocompile v0.14.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
-	github.com/cncf/xds/go v0.0.0-20240723142845-024c85f92f20 // indirect
+	github.com/cncf/xds/go v0.0.0-20240905190251-b4127c9b8d78 // indirect
 	github.com/coreos/go-semver v0.3.1 // indirect
 	github.com/coreos/go-systemd/v22 v22.5.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
@@ -106,13 +108,13 @@ require (
 	golang.org/x/crypto v0.28.0 // indirect
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // indirect
 	golang.org/x/net v0.30.0 // indirect
-	golang.org/x/oauth2 v0.23.0 // indirect
-	golang.org/x/sync v0.8.0 // indirect
+	golang.org/x/oauth2 v0.24.0 // indirect
+	golang.org/x/sync v0.9.0 // indirect
 	golang.org/x/sys v0.26.0 // indirect
 	golang.org/x/term v0.25.0 // indirect
-	golang.org/x/text v0.19.0 // indirect
+	golang.org/x/text v0.20.0 // indirect
 	golang.org/x/time v0.7.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20241021214115-324edc3d5d38 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20241118233622-e639e219e697 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
