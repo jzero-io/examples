@@ -1,0 +1,23 @@
+syntax = "v1"
+
+info (
+	go_package: "echo"
+)
+
+type EchoRequest {
+	message string `form:"message"`
+}
+
+type EchoResponse {
+	message string `json:"message"`
+}
+
+@server (
+	prefix: /api/simpleapi-serverless
+	group:  echo
+)
+service simpleapiServerless {
+	@handler Echo
+	get /echo (EchoRequest) returns (EchoResponse)
+}
+
