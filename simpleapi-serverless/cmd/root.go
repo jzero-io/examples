@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-var CfgFile string
+var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -35,7 +35,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	rootCmd.PersistentFlags().StringVar(&CfgFile, "config", "etc/etc.yaml", "config file (default is project root dir etc/etc.yaml")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "etc/etc.yaml", "config file (default is project root dir etc/etc.yaml")
 }
 
 // initConfig reads in config file and ENV variables if set.
@@ -44,6 +44,13 @@ func initConfig() {
 		return
 	}
 
-	viper.SetConfigFile(CfgFile)
+	viper.SetConfigFile(cfgFile)
 	viper.AutomaticEnv() // read in environment variables that match
+
+	// If a config file is found, read it in.
+	if err := viper.ReadInConfig(); err == nil {
+		cfgFile = viper.ConfigFileUsed()
+	} else {
+		cobra.CheckErr(err)
+	}
 }

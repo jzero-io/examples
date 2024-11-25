@@ -14,57 +14,50 @@
     "application/json"
   ],
   "paths": {
-    "/api/simpleapi-serverless/echo": {
+    "/api/simpleapi-serverless/v1/version": {
       "get": {
-        "operationId": "Echo",
+        "operationId": "GetHandler",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/EchoResponse"
+              "$ref": "#/definitions/GetResponse"
             }
           }
         },
-        "parameters": [
-          {
-            "name": "message",
-            "in": "query",
-            "required": true,
-            "type": "string"
-          }
-        ],
         "tags": [
-          "echo"
-        ],
-        "consumes": [
-          "multipart/form-data"
+          "version"
         ]
       }
     }
   },
   "definitions": {
-    "EchoRequest": {
+    "GetRequest": {
       "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      },
-      "title": "EchoRequest",
-      "required": [
-        "message"
-      ]
+      "title": "GetRequest"
     },
-    "EchoResponse": {
+    "GetResponse": {
       "type": "object",
       "properties": {
-        "message": {
+        "version": {
+          "type": "string"
+        },
+        "goVersion": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "date": {
           "type": "string"
         }
       },
-      "title": "EchoResponse",
+      "title": "GetResponse",
       "required": [
-        "message"
+        "version",
+        "goVersion",
+        "commit",
+        "date"
       ]
     }
   },

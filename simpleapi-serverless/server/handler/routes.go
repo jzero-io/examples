@@ -2,7 +2,7 @@ package handler
 
 import (
 	"net/http"
-	echo "simpleapi-serverless/server/handler/echo"
+	version "simpleapi-serverless/server/handler/version"
 	"simpleapi-serverless/server/svc"
 	"time"
 
@@ -20,11 +20,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			[]rest.Route{
 				{
 					Method:  http.MethodGet,
-					Path:    "/echo",
-					Handler: echo.Echo(serverCtx),
+					Path:    "/version",
+					Handler: version.Get(serverCtx),
 				},
 			},
-			rest.WithPrefix("/api/simpleapi-serverless"),
+			rest.WithPrefix("/api/simpleapi-serverless/v1"),
 		)
 	}
 

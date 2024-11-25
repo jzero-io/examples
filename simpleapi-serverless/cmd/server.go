@@ -21,7 +21,7 @@ var serverCmd = &cobra.Command{
 	Long:  "simpleapi-serverless server",
 	Run: func(cmd *cobra.Command, args []string) {
 		var c config.Config
-		conf.MustLoad(CfgFile, &c)
+		conf.MustLoad(cfgFile, &c)
 		config.C = c
 
 		if err := logx.SetUp(c.Log.LogConf); err != nil {

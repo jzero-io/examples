@@ -1,28 +1,28 @@
-package echo
+package version
 
 import (
 	"context"
 	"simpleapi-serverless/server/svc"
-	types "simpleapi-serverless/server/types/echo"
+	types "simpleapi-serverless/server/types/version"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type Echo struct {
+type Get struct {
 	logx.Logger
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 }
 
-func NewEcho(ctx context.Context, svcCtx *svc.ServiceContext) *Echo {
-	return &Echo{
+func NewGet(ctx context.Context, svcCtx *svc.ServiceContext) *Get {
+	return &Get{
 		Logger: logx.WithContext(ctx),
 		ctx:    ctx,
 		svcCtx: svcCtx,
 	}
 }
 
-func (l *Echo) Echo(req *types.EchoRequest) (resp *types.EchoResponse, err error) {
+func (l *Get) Get(req *types.GetRequest) (resp *types.GetResponse, err error) {
 
 	return
 }
