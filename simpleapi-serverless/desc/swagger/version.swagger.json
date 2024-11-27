@@ -16,7 +16,7 @@
   "paths": {
     "/api/simpleapi-serverless/v1/version": {
       "get": {
-        "operationId": "GetHandler",
+        "operationId": "Get",
         "responses": {
           "200": {
             "description": "A successful response.",

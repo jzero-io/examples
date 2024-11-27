@@ -18,7 +18,7 @@ type GetResponse {
 	group:  version
 )
 service simpleapiServerless {
-	@handler GetHandler
+	@handler Get
 	get /version (GetRequest) returns (GetResponse)
 }
 
