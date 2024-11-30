@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"os"
+	"path/filepath"
 	"simplegateway/desc/pb"
 	"simplegateway/internal/config"
 	"simplegateway/internal/middleware"
@@ -9,7 +10,7 @@ import (
 	"simplegateway/internal/svc"
 
 	"github.com/common-nighthawk/go-figure"
-	"github.com/jzero-io/jzero-contrib/gwx"
+	"github.com/jzero-io/jzero-contrib/embedx"
 	"github.com/spf13/cobra"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"
@@ -29,7 +30,9 @@ var serverCmd = &cobra.Command{
 
 		// write pb to local
 		var err error
-		c.Gateway.Upstreams[0].ProtoSets, err = gwx.WritePbToLocal(pb.Embed)
+		c.Gateway.Upstreams[0].ProtoSets, err = embedx.WriteToLocalTemp(pb.Embed, embedx.WithFileMatchFunc(func(path string) bool {
+			return filepath.Ext(path) == ".pb"
+		}))
 		if err != nil {
 			logx.Must(err)
 		}
