@@ -1,7 +1,6 @@
 package serverless
 
 import (
-	"os"
 	"path/filepath"
 	"simpleapi-serverless/server/config"
 	"simpleapi-serverless/server/handler"
