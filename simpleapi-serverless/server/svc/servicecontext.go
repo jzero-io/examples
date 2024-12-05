@@ -2,21 +2,21 @@ package svc
 
 import (
 	"simpleapi-serverless/server/config"
-	"simpleapi-serverless/server/custom"
 	"simpleapi-serverless/server/middleware"
+	"simpleapi-serverless/server/custom"
 )
 
 type ServiceContext struct {
-	Config config.Config
+	Config	config.Config
 	middleware.Middleware
-	Custom *custom.Custom
+	Custom	*custom.Custom
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
 	sc := &ServiceContext{
-		Config:     c,
-		Custom:     custom.New(),
-		Middleware: middleware.New(),
+		Config:		c,
+		Custom:		custom.New(),
+		Middleware:	middleware.New(),
 	}
 	return sc
 }

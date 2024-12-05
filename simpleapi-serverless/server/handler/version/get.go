@@ -2,11 +2,12 @@ package version
 
 import (
 	"net/http"
-	"simpleapi-serverless/server/logic/version"
-	"simpleapi-serverless/server/svc"
-	types "simpleapi-serverless/server/types/version"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
+
+	"simpleapi-serverless/server/logic/version"
+	types "simpleapi-serverless/server/types/version"
+	"simpleapi-serverless/server/svc"
 )
 
 func Get(svcCtx *svc.ServiceContext) http.HandlerFunc {
