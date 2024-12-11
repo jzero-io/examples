@@ -10,9 +10,10 @@ import (
 	"simplegateway/internal/svc"
 
 	"github.com/common-nighthawk/go-figure"
+	"github.com/jzero-io/jzero-contrib/dynamic_conf"
 	"github.com/jzero-io/jzero-contrib/embedx"
 	"github.com/spf13/cobra"
-	"github.com/zeromicro/go-zero/core/conf"
+	configurator "github.com/zeromicro/go-zero/core/configcenter"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/gateway"
@@ -24,18 +25,14 @@ var serverCmd = &cobra.Command{
 	Short: "simplegateway server",
 	Long:  "simplegateway server",
 	Run: func(cmd *cobra.Command, args []string) {
-		var c config.Config
-		conf.MustLoad(cfgFile, &c)
+		ss, err := dynamic_conf.NewFsNotify(cfgFile)
+		logx.Must(err)
+		cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
+			Type: "yaml",
+		}, ss)
+		c, err := cc.GetConfig()
+		logx.Must(err)
 		config.C = c
-
-		// write pb to local
-		var err error
-		c.Gateway.Upstreams[0].ProtoSets, err = embedx.WriteToLocalTemp(pb.Embed, embedx.WithFileMatchFunc(func(path string) bool {
-			return filepath.Ext(path) == ".pb"
-		}))
-		if err != nil {
-			logx.Must(err)
-		}
 
 		// set up logger
 		if err = logx.SetUp(c.Log.LogConf); err != nil {
@@ -45,8 +42,14 @@ var serverCmd = &cobra.Command{
 			logx.AddWriter(logx.NewWriter(os.Stdout))
 		}
 
-		ctx := svc.NewServiceContext(c)
-		run(ctx)
+		// write pb to local
+		c.Gateway.Upstreams[0].ProtoSets, err = embedx.WriteToLocalTemp(pb.Embed, embedx.WithFileMatchFunc(func(path string) bool {
+			return filepath.Ext(path) == ".pb"
+		}))
+		logx.Must(err)
+
+		svcCtx := svc.NewServiceContext(c, cc)
+		run(svcCtx)
 	},
 }
 

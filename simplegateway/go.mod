@@ -8,8 +8,8 @@ require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/envoyproxy/protoc-gen-validate v1.1.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.24.0
-	github.com/jzero-io/jzero-contrib v0.14.0
-	github.com/jzero-io/restc v0.3.1
+	github.com/jzero-io/jzero-contrib v0.16.0
+	github.com/jzero-io/restc v0.4.0
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/viper v1.18.2
@@ -36,7 +36,7 @@ require (
 	github.com/emicklei/go-restful/v3 v3.11.0 // indirect
 	github.com/envoyproxy/go-control-plane v0.13.0 // indirect
 	github.com/fatih/color v1.18.0 // indirect
-	github.com/fsnotify/fsnotify v1.7.0 // indirect
+	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/fullstorydev/grpcurl v1.9.1 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
