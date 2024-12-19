@@ -8,16 +8,16 @@ import (
 )
 
 type ServiceContext struct {
-	Config config.Config
+	Config configurator.Configurator[config.Config]
 
 	Custom *custom.Custom
 }
 
 func NewServiceContext(c config.Config, cc configurator.Configurator[config.Config]) *ServiceContext {
 	sc := &ServiceContext{
-		Config: c,
+		Config: cc,
 		Custom: custom.New(),
 	}
-	sc.DynamicConfListener(cc)
+	sc.DynamicConfListener(c, cc)
 	return sc
 }
