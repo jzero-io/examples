@@ -18,6 +18,6 @@ func NewServiceContext(c config.Config, cc configurator.Configurator[config.Conf
 		Config: cc,
 		Custom: custom.New(),
 	}
-	sc.DynamicConfListener(c, cc)
+	sc.SetConfigListener(c, cc)
 	return sc
 }

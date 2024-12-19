@@ -7,7 +7,7 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-func (sc *ServiceContext) DynamicConfListener(c config.Config, cc configurator.Configurator[config.Config]) {
+func (sc *ServiceContext) SetConfigListener(c config.Config, cc configurator.Configurator[config.Config]) {
 	cc.AddListener(func() {
 		logx.Infof("config file changed")
 		if v, err := cc.GetConfig(); err == nil {
