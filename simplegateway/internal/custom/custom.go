@@ -3,12 +3,16 @@ package custom
 import (
 	"os"
 	"simplegateway/internal/config"
+
+	configurator "github.com/zeromicro/go-zero/core/configcenter"
 )
 
-type Custom struct{}
+type Custom struct {
+	Config configurator.Configurator[config.Config]
+}
 
-func New() *Custom {
-	return &Custom{}
+func New(config configurator.Configurator[config.Config]) *Custom {
+	return &Custom{Config: config}
 }
 
 // Start Please add custom logic here.
@@ -16,10 +20,13 @@ func (c *Custom) Start() {}
 
 // Stop Please add shut down logic here.
 func (c *Custom) Stop() {
-	// remove temp pb file
-	if len(config.C.Gateway.Upstreams) > 0 {
-		for _, p := range config.C.Gateway.Upstreams[0].ProtoSets {
-			_ = os.Remove(p)
+	conf, err := c.Config.GetConfig()
+	if err == nil {
+		// remove temp pb file
+		if len(conf.Gateway.Upstreams) > 0 {
+			for _, p := range conf.Gateway.Upstreams[0].ProtoSets {
+				_ = os.Remove(p)
+			}
 		}
 	}
 }

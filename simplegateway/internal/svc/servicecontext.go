@@ -16,7 +16,7 @@ type ServiceContext struct {
 func NewServiceContext(c config.Config, cc configurator.Configurator[config.Config]) *ServiceContext {
 	sc := &ServiceContext{
 		Config: cc,
-		Custom: custom.New(),
+		Custom: custom.New(cc),
 	}
 	sc.SetConfigListener(c, cc)
 	return sc
