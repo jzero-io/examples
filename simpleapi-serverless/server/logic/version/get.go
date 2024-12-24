@@ -1,6 +1,8 @@
 package version
 
 import (
+	"net/http"
+
 	"context"
 
 	"simpleapi-serverless/server/svc"
@@ -13,13 +15,15 @@ type Get struct {
 	logx.Logger
 	ctx	context.Context
 	svcCtx	*svc.ServiceContext
+	r	*http.Request
 }
 
-func NewGet(ctx context.Context, svcCtx *svc.ServiceContext) *Get {
+func NewGet(ctx context.Context, svcCtx *svc.ServiceContext, r *http.Request) *Get {
 	return &Get{
 		Logger:	logx.WithContext(ctx),
 		ctx:	ctx,
 		svcCtx:	svcCtx,
+		r:	r,
 	}
 }
 
