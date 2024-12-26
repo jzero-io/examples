@@ -8,8 +8,9 @@ import (
 	"simplerpc/internal/svc"
 
 	"github.com/common-nighthawk/go-figure"
+	"github.com/jzero-io/jzero-contrib/dynamic_conf"
 	"github.com/spf13/cobra"
-	"github.com/zeromicro/go-zero/core/conf"
+	configurator "github.com/zeromicro/go-zero/core/configcenter"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
 )
@@ -20,9 +21,13 @@ var serverCmd = &cobra.Command{
 	Short: "simplerpc server",
 	Long:  "simplerpc server",
 	Run: func(cmd *cobra.Command, args []string) {
-		var c config.Config
-		conf.MustLoad(cfgFile, &c)
-		config.C = c
+		ss, err := dynamic_conf.NewFsNotify(cfgFile)
+		logx.Must(err)
+		cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
+			Type: "yaml",
+		}, ss)
+		c, err := cc.GetConfig()
+		logx.Must(err)
 
 		// set up logger
 		if err := logx.SetUp(c.Log.LogConf); err != nil {
@@ -32,21 +37,23 @@ var serverCmd = &cobra.Command{
 			logx.AddWriter(logx.NewWriter(os.Stdout))
 		}
 
-		ctx := svc.NewServiceContext(c)
-		run(ctx)
+		svcCtx := svc.NewServiceContext(cc)
+		run(svcCtx)
 	},
 }
 
 func run(svcCtx *svc.ServiceContext) {
-	zrpc := server.RegisterZrpc(svcCtx.Config, svcCtx)
+	c := svcCtx.MustGetConfig()
+
+	zrpc := server.RegisterZrpc(c, svcCtx)
 	middleware.Register(zrpc)
 
 	group := service.NewServiceGroup()
 	group.Add(zrpc)
 	group.Add(svcCtx.Custom)
 
-	printBanner(svcCtx.Config)
-	logx.Infof("Starting rpc server at %s...", svcCtx.Config.Zrpc.ListenOn)
+	printBanner(c)
+	logx.Infof("Starting rpc server at %s...", c.Zrpc.ListenOn)
 	group.Start()
 }
 
