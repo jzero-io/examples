@@ -4,23 +4,22 @@ import (
 	"simpleapi-serverless/server/config"
 	"simpleapi-serverless/server/middleware"
 	"simpleapi-serverless/server/custom"
+
+	configurator "github.com/zeromicro/go-zero/core/configcenter"
 )
 
 type ServiceContext struct {
-	Config	config.Config
+	Config	configurator.Configurator[config.Config]
 	middleware.Middleware
 	Custom	*custom.Custom
 }
 
-func NewServiceContext(c config.Config) *ServiceContext {
+func NewServiceContext(cc configurator.Configurator[config.Config]) *ServiceContext {
 	sc := &ServiceContext{
-		Config:		c,
+		Config:		cc,
 		Custom:		custom.New(),
 		Middleware:	middleware.New(),
 	}
+	sc.SetConfigListener()
 	return sc
-}
-
-func (sc *ServiceContext) MustGetConfig() config.Config {
-	return sc.Config
 }
