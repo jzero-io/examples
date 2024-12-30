@@ -2,10 +2,11 @@ package cmd
 
 import (
 	"os"
-	"simpleapi-serverless/server/config"
-	"simpleapi-serverless/server/svc"
-	"simpleapi-serverless/server/middleware"
-	"simpleapi-serverless/server/handler"
+	"simpleapi-serverless/internal/config"
+	"simpleapi-serverless/internal/handler"
+	"simpleapi-serverless/internal/middleware"
+	"simpleapi-serverless/internal/svc"
+
 	"github.com/common-nighthawk/go-figure"
 	"github.com/jzero-io/jzero-contrib/dynamic_conf"
 	"github.com/spf13/cobra"
@@ -17,9 +18,9 @@ import (
 
 // serverCmd represents the server command
 var serverCmd = &cobra.Command{
-	Use:	"server",
-	Short:	"simpleapi-serverless server",
-	Long:	"simpleapi-serverless server",
+	Use:   "server",
+	Short: "simpleapi-serverless server",
+	Long:  "simpleapi-serverless server",
 	Run: func(cmd *cobra.Command, args []string) {
 		ss, err := dynamic_conf.NewFsNotify(cfgFile, dynamic_conf.WithUseEnv(true))
 		logx.Must(err)

@@ -2,11 +2,13 @@ package serverless
 
 import (
 	"path/filepath"
-	"simpleapi-serverless/server/config"
-	"simpleapi-serverless/server/handler"
-	"simpleapi-serverless/server/svc"
+	"simpleapi-serverless/internal/config"
+	"simpleapi-serverless/internal/handler"
+	"simpleapi-serverless/internal/svc"
 
-	"github.com/zeromicro/go-zero/core/conf"
+	"github.com/jzero-io/jzero-contrib/dynamic_conf"
+	configurator "github.com/zeromicro/go-zero/core/configcenter"
+	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/rest"
 )
 
@@ -17,14 +19,13 @@ type Serverless struct {
 
 // Serverless please replace coreSvcCtx any type to real core svcCtx
 func New(coreSvcCtx any) *Serverless {
-	var c config.Config
+	ss, err := dynamic_conf.NewFsNotify(filepath.Join("plugins", "hello", "etc", "etc.yaml"), dynamic_conf.WithUseEnv(true))
+	logx.Must(err)
+	cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
+		Type: "yaml",
+	}, ss)
 
-	if err := conf.Load(filepath.Join("plugins", "simpleapi-serverless", "etc", "etc.yaml"), &c); err != nil {
-		panic(err)
-	}
-	config.C = c
-
-	svcCtx := svc.NewServiceContext(c)
+	svcCtx := svc.NewServiceContext(cc)
 	return &Serverless{
 		SvcCtx:      svcCtx,
 		HandlerFunc: handler.RegisterHandlers,

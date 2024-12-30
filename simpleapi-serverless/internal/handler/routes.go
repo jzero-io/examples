@@ -6,14 +6,14 @@ import (
 	"time"
 
 	"github.com/zeromicro/go-zero/rest"
+	"simpleapi-serverless/internal/svc"
 
-	"simpleapi-serverless/server/svc"
-	version "simpleapi-serverless/server/handler/version"
+	version "simpleapi-serverless/internal/handler/version"
 )
 
 var (
-	_	= http.StatusOK
-	_	= time.Now()
+	_ = http.StatusOK
+	_ = time.Now()
 )
 
 func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
@@ -21,9 +21,9 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		server.AddRoutes(
 			[]rest.Route{
 				{
-					Method:		http.MethodGet,
-					Path:		"/version",
-					Handler:	version.Get(serverCtx),
+					Method:  http.MethodGet,
+					Path:    "/version",
+					Handler: version.Get(serverCtx),
 				},
 			},
 			rest.WithPrefix("/api/simpleapi-serverless/v1"),

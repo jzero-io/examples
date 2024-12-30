@@ -5,25 +5,25 @@ import (
 
 	"context"
 
-	"simpleapi-serverless/server/svc"
-	types "simpleapi-serverless/server/types/version"
+	"simpleapi-serverless/internal/svc"
+	types "simpleapi-serverless/internal/types/version"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
 type Get struct {
 	logx.Logger
-	ctx	context.Context
-	svcCtx	*svc.ServiceContext
-	r	*http.Request
+	ctx    context.Context
+	svcCtx *svc.ServiceContext
+	r      *http.Request
 }
 
 func NewGet(ctx context.Context, svcCtx *svc.ServiceContext, r *http.Request) *Get {
 	return &Get{
-		Logger:	logx.WithContext(ctx),
-		ctx:	ctx,
-		svcCtx:	svcCtx,
-		r:	r,
+		Logger: logx.WithContext(ctx),
+		ctx:    ctx,
+		svcCtx: svcCtx,
+		r:      r,
 	}
 }
 

@@ -5,9 +5,9 @@ import (
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 
-	"simpleapi-serverless/server/logic/version"
-	types "simpleapi-serverless/server/types/version"
-	"simpleapi-serverless/server/svc"
+	"simpleapi-serverless/internal/logic/version"
+	"simpleapi-serverless/internal/svc"
+	types "simpleapi-serverless/internal/types/version"
 )
 
 func Get(svcCtx *svc.ServiceContext) http.HandlerFunc {
