@@ -17,7 +17,7 @@ type Serverless struct {
 	HandlerFunc func(server *rest.Server, svcCtx *svc.ServiceContext) // 服务路由
 }
 
-// Serverless please replace coreSvcCtx any type to real core svcCtx
+// Serverless please replace coreSvcCtx any type to real CoreSvcCtx
 func New(coreSvcCtx any) *Serverless {
 	ss, err := dynamic_conf.NewFsNotify(filepath.Join("plugins", "hello", "etc", "etc.yaml"), dynamic_conf.WithUseEnv(true))
 	logx.Must(err)
