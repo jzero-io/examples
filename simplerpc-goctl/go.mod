@@ -5,7 +5,7 @@ go 1.22.10
 require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/envoyproxy/protoc-gen-validate v1.0.4
-	github.com/zeromicro/go-zero v1.7.5
+	github.com/zeromicro/go-zero v1.7.6
 	google.golang.org/grpc v1.65.0
 	google.golang.org/protobuf v1.36.1
 )
