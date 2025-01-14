@@ -6,7 +6,7 @@ require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
-	github.com/go-playground/validator/v10 v10.23.0
+	github.com/go-playground/validator/v10 v10.24.0
 	github.com/jzero-io/jzero-contrib v0.18.4
 	github.com/jzero-io/restc v0.5.0
 	github.com/pkg/errors v0.9.1
@@ -30,7 +30,7 @@ require (
 	github.com/eddieowens/opts v0.1.0 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/fsnotify/fsnotify v1.8.0 // indirect
-	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.8 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
@@ -85,10 +85,10 @@ require (
 	go.uber.org/automaxprocs v1.6.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
 	go.uber.org/zap v1.24.0 // indirect
-	golang.org/x/crypto v0.31.0 // indirect
+	golang.org/x/crypto v0.32.0 // indirect
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9 // indirect
-	golang.org/x/net v0.33.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
+	golang.org/x/net v0.34.0 // indirect
+	golang.org/x/sys v0.29.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20240711142825-46eb208f015d // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240701130421-f6361c86f094 // indirect
