@@ -9,7 +9,7 @@ require (
 	github.com/jzero-io/jzero-contrib v0.19.2
 	github.com/jzero-io/restc v0.5.0
 	github.com/spf13/cast v1.6.0
-	github.com/spf13/cobra v1.8.1
+	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.18.2
 	github.com/zeromicro/go-zero v1.8.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20250204164813-702378808489
@@ -85,7 +85,7 @@ require (
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/spf13/afero v1.11.0 // indirect
-	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/spf13/pflag v1.0.6 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.15 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.15 // indirect
