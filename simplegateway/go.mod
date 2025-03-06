@@ -1,13 +1,13 @@
 module simplegateway
 
-go 1.24
+go 1.23.0
 
-toolchain go1.24.0
+toolchain go1.23.7
 
 require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/envoyproxy/protoc-gen-validate v1.1.0
-	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.2
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3
 	github.com/jzero-io/jzero-contrib v0.19.4
 	github.com/jzero-io/restc v0.5.0
 	github.com/spf13/cast v1.6.0
