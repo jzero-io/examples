@@ -9,9 +9,8 @@ import (
 
 type SimplegatewayInterface interface {
 	RESTClient() restc.Interface
-	
+
 	HelloGetter
-	
 }
 
 type SimplegatewayClient struct {
@@ -28,7 +27,6 @@ func (x *SimplegatewayClient) RESTClient() restc.Interface {
 func (x *SimplegatewayClient) Hello() HelloInterface {
 	return newHelloClient(x)
 }
-
 
 // NewForConfig creates a new SimplegatewayClient for the given config.
 func NewForConfig(x *restc.RESTClient) (*SimplegatewayClient, error) {

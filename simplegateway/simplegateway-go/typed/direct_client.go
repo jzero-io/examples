@@ -7,7 +7,6 @@ import (
 	"github.com/jzero-io/restc"
 )
 
-
 type DirectInterface interface {
 	RESTClient() restc.Interface
 }

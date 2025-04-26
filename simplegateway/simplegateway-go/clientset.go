@@ -4,10 +4,10 @@
 package simplegateway_go
 
 import (
-	"github.com/jzero-io/restc"
 	"simplegateway/simplegateway-go/typed"
-
 	"simplegateway/simplegateway-go/typed/simplegateway"
+
+	"github.com/jzero-io/restc"
 )
 
 type Interface interface {
@@ -49,6 +49,6 @@ func NewClientWithOptions(ops ...restc.Opt) (simplegateway.SimplegatewayInterfac
 	if err != nil {
 		return nil, err
 	}
-	
+
 	return cs.Simplegateway(), nil
 }

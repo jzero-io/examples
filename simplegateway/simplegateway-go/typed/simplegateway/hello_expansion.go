@@ -1,3 +1,3 @@
 package simplegateway
 
-type HelloExpansion interface {}
+type HelloExpansion interface{}
