@@ -4,10 +4,10 @@
 package simpleapi_go
 
 import (
-	"github.com/jzero-io/restc"
 	"simpleapi/simpleapi-go/typed"
-
 	"simpleapi/simpleapi-go/typed/simpleapi"
+
+	"github.com/jzero-io/restc"
 )
 
 type Interface interface {
@@ -49,6 +49,6 @@ func NewClientWithOptions(ops ...restc.Opt) (simpleapi.SimpleapiInterface, error
 	if err != nil {
 		return nil, err
 	}
-	
+
 	return cs.Simpleapi(), nil
 }

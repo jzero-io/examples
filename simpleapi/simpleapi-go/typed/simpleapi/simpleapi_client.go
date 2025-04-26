@@ -9,9 +9,8 @@ import (
 
 type SimpleapiInterface interface {
 	RESTClient() restc.Interface
-	
+
 	VersionGetter
-	
 }
 
 type SimpleapiClient struct {
@@ -28,7 +27,6 @@ func (x *SimpleapiClient) RESTClient() restc.Interface {
 func (x *SimpleapiClient) Version() VersionInterface {
 	return newVersionClient(x)
 }
-
 
 // NewForConfig creates a new SimpleapiClient for the given config.
 func NewForConfig(x *restc.RESTClient) (*SimpleapiClient, error) {
