@@ -7,13 +7,13 @@ require (
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.26.0
-	github.com/jzero-io/jzero-contrib v0.22.0
+	github.com/jzero-io/jzero-contrib v0.23.0
 	github.com/jzero-io/restc v0.5.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.18.2
-	github.com/zeromicro/go-zero v1.8.2
+	github.com/zeromicro/go-zero v1.8.3
 )
 
 require (
