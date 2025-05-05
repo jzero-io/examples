@@ -8,12 +8,12 @@ require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/envoyproxy/protoc-gen-validate v1.1.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3
-	github.com/jzero-io/jzero-contrib v0.22.0
+	github.com/jzero-io/jzero-contrib v0.23.0
 	github.com/jzero-io/restc v0.5.0
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.18.2
-	github.com/zeromicro/go-zero v1.8.2
+	github.com/zeromicro/go-zero v1.8.3
 	google.golang.org/genproto/googleapis/api v0.0.0-20250303144028-a0af3efb3deb
 	google.golang.org/grpc v1.70.0
 	google.golang.org/protobuf v1.36.5
@@ -82,7 +82,7 @@ require (
 	github.com/prometheus/client_model v0.6.1 // indirect
 	github.com/prometheus/common v0.62.0 // indirect
 	github.com/prometheus/procfs v0.15.1 // indirect
-	github.com/redis/go-redis/v9 v9.7.3 // indirect
+	github.com/redis/go-redis/v9 v9.8.0 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
 	github.com/shopspring/decimal v1.2.0 // indirect
