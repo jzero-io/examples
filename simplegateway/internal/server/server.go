@@ -11,15 +11,15 @@ import (
 	"simplegateway/internal/config"
 	"simplegateway/internal/svc"
 
-	hellosvr "simplegateway/internal/server/hello"
+	versionsvr "simplegateway/internal/server/version"
 
-	"simplegateway/internal/pb/hellopb"
+	"simplegateway/internal/pb/versionpb"
 )
 
 func RegisterZrpc(c config.Config, ctx *svc.ServiceContext) *zrpc.RpcServer {
 	s := zrpc.MustNewServer(c.Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
 	    
-		hellopb.RegisterHelloServer(grpcServer, hellosvr.NewHello(ctx))
+		versionpb.RegisterVersionServer(grpcServer, versionsvr.NewVersion(ctx))
 
 		if c.Zrpc.Mode == service.DevMode || c.Zrpc.Mode == service.TestMode {
 			reflection.Register(grpcServer)

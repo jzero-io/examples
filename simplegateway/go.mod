@@ -2,11 +2,10 @@ module simplegateway
 
 go 1.23.0
 
-toolchain go1.23.8
+toolchain go1.23.9
 
 require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/envoyproxy/protoc-gen-validate v1.1.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3
 	github.com/jzero-io/jzero-contrib v0.23.0
 	github.com/jzero-io/restc v0.5.0
@@ -37,6 +36,7 @@ require (
 	github.com/eddieowens/opts v0.1.0 // indirect
 	github.com/emicklei/go-restful/v3 v3.11.0 // indirect
 	github.com/envoyproxy/go-control-plane v0.13.1 // indirect
+	github.com/envoyproxy/protoc-gen-validate v1.1.0 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/fsnotify/fsnotify v1.8.0 // indirect
 	github.com/fullstorydev/grpcurl v1.9.3 // indirect

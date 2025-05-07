@@ -1,9 +1,9 @@
-package hellologic
+package versionlogic
 
 import (
 	"context"
 
-	"simplegateway/internal/pb/hellopb"
+	"simplegateway/internal/pb/versionpb"
 	"simplegateway/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/logx"
@@ -23,8 +23,8 @@ func NewSay(ctx context.Context, svcCtx *svc.ServiceContext) *Say {
 	}
 }
 
-func (l *Say) Say(in *hellopb.SayRequest) (*hellopb.SayResponse, error) {
+func (l *Say) Say(in *versionpb.GetRequest) (*versionpb.GetResponse, error) {
 	// todo: add your logic here and delete this line
 
-	return &hellopb.SayResponse{}, nil
+	return &versionpb.GetResponse{}, nil
 }

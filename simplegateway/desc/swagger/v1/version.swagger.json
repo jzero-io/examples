@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "v1/hello.proto",
+    "title": "v1/version.proto",
     "version": "v1"
   },
   "tags": [
     {
-      "name": "Hello"
+      "name": "Version"
     }
   ],
   "consumes": [
@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/api/v1/hello/say": {
+    "/api/v1/version": {
       "get": {
-        "operationId": "Hello_Say",
+        "operationId": "Version_Say",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/hellopbSayResponse"
+              "$ref": "#/definitions/versionpbGetResponse"
             }
           },
           "default": {
@@ -33,29 +33,13 @@
             }
           }
         },
-        "parameters": [
-          {
-            "name": "message",
-            "in": "query",
-            "required": false,
-            "type": "string"
-          }
-        ],
         "tags": [
-          "Hello"
+          "Version"
         ]
       }
     }
   },
   "definitions": {
-    "hellopbSayResponse": {
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -81,6 +65,23 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "versionpbGetResponse": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "goVersion": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "string": {
+          "type": "string"
         }
       }
     }
