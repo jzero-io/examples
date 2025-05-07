@@ -3,13 +3,13 @@ package simplerpc
 import (
 	"github.com/zeromicro/go-zero/zrpc"
 	
-	"simplerpc/zrpcclient-go/typed/simplerpc/hello"
+	"simplerpc/zrpcclient-go/typed/simplerpc/version"
 	
 )
 
 type Interface interface {
 	
-	Hello() hello.Hello
+	Version() version.Version
 	
 }
 
@@ -22,6 +22,6 @@ func New(c zrpc.Client) *Client {
 }
 
 
-func (x *Client) Hello() hello.Hello {
-	return hello.NewHello(x.client)
+func (x *Client) Version() version.Version {
+	return version.NewVersion(x.client)
 }

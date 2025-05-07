@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "v1/hello.proto",
+    "title": "v1/version.proto",
     "version": "version not set"
   },
   "tags": [
     {
-      "name": "Hello"
+      "name": "Version"
     }
   ],
   "consumes": [
@@ -17,14 +17,6 @@
   ],
   "paths": {},
   "definitions": {
-    "hellopbSayResponse": {
-      "type": "object",
-      "properties": {
-        "message": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -50,6 +42,23 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "versionpbGetResponse": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "goVersion": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "string": {
+          "type": "string"
         }
       }
     }
