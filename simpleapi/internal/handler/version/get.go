@@ -7,7 +7,7 @@ import (
 
 	"simpleapi/internal/logic/version"
 	"simpleapi/internal/svc"
-	types "simpleapi/internal/types/version"
+	"simpleapi/internal/types"
 )
 
 func Get(svcCtx *svc.ServiceContext) http.HandlerFunc {

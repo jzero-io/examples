@@ -5,7 +5,7 @@ package simpleapi
 
 import (
 	"context"
-	"simpleapi/simpleapi-go/model/simpleapi/version"
+	"simpleapi/simpleapi-go/model/simpleapi/types"
 
 	"github.com/jzero-io/restc"
 )
@@ -20,7 +20,7 @@ type VersionGetter interface {
 
 type VersionInterface interface {
 	// API /api/v1/version
-	Get(ctx context.Context, param version.GetRequest) (*version.GetResponse, error)
+	Get(ctx context.Context, param types.GetRequest) (*types.GetResponse, error)
 
 	VersionExpansion
 }
@@ -35,8 +35,8 @@ func newVersionClient(c *SimpleapiClient) *versionClient {
 	}
 }
 
-func (x *versionClient) Get(ctx context.Context, param version.GetRequest) (*version.GetResponse, error) {
-	var resp *version.GetResponse
+func (x *versionClient) Get(ctx context.Context, param types.GetRequest) (*types.GetResponse, error) {
+	var resp *types.GetResponse
 	err := x.client.Verb("GET").
 		SubPath(
 			"/api/v1/version",

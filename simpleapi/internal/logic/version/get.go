@@ -6,7 +6,7 @@ import (
 	"context"
 
 	"simpleapi/internal/svc"
-	types "simpleapi/internal/types/version"
+	"simpleapi/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
