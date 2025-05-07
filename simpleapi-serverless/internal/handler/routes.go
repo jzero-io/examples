@@ -26,7 +26,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Handler: version.Get(serverCtx),
 				},
 			},
-			rest.WithPrefix("/api/simpleapi-serverless/v1"),
+			rest.WithPrefix("/api/v1/simpleapi-serverless"),
 		)
 	}
 
