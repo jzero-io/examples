@@ -9,11 +9,12 @@ type GetResponse {
 	Date      string `json:"date"`
 }
 
-@server(
+@server (
 	prefix: /api/v1/simpleapi-serverless
-	group: version
+	group:  version
 )
 service simpleapiServerless {
 	@handler Get
 	get /version (GetRequest) returns (GetResponse)
 }
+
