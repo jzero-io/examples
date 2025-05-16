@@ -1,4 +1,4 @@
-package version
+package logic
 
 import (
 	"net/http"

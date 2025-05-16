@@ -42,10 +42,7 @@
             "apiKey": []
           }
         ],
-        "summary": "Get",
-        "tags": [
-          "version"
-        ]
+        "summary": "Get"
       }
     }
   },
@@ -65,7 +62,7 @@
     }
   },
   "swagger": "2.0",
-  "x-date": "2025-05-16 09:05:50",
+  "x-date": "2025-05-16 09:19:08",
   "x-description": "This is a goctl generated swagger file.",
   "x-github": "https://github.com/zeromicro/go-zero",
   "x-go-zero-doc": "https://go-zero.dev/",

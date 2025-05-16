@@ -11,7 +11,6 @@ type GetResponse {
 
 @server (
 	prefix: /api/v1/simpleapi-serverless
-	group:  version
 )
 service simpleapiServerless {
 	@handler Get
