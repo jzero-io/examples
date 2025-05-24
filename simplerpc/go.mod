@@ -4,7 +4,7 @@ go 1.24.3
 
 require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/jzero-io/jzero-contrib v0.24.0
+	github.com/jzero-io/jzero-contrib v0.25.0
 	github.com/spf13/cast v1.6.0
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/viper v1.18.2
@@ -95,7 +95,7 @@ require (
 	golang.org/x/text v0.22.0 // indirect
 	golang.org/x/time v0.10.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20240711142825-46eb208f015d // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240701130421-f6361c86f094 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240711142825-46eb208f015d // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
