@@ -3,7 +3,7 @@
 ## Install Jzero Framework
 
 ```shell
-go install github.com/jzero-io/jzero@latest
+go install github.com/jzero-io/jzero/cmd/jzero@latest
 
 jzero check
 ```
