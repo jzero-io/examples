@@ -2,6 +2,10 @@ package cmd
 
 import (
 	"os"
+	"simpleapi-serverless/internal/config"
+	"simpleapi-serverless/internal/handler"
+	"simpleapi-serverless/internal/middleware"
+	"simpleapi-serverless/internal/svc"
 
 	"github.com/common-nighthawk/go-figure"
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
@@ -10,11 +14,6 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/rest"
-
-	"simpleapi-serverless/internal/config"
-	"simpleapi-serverless/internal/handler"
-	"simpleapi-serverless/internal/middleware"
-	"simpleapi-serverless/internal/svc"
 )
 
 // serverCmd represents the server command
@@ -59,6 +58,8 @@ func run(svcCtx *svc.ServiceContext) {
 	group.Add(svcCtx.Custom)
 
 	printBanner(c)
+	printVersion()
+
 	logx.Infof("Starting rest server at %s:%d...", c.Rest.Host, c.Rest.Port)
 	group.Start()
 }
