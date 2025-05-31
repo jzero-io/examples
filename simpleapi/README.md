@@ -36,4 +36,4 @@ docker buildx build --platform linux/amd64 --progress=plain -t simpleapi:latest 
 
 ## Documents
 
-https://jzero.jaronnie.com
+https://docs.jzero.io
