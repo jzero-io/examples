@@ -10,8 +10,8 @@ import (
 	"simplegateway/internal/svc"
 
 	"github.com/common-nighthawk/go-figure"
-	"github.com/jzero-io/jzero-contrib/dynamic_conf"
-	"github.com/jzero-io/jzero-contrib/embedx"
+	"github.com/jzero-io/jzero/core/configcenter/subscriber"
+	"github.com/jzero-io/jzero/core/embedx"
 	"github.com/spf13/cobra"
 	configurator "github.com/zeromicro/go-zero/core/configcenter"
 	"github.com/zeromicro/go-zero/core/logx"
@@ -25,11 +25,9 @@ var serverCmd = &cobra.Command{
 	Short: "simplegateway server",
 	Long:  "simplegateway server",
 	Run: func(cmd *cobra.Command, args []string) {
-		ss, err := dynamic_conf.NewFsNotify(cfgFile)
-		logx.Must(err)
 		cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
 			Type: "yaml",
-		}, ss)
+		}, subscriber.MustNewFsnotifySubscriber(cfgFile, subscriber.WithUseEnv(true)))
 		c, err := cc.GetConfig()
 		logx.Must(err)
 
@@ -42,7 +40,7 @@ var serverCmd = &cobra.Command{
 		}
 
 		// write pb to local
-		c.Gateway.Upstreams[0].ProtoSets, err = embedx.WriteToLocalTemp(pb.Embed, embedx.WithFileMatchFunc(func(path string) bool {
+		c.Gateway.Upstreams[0].ProtoSets, err = embedx.WriteToLocal(pb.Embed, embedx.WithFileMatchFunc(func(path string) bool {
 			return filepath.Ext(path) == ".pb"
 		}))
 		logx.Must(err)
