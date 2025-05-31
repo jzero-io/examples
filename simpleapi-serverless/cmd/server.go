@@ -2,18 +2,19 @@ package cmd
 
 import (
 	"os"
-	"simpleapi-serverless/internal/config"
-	"simpleapi-serverless/internal/handler"
-	"simpleapi-serverless/internal/middleware"
-	"simpleapi-serverless/internal/svc"
 
 	"github.com/common-nighthawk/go-figure"
-	"github.com/jzero-io/jzero-contrib/dynamic_conf"
+	"github.com/jzero-io/jzero/core/configcenter/subscriber"
 	"github.com/spf13/cobra"
 	configurator "github.com/zeromicro/go-zero/core/configcenter"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/rest"
+
+	"simpleapi-serverless/internal/config"
+	"simpleapi-serverless/internal/handler"
+	"simpleapi-serverless/internal/middleware"
+	"simpleapi-serverless/internal/svc"
 )
 
 // serverCmd represents the server command
@@ -22,11 +23,9 @@ var serverCmd = &cobra.Command{
 	Short: "simpleapi-serverless server",
 	Long:  "simpleapi-serverless server",
 	Run: func(cmd *cobra.Command, args []string) {
-		ss, err := dynamic_conf.NewFsNotify(cfgFile, dynamic_conf.WithUseEnv(true))
-		logx.Must(err)
 		cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
 			Type: "yaml",
-		}, ss)
+		}, subscriber.MustNewFsnotifySubscriber(cfgFile, subscriber.WithUseEnv(true)))
 		c, err := cc.GetConfig()
 		logx.Must(err)
 

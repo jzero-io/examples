@@ -2,14 +2,15 @@ package serverless
 
 import (
 	"path/filepath"
-	"simpleapi-serverless/internal/config"
-	"simpleapi-serverless/internal/handler"
-	"simpleapi-serverless/internal/svc"
 
-	"github.com/jzero-io/jzero-contrib/dynamic_conf"
+	"github.com/jzero-io/jzero/core/configcenter/subscriber"
 	configurator "github.com/zeromicro/go-zero/core/configcenter"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/rest"
+
+	"simpleapi-serverless/internal/config"
+	"simpleapi-serverless/internal/handler"
+	"simpleapi-serverless/internal/svc"
 )
 
 type Serverless struct {
@@ -19,11 +20,9 @@ type Serverless struct {
 
 // Serverless please replace coreSvcCtx any type to real CoreSvcCtx
 func New(coreSvcCtx any) *Serverless {
-	ss, err := dynamic_conf.NewFsNotify(filepath.Join("plugins", "simpleapi-serverless", "etc", "etc.yaml"), dynamic_conf.WithUseEnv(true))
-	logx.Must(err)
 	cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
 		Type: "yaml",
-	}, ss)
+	}, subscriber.MustNewFsnotifySubscriber(cfgFile, subscriber.WithUseEnv(true)))
 
 	svcCtx := svc.NewServiceContext(cc)
 	return &Serverless{
