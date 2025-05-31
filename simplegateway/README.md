@@ -40,4 +40,4 @@ docker buildx build --platform linux/amd64 --progress=plain -t simplegateway:lat
 
 ## Documents
 
-https://jzero.jaronnie.com
+https://docs.jzero.io
