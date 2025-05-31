@@ -51,6 +51,8 @@ func run(svcCtx *svc.ServiceContext) {
 	group.Add(svcCtx.Custom)
 
 	printBanner(c)
+	printVersion()
+
 	logx.Infof("Starting rpc server at %s...", c.Zrpc.ListenOn)
 	group.Start()
 }
