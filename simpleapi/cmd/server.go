@@ -1,12 +1,6 @@
 package cmd
 
 import (
-	"os"
-	"simpleapi/internal/config"
-	"simpleapi/internal/handler"
-	"simpleapi/internal/middleware"
-	"simpleapi/internal/svc"
-
 	"github.com/common-nighthawk/go-figure"
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
 	"github.com/spf13/cobra"
@@ -14,6 +8,11 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/rest"
+
+	"simpleapi/internal/config"
+	"simpleapi/internal/handler"
+	"simpleapi/internal/middleware"
+	"simpleapi/internal/svc"
 )
 
 // serverCmd represents the server command
@@ -29,12 +28,7 @@ var serverCmd = &cobra.Command{
 		logx.Must(err)
 
 		// set up logger
-		if err := logx.SetUp(c.Log.LogConf); err != nil {
-			logx.Must(err)
-		}
-		if c.Log.LogConf.Mode != "console" {
-			logx.AddWriter(logx.NewWriter(os.Stdout))
-		}
+		logx.Must(logx.SetUp(c.Log.LogConf))
 
 		svcCtx := svc.NewServiceContext(cc)
 		run(svcCtx)

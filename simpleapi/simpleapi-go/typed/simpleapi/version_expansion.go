@@ -1,3 +1,3 @@
 package simpleapi
 
-type VersionExpansion interface{}
+type VersionExpansion any
