@@ -1,25 +1,25 @@
-package handler
+package version
 
 import (
 	"net/http"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 
-	"simpleapi/internal/logic"
+	"simpleapi/internal/logic/version"
 	"simpleapi/internal/svc"
-	"simpleapi/internal/types"
+	types "simpleapi/internal/types/version"
 )
 
-func Get(svcCtx *svc.ServiceContext) http.HandlerFunc {
+func Version(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		var req types.GetRequest
+		var req types.VersionRequest
 		if err := httpx.Parse(r, &req); err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 			return
 		}
 
-		l := logic.NewGet(r.Context(), svcCtx, r)
-		resp, err := l.Get(&req)
+		l := version.NewVersion(r.Context(), svcCtx, r)
+		resp, err := l.Version(&req)
 		if err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 		} else {

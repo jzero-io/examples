@@ -4,7 +4,7 @@
     "application/json"
   ],
   "info": {
-    "version": "1.0"
+    "version": "v1"
   },
   "paths": {
     "/api/v1/version": {
@@ -42,7 +42,10 @@
             "apiKey": []
           }
         ],
-        "summary": "Get"
+        "summary": "Version",
+        "tags": [
+          "version"
+        ]
       }
     }
   },
