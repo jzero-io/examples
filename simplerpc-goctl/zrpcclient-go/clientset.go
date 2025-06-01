@@ -16,7 +16,6 @@ func (x *Clientset) SimplerpcGoctl() simplerpc_goctl.Interface {
 	return x.simplerpcGoctl
 }
 
-
 func NewClientWithOptions(ops ...Opt) *Clientset {
 	cs := &Clientset{}
 

@@ -3,10 +3,10 @@ package hellologic
 import (
 	"context"
 
+	"github.com/zeromicro/go-zero/core/logx"
+
 	"simplerpc-goctl/internal/pb/hellopb"
 	"simplerpc-goctl/internal/svc"
-
-	"github.com/zeromicro/go-zero/core/logx"
 )
 
 type SayHello struct {

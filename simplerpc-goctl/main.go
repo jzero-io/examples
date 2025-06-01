@@ -2,13 +2,14 @@ package main
 
 import (
 	"flag"
-	"simplerpc-goctl/internal/config"
-	"simplerpc-goctl/internal/server"
-	"simplerpc-goctl/internal/svc"
 
 	"github.com/common-nighthawk/go-figure"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/logx"
+
+	"simplerpc-goctl/internal/config"
+	"simplerpc-goctl/internal/server"
+	"simplerpc-goctl/internal/svc"
 )
 
 var configFile = flag.String("f", "etc/etc.yaml", "set config file")
