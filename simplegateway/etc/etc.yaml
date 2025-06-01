@@ -12,4 +12,7 @@ gateway:
       name: simplegateway.gw
 
 log:
-  encoding: plain
+    serviceName: simplegateway
+    encoding: plain
+    level: info
+    mode: console

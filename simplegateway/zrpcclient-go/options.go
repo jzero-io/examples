@@ -8,11 +8,8 @@ import (
 
 type Opt func(client *Clientset)
 
-
 func WithSimplegatewayClient(cli zrpc.Client) Opt {
 	return func(client *Clientset) {
 		client.simplegateway = simplegateway.New(cli)
 	}
 }
-
-

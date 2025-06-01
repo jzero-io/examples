@@ -1,10 +1,10 @@
 package svc
 
 import (
+	configurator "github.com/zeromicro/go-zero/core/configcenter"
+
 	"simplegateway/internal/config"
 	"simplegateway/internal/custom"
-
-	configurator "github.com/zeromicro/go-zero/core/configcenter"
 )
 
 type ServiceContext struct {

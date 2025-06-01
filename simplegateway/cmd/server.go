@@ -1,13 +1,7 @@
 package cmd
 
 import (
-	"os"
 	"path/filepath"
-	"simplegateway/desc/pb"
-	"simplegateway/internal/config"
-	"simplegateway/internal/middleware"
-	"simplegateway/internal/server"
-	"simplegateway/internal/svc"
 
 	"github.com/common-nighthawk/go-figure"
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
@@ -17,6 +11,12 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/gateway"
+
+	"simplegateway/desc/pb"
+	"simplegateway/internal/config"
+	"simplegateway/internal/middleware"
+	"simplegateway/internal/server"
+	"simplegateway/internal/svc"
 )
 
 // serverCmd represents the server command
@@ -32,12 +32,7 @@ var serverCmd = &cobra.Command{
 		logx.Must(err)
 
 		// set up logger
-		if err = logx.SetUp(c.Log.LogConf); err != nil {
-			logx.Must(err)
-		}
-		if c.Log.LogConf.Mode != "console" {
-			logx.AddWriter(logx.NewWriter(os.Stdout))
-		}
+		logx.Must(logx.SetUp(c.Log.LogConf))
 
 		// write pb to local
 		c.Gateway.Upstreams[0].ProtoSets, err = embedx.WriteToLocal(pb.Embed, embedx.WithFileMatchFunc(func(path string) bool {

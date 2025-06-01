@@ -12,9 +12,9 @@ import (
 )
 
 type Body struct {
-	Data    interface{} `json:"data"`
-	Code    int         `json:"code"`
-	Message string      `json:"message"`
+	Data    any    `json:"data"`
+	Code    int    `json:"code"`
+	Message string `json:"message"`
 }
 
 type responseWriter struct {
@@ -48,7 +48,7 @@ func ResponseMiddleware(next http.HandlerFunc) http.HandlerFunc {
 		next.ServeHTTP(rw, r)
 
 		if strings.Contains(strings.ToLower(w.Header().Get("Content-Type")), "application/json") {
-			var resp map[string]interface{}
+			var resp map[string]any
 			err := json.Unmarshal(rw.Body(), &resp)
 			if err != nil {
 				logc.Errorf(logCtx, "Unmarshal resp error: %s\n", err.Error())

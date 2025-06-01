@@ -2,9 +2,10 @@ package custom
 
 import (
 	"os"
-	"simplegateway/internal/config"
 
 	configurator "github.com/zeromicro/go-zero/core/configcenter"
+
+	"simplegateway/internal/config"
 )
 
 type Custom struct {

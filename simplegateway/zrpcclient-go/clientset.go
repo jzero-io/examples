@@ -16,7 +16,6 @@ func (x *Clientset) Simplegateway() simplegateway.Interface {
 	return x.simplegateway
 }
 
-
 func NewClientWithOptions(ops ...Opt) *Clientset {
 	cs := &Clientset{}
 

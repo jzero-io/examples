@@ -1,9 +1,9 @@
 package svc
 
 import (
-	"simplegateway/internal/config"
-
 	"github.com/zeromicro/go-zero/core/logx"
+
+	"simplegateway/internal/config"
 )
 
 func (sc *ServiceContext) GetConfig() (config.Config, error) {

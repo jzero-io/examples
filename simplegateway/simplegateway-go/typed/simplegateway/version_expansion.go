@@ -1,3 +1,3 @@
 package simplegateway
 
-type VersionExpansion interface{}
+type VersionExpansion any
