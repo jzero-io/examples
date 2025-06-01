@@ -16,7 +16,6 @@ func (x *Clientset) Simplerpc() simplerpc.Interface {
 	return x.simplerpc
 }
 
-
 func NewClientWithOptions(ops ...Opt) *Clientset {
 	cs := &Clientset{}
 

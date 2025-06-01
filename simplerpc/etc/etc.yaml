@@ -4,4 +4,7 @@ zrpc:
     name: simplerpc.rpc
 
 log:
+    serviceName: simplerpc
     encoding: plain
+    level: info
+    mode: console

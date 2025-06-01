@@ -8,11 +8,8 @@ import (
 
 type Opt func(client *Clientset)
 
-
 func WithSimplerpcClient(cli zrpc.Client) Opt {
 	return func(client *Clientset) {
 		client.simplerpc = simplerpc.New(cli)
 	}
 }
-
-

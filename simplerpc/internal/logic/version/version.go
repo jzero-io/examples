@@ -3,10 +3,10 @@ package versionlogic
 import (
 	"context"
 
+	"github.com/zeromicro/go-zero/core/logx"
+
 	"simplerpc/internal/pb/versionpb"
 	"simplerpc/internal/svc"
-
-	"github.com/zeromicro/go-zero/core/logx"
 )
 
 type Version struct {
