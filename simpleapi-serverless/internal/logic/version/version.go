@@ -1,14 +1,13 @@
 package version
 
 import (
+	"context"
 	"net/http"
 
-	"context"
+	"github.com/zeromicro/go-zero/core/logx"
 
 	"simpleapi-serverless/internal/svc"
 	types "simpleapi-serverless/internal/types/version"
-
-	"github.com/zeromicro/go-zero/core/logx"
 )
 
 type Version struct {

@@ -1,9 +1,9 @@
 package svc
 
 import (
-	"simpleapi-serverless/internal/config"
-
 	"github.com/zeromicro/go-zero/core/logx"
+
+	"simpleapi-serverless/internal/config"
 )
 
 func (sc *ServiceContext) GetConfig() (config.Config, error) {

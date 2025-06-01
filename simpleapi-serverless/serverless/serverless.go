@@ -2,14 +2,15 @@ package serverless
 
 import (
 	"path/filepath"
-	"simpleapi-serverless/internal/config"
-	"simpleapi-serverless/internal/handler"
-	"simpleapi-serverless/internal/svc"
 
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
 	configurator "github.com/zeromicro/go-zero/core/configcenter"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/rest"
+
+	"simpleapi-serverless/internal/config"
+	"simpleapi-serverless/internal/handler"
+	"simpleapi-serverless/internal/svc"
 )
 
 type Serverless struct {
