@@ -1,4 +1,4 @@
-package logic
+package version
 
 import (
 	"net/http"
@@ -6,20 +6,20 @@ import (
 	"context"
 
 	"simpleapi-serverless/internal/svc"
-	"simpleapi-serverless/internal/types"
+	types "simpleapi-serverless/internal/types/version"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type Get struct {
+type Version struct {
 	logx.Logger
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 	r      *http.Request
 }
 
-func NewGet(ctx context.Context, svcCtx *svc.ServiceContext, r *http.Request) *Get {
-	return &Get{
+func NewVersion(ctx context.Context, svcCtx *svc.ServiceContext, r *http.Request) *Version {
+	return &Version{
 		Logger: logx.WithContext(ctx),
 		ctx:    ctx,
 		svcCtx: svcCtx,
@@ -27,7 +27,7 @@ func NewGet(ctx context.Context, svcCtx *svc.ServiceContext, r *http.Request) *G
 	}
 }
 
-func (l *Get) Get(req *types.GetRequest) (resp *types.GetResponse, err error) {
+func (l *Version) Version(req *types.VersionRequest) (resp *types.VersionResponse, err error) {
 	// todo: add your logic here and delete this line
 
 	return

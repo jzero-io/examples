@@ -7,6 +7,8 @@ import (
 
 	"github.com/zeromicro/go-zero/rest"
 	"simpleapi-serverless/internal/svc"
+
+	version "simpleapi-serverless/internal/handler/version"
 )
 
 var (
@@ -21,7 +23,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				{
 					Method:  http.MethodGet,
 					Path:    "/version",
-					Handler: Get(serverCtx),
+					Handler: version.Version(serverCtx),
 				},
 			},
 			rest.WithPrefix("/api/v1/simpleapi-serverless"),

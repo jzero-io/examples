@@ -8,13 +8,3 @@ import (
 var (
 	_ = time.Now()
 )
-
-type GetRequest struct {
-}
-
-type GetResponse struct {
-	Version   string `json:"version"`
-	GoVersion string `json:"goVersion"`
-	Commit    string `json:"commit"`
-	Date      string `json:"date"`
-}
