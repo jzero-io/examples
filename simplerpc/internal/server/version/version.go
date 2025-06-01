@@ -23,7 +23,7 @@ func NewVersion(svcCtx *svc.ServiceContext) *Version {
 	}
 }
 
-func (s *Version) Say(ctx context.Context, in *versionpb.GetRequest) (*versionpb.GetResponse, error) {
-	l := versionlogic.NewSay(ctx, s.svcCtx)
-	return l.Say(in)
+func (s *Version) Version(ctx context.Context, in *versionpb.VersionRequest) (*versionpb.VersionResponse, error) {
+	l := versionlogic.NewVersion(ctx, s.svcCtx)
+	return l.Version(in)
 }

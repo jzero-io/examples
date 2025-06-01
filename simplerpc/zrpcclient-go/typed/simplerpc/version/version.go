@@ -14,11 +14,11 @@ import (
 )
 
 type (
-	GetRequest  = versionpb.GetRequest
-	GetResponse = versionpb.GetResponse
+	VersionRequest  = versionpb.VersionRequest
+	VersionResponse = versionpb.VersionResponse
 
 	Version interface {
-		Say(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error)
+		Version(ctx context.Context, in *VersionRequest, opts ...grpc.CallOption) (*VersionResponse, error)
 	}
 
 	defaultVersion struct {
@@ -32,7 +32,7 @@ func NewVersion(cli zrpc.Client) Version {
 	}
 }
 
-func (m *defaultVersion) Say(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error) {
+func (m *defaultVersion) Version(ctx context.Context, in *VersionRequest, opts ...grpc.CallOption) (*VersionResponse, error) {
 	client := versionpb.NewVersionClient(m.cli.Conn())
-	return client.Say(ctx, in, opts...)
+	return client.Version(ctx, in, opts...)
 }

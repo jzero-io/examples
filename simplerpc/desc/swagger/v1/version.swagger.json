@@ -45,7 +45,7 @@
         }
       }
     },
-    "versionpbGetResponse": {
+    "versionpbVersionResponse": {
       "type": "object",
       "properties": {
         "version": {
@@ -57,7 +57,7 @@
         "commit": {
           "type": "string"
         },
-        "string": {
+        "date": {
           "type": "string"
         }
       }
