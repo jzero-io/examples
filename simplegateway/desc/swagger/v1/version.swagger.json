@@ -18,12 +18,12 @@
   "paths": {
     "/api/v1/version": {
       "get": {
-        "operationId": "Version_Say",
+        "operationId": "Version_Version",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/versionpbGetResponse"
+              "$ref": "#/definitions/versionpbVersionResponse"
             }
           },
           "default": {
@@ -68,7 +68,7 @@
         }
       }
     },
-    "versionpbGetResponse": {
+    "versionpbVersionResponse": {
       "type": "object",
       "properties": {
         "version": {
@@ -80,7 +80,7 @@
         "commit": {
           "type": "string"
         },
-        "string": {
+        "date": {
           "type": "string"
         }
       }

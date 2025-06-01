@@ -20,7 +20,7 @@ type VersionGetter interface {
 
 type VersionInterface interface {
 	// API /api/v1/version
-	Say(ctx context.Context, param *versionpb.GetRequest) (*versionpb.GetResponse, error)
+	Version(ctx context.Context, param *versionpb.VersionRequest) (*versionpb.VersionResponse, error)
 
 	VersionExpansion
 }
@@ -35,8 +35,8 @@ func newVersionClient(c *SimplegatewayClient) *VersionClient {
 	}
 }
 
-func (x *VersionClient) Say(ctx context.Context, param *versionpb.GetRequest) (*versionpb.GetResponse, error) {
-	var resp *versionpb.GetResponse
+func (x *VersionClient) Version(ctx context.Context, param *versionpb.VersionRequest) (*versionpb.VersionResponse, error) {
+	var resp *versionpb.VersionResponse
 	err := x.client.Verb("GET").
 		SubPath(
 			"/api/v1/version",

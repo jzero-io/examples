@@ -23,26 +23,26 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type GetRequest struct {
+type VersionRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetRequest) Reset() {
-	*x = GetRequest{}
+func (x *VersionRequest) Reset() {
+	*x = VersionRequest{}
 	mi := &file_v1_version_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetRequest) String() string {
+func (x *VersionRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetRequest) ProtoMessage() {}
+func (*VersionRequest) ProtoMessage() {}
 
-func (x *GetRequest) ProtoReflect() protoreflect.Message {
+func (x *VersionRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_version_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -54,35 +54,35 @@ func (x *GetRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetRequest.ProtoReflect.Descriptor instead.
-func (*GetRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use VersionRequest.ProtoReflect.Descriptor instead.
+func (*VersionRequest) Descriptor() ([]byte, []int) {
 	return file_v1_version_proto_rawDescGZIP(), []int{0}
 }
 
-type GetResponse struct {
+type VersionResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Version       string                 `protobuf:"bytes,1,opt,name=version,proto3" json:"version,omitempty"`
 	GoVersion     string                 `protobuf:"bytes,2,opt,name=goVersion,proto3" json:"goVersion,omitempty"`
 	Commit        string                 `protobuf:"bytes,3,opt,name=commit,proto3" json:"commit,omitempty"`
-	String_       string                 `protobuf:"bytes,4,opt,name=string,proto3" json:"string,omitempty"`
+	Date          string                 `protobuf:"bytes,4,opt,name=date,proto3" json:"date,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetResponse) Reset() {
-	*x = GetResponse{}
+func (x *VersionResponse) Reset() {
+	*x = VersionResponse{}
 	mi := &file_v1_version_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetResponse) String() string {
+func (x *VersionResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetResponse) ProtoMessage() {}
+func (*VersionResponse) ProtoMessage() {}
 
-func (x *GetResponse) ProtoReflect() protoreflect.Message {
+func (x *VersionResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_version_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -94,35 +94,35 @@ func (x *GetResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetResponse.ProtoReflect.Descriptor instead.
-func (*GetResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use VersionResponse.ProtoReflect.Descriptor instead.
+func (*VersionResponse) Descriptor() ([]byte, []int) {
 	return file_v1_version_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *GetResponse) GetVersion() string {
+func (x *VersionResponse) GetVersion() string {
 	if x != nil {
 		return x.Version
 	}
 	return ""
 }
 
-func (x *GetResponse) GetGoVersion() string {
+func (x *VersionResponse) GetGoVersion() string {
 	if x != nil {
 		return x.GoVersion
 	}
 	return ""
 }
 
-func (x *GetResponse) GetCommit() string {
+func (x *VersionResponse) GetCommit() string {
 	if x != nil {
 		return x.Commit
 	}
 	return ""
 }
 
-func (x *GetResponse) GetString_() string {
+func (x *VersionResponse) GetDate() string {
 	if x != nil {
-		return x.String_
+		return x.Date
 	}
 	return ""
 }
@@ -131,16 +131,15 @@ var File_v1_version_proto protoreflect.FileDescriptor
 
 const file_v1_version_proto_rawDesc = "" +
 	"\n" +
-	"\x10v1/version.proto\x12\tversionpb\x1a\x1cgoogle/api/annotations.proto\x1a;grpc-gateway/protoc-gen-openapiv2/options/annotations.proto\"\f\n" +
-	"\n" +
-	"GetRequest\"u\n" +
-	"\vGetResponse\x12\x18\n" +
+	"\x10v1/version.proto\x12\tversionpb\x1a\x1cgoogle/api/annotations.proto\x1a;grpc-gateway/protoc-gen-openapiv2/options/annotations.proto\"\x10\n" +
+	"\x0eVersionRequest\"u\n" +
+	"\x0fVersionResponse\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1c\n" +
 	"\tgoVersion\x18\x02 \x01(\tR\tgoVersion\x12\x16\n" +
-	"\x06commit\x18\x03 \x01(\tR\x06commit\x12\x16\n" +
-	"\x06string\x18\x04 \x01(\tR\x06string2X\n" +
-	"\aVersion\x12M\n" +
-	"\x03Say\x12\x15.versionpb.GetRequest\x1a\x16.versionpb.GetResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/api/v1/versionB\x19\x92A\x06\x12\x042\x02v1Z\x0e./pb/versionpbb\x06proto3"
+	"\x06commit\x18\x03 \x01(\tR\x06commit\x12\x12\n" +
+	"\x04date\x18\x04 \x01(\tR\x04date2d\n" +
+	"\aVersion\x12Y\n" +
+	"\aVersion\x12\x19.versionpb.VersionRequest\x1a\x1a.versionpb.VersionResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/api/v1/versionB\x19\x92A\x06\x12\x042\x02v1Z\x0e./pb/versionpbb\x06proto3"
 
 var (
 	file_v1_version_proto_rawDescOnce sync.Once
@@ -156,12 +155,12 @@ func file_v1_version_proto_rawDescGZIP() []byte {
 
 var file_v1_version_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_v1_version_proto_goTypes = []any{
-	(*GetRequest)(nil),  // 0: versionpb.GetRequest
-	(*GetResponse)(nil), // 1: versionpb.GetResponse
+	(*VersionRequest)(nil),  // 0: versionpb.VersionRequest
+	(*VersionResponse)(nil), // 1: versionpb.VersionResponse
 }
 var file_v1_version_proto_depIdxs = []int32{
-	0, // 0: versionpb.Version.Say:input_type -> versionpb.GetRequest
-	1, // 1: versionpb.Version.Say:output_type -> versionpb.GetResponse
+	0, // 0: versionpb.Version.Version:input_type -> versionpb.VersionRequest
+	1, // 1: versionpb.Version.Version:output_type -> versionpb.VersionResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

@@ -9,22 +9,22 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type Say struct {
+type Version struct {
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 	logx.Logger
 }
 
-func NewSay(ctx context.Context, svcCtx *svc.ServiceContext) *Say {
-	return &Say{
+func NewVersion(ctx context.Context, svcCtx *svc.ServiceContext) *Version {
+	return &Version{
 		ctx:    ctx,
 		svcCtx: svcCtx,
 		Logger: logx.WithContext(ctx),
 	}
 }
 
-func (l *Say) Say(in *versionpb.GetRequest) (*versionpb.GetResponse, error) {
+func (l *Version) Version(in *versionpb.VersionRequest) (*versionpb.VersionResponse, error) {
 	// todo: add your logic here and delete this line
 
-	return &versionpb.GetResponse{}, nil
+	return &versionpb.VersionResponse{}, nil
 }
