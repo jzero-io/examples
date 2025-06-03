@@ -82,8 +82,8 @@ github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
 github.com/jaronnie/genius v0.5.2 h1:9wm3yDPwfUwV1NF8SDJJVLCtGGGa9Iu52pscGw6mu14=
 github.com/jaronnie/genius v0.5.2/go.mod h1:8JV/ENGBhpWkUVjxLCWT1MitnYNj1W+IutAdLzfW/H8=
-github.com/jzero-io/jzero v0.39.2 h1:BqZHYjjumMICC336UHbOGZPmuZuanQKbYkrYX3JNGEE=
-github.com/jzero-io/jzero v0.39.2/go.mod h1:Xn4aPsj5flDTJeCGuorw1kN/8aonrgiDZCvKGSvaviM=
+github.com/jzero-io/jzero v0.39.3 h1:yCa2bI6fbdH32Ujbo8vUTj3PSnqfUTT4fwc3TiQEC4c=
+github.com/jzero-io/jzero v0.39.3/go.mod h1:Xn4aPsj5flDTJeCGuorw1kN/8aonrgiDZCvKGSvaviM=
 github.com/jzero-io/restc v0.5.0 h1:aNR62HIebxq6e5P5kIMPiChYmif0OL70bj19ID9LkNc=
 github.com/jzero-io/restc v0.5.0/go.mod h1:88wCepjLz+531f/2qznAWvPgf/5glrZEqpeY0KYW4Ks=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
