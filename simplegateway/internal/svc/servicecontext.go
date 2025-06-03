@@ -9,7 +9,6 @@ import (
 
 type ServiceContext struct {
 	Config configurator.Configurator[config.Config]
-
 	Custom *custom.Custom
 }
 
