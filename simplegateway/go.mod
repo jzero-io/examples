@@ -13,7 +13,7 @@ require (
 	buf.build/go/protovalidate v0.12.0
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3
-	github.com/jzero-io/jzero v0.39.4
+	github.com/jzero-io/jzero v0.39.5
 	github.com/jzero-io/restc v0.5.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.9.2
@@ -102,7 +102,7 @@ require (
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/jzero-io/desc v1.1.0 // indirect
-	github.com/jzero-io/jzero/cmd/jzero v0.39.4 // indirect
+	github.com/jzero-io/jzero/cmd/jzero v0.39.6 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
