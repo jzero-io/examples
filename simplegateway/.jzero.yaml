@@ -1,3 +1,9 @@
+
+hooks:
+    before:
+        - go install tool
+
+
 gen:
     hooks:
         after:
