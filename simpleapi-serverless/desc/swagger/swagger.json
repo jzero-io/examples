@@ -3,6 +3,7 @@
   "consumes": [
     "application/json"
   ],
+  "host": "",
   "info": {
     "version": "v1"
   },
@@ -13,7 +14,7 @@
           "application/json"
         ],
         "responses": {
-          "200": {
+          "default": {
             "description": "",
             "schema": {
               "properties": {
@@ -69,5 +70,5 @@
   "x-description": "This is a goctl generated swagger file.",
   "x-github": "https://github.com/zeromicro/go-zero",
   "x-go-zero-doc": "https://go-zero.dev/",
-  "x-goctl-version": "1.8.4-alpha"
+  "x-goctl-version": "1.8.3"
 }
