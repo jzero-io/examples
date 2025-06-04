@@ -1,2 +1,8 @@
+
+hooks:
+    before:
+        - go install tool
+
+
 gen:
     style: gozero
