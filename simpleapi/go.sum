@@ -188,10 +188,10 @@ github.com/josharian/intern v1.0.0 h1:vlS4z54oSdjm0bgjRigI+G1HpF+tI+9rE5LLzOg8Hm
 github.com/josharian/intern v1.0.0/go.mod h1:5DoeVV0s6jJacbCEi61lwdGj/aVlrQvzHFFd8Hwg//Y=
 github.com/jzero-io/desc v1.1.0 h1:V6PvGnYWxfR24iroaJ8R/jlChiBBQ2hJdxhHKkSvAQY=
 github.com/jzero-io/desc v1.1.0/go.mod h1:gav1fZ49+rsEjT/5MUNp6ueyNFuX0lDKGyzIM6NrB+E=
-github.com/jzero-io/jzero v0.39.4 h1:swxVok3vSYN7lHc8Z7rbb+MxUYg+R7s2d5/PtHY3VaY=
-github.com/jzero-io/jzero v0.39.4/go.mod h1:XS03W9yGBD/4cSOOXJjSZVFUno2r2x1AYnX+M2WRE5A=
-github.com/jzero-io/jzero/cmd/jzero v0.39.4 h1:6P3I6UOR0HkPZGspiAMc8pDsEc+Xkjat89jjpAmm/aw=
-github.com/jzero-io/jzero/cmd/jzero v0.39.4/go.mod h1:wWSx1mF4UNrBrvgnyOO5UrVgVIc1q5bHhy41vz/eltM=
+github.com/jzero-io/jzero v0.39.5 h1:d1XuLXYacwWftQ48Yr5wgiZZHWTEcAfkbtArElY40J4=
+github.com/jzero-io/jzero v0.39.5/go.mod h1:XS03W9yGBD/4cSOOXJjSZVFUno2r2x1AYnX+M2WRE5A=
+github.com/jzero-io/jzero/cmd/jzero v0.39.6 h1:qfB+mXcRDNGc+VcqecgLagu231+pTRUq/+pVoT38jEE=
+github.com/jzero-io/jzero/cmd/jzero v0.39.6/go.mod h1:/TK/smMnzsux1H7EBApY+sl/fW225rPP8W9lf+PkNi0=
 github.com/jzero-io/restc v0.5.0 h1:aNR62HIebxq6e5P5kIMPiChYmif0OL70bj19ID9LkNc=
 github.com/jzero-io/restc v0.5.0/go.mod h1:88wCepjLz+531f/2qznAWvPgf/5glrZEqpeY0KYW4Ks=
 github.com/kevinburke/ssh_config v1.2.0 h1:x584FjTGwHzMwvHx18PXxbBVzfnxogHaAReU4gf13a4=
