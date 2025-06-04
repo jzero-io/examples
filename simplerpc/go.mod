@@ -12,7 +12,7 @@ tool (
 require (
 	buf.build/go/protovalidate v0.12.0
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/jzero-io/jzero v0.39.5
+	github.com/jzero-io/jzero v0.39.6
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.9.2
 	github.com/spf13/cobra v1.9.1
