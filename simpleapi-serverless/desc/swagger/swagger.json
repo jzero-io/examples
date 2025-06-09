@@ -3,18 +3,18 @@
   "consumes": [
     "application/json"
   ],
-  "host": "",
   "info": {
     "version": "v1"
   },
   "paths": {
     "/api/v1/simpleapi-serverless/version": {
       "get": {
+        "operationId": "versionVersion",
         "produces": [
           "application/json"
         ],
         "responses": {
-          "default": {
+          "200": {
             "description": "",
             "schema": {
               "properties": {
@@ -70,5 +70,5 @@
   "x-description": "This is a goctl generated swagger file.",
   "x-github": "https://github.com/zeromicro/go-zero",
   "x-go-zero-doc": "https://go-zero.dev/",
-  "x-goctl-version": "1.8.3"
+  "x-goctl-version": "1.8.4"
 }
