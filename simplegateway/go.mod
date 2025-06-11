@@ -14,7 +14,7 @@ require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3
 	github.com/jzero-io/jzero v0.40.0
-	github.com/jzero-io/restc v0.5.0
+	github.com/jzero-io/restc v0.6.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.9.2
 	github.com/spf13/cobra v1.9.1
