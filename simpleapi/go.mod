@@ -12,7 +12,7 @@ require (
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.26.0
-	github.com/jzero-io/jzero v0.40.0
+	github.com/jzero-io/jzero v0.40.1
 	github.com/jzero-io/restc v0.6.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.9.2
@@ -112,7 +112,7 @@ require (
 	github.com/prometheus/procfs v0.15.1 // indirect
 	github.com/rinchsan/gosimports v0.3.8 // indirect
 	github.com/sagikazarmark/locafero v0.7.0 // indirect
-	github.com/samber/lo v1.50.0 // indirect
+	github.com/samber/lo v1.51.0 // indirect
 	github.com/sergi/go-diff v1.3.2-0.20230802210424-5b0b94c5c0d3 // indirect
 	github.com/shopspring/decimal v1.4.0 // indirect
 	github.com/skeema/knownhosts v1.3.1 // indirect
