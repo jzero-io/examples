@@ -7,7 +7,7 @@ package hello
 import (
 	"context"
 
-	"simplerpc-goctl/zrpcclient-go/model/simplerpc_goctl/pb/hellopb"
+	"simplerpc-goctl/zrpcclient-go/model/pb/hellopb"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"
