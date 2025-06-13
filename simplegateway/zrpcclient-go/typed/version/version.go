@@ -7,7 +7,7 @@ package version
 import (
 	"context"
 
-	"simplegateway/zrpcclient-go/model/simplegateway/pb/versionpb"
+	"simplegateway/zrpcclient-go/model/pb/versionpb"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"
