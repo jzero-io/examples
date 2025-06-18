@@ -29,15 +29,10 @@ func (cs *clientset) Version() version.Version {
 	return cs.version
 }
 
-func NewClientset(target string, ops ...restc.Opt) (Clientset, error) {
-	restClient, err := restc.NewClient(target, ops...)
-	if err != nil {
-		return nil, err
-	}
-
+func NewClientset(cli restc.Client) (Clientset, error) {
 	cs := clientset{
-		direct:  restClient,
-		version: version.NewVersion(restClient),
+		direct:  cli,
+		version: version.NewVersion(cli),
 	}
 
 	return &cs, nil
