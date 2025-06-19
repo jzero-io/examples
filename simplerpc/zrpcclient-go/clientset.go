@@ -3,9 +3,9 @@
 package zrpcclient_go
 
 import (
-	version "simplerpc/zrpcclient-go/typed/version"
-
 	"github.com/zeromicro/go-zero/zrpc"
+
+	version "simplerpc/zrpcclient-go/typed/version"
 )
 
 type Clientset interface {
