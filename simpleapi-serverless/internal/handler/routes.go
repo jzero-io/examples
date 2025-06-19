@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/zeromicro/go-zero/rest"
-	"simpleapi-serverless/internal/svc"
 
 	version "simpleapi-serverless/internal/handler/version"
+	"simpleapi-serverless/internal/svc"
 )
 
 var (
