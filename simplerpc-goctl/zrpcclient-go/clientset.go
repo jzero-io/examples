@@ -3,9 +3,9 @@
 package zrpcclient_go
 
 import (
-	hello "simplerpc-goctl/zrpcclient-go/typed/hello"
-
 	"github.com/zeromicro/go-zero/zrpc"
+
+	hello "simplerpc-goctl/zrpcclient-go/typed/hello"
 )
 
 type Clientset interface {

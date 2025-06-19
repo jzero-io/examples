@@ -7,7 +7,7 @@ package server
 import (
 	"context"
 
-	"simplerpc-goctl/internal/logic/hello"
+	hellologic "simplerpc-goctl/internal/logic/hello"
 	"simplerpc-goctl/internal/pb/hellopb"
 	"simplerpc-goctl/internal/svc"
 )
