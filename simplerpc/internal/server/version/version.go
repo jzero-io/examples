@@ -7,7 +7,7 @@ package server
 import (
 	"context"
 
-	"simplerpc/internal/logic/version"
+	versionlogic "simplerpc/internal/logic/version"
 	"simplerpc/internal/pb/versionpb"
 	"simplerpc/internal/svc"
 )
