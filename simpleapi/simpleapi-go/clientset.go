@@ -3,9 +3,9 @@
 package simpleapi_go
 
 import (
-	version "simpleapi/simpleapi-go/typed/version"
-
 	"github.com/jzero-io/restc"
+
+	version "simpleapi/simpleapi-go/typed/version"
 )
 
 type Clientset interface {

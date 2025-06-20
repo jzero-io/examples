@@ -5,9 +5,10 @@ package version
 
 import (
 	"context"
-	"simpleapi/simpleapi-go/model/version"
 
 	"github.com/jzero-io/restc"
+
+	"simpleapi/simpleapi-go/model/version"
 )
 
 var (
