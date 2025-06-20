@@ -3,9 +3,9 @@
 package simplegateway_go
 
 import (
-	version "simplegateway/simplegateway-go/typed/version"
-
 	"github.com/jzero-io/restc"
+
+	version "simplegateway/simplegateway-go/typed/version"
 )
 
 type Clientset interface {

@@ -7,7 +7,7 @@ package server
 import (
 	"context"
 
-	"simplegateway/internal/logic/version"
+	versionlogic "simplegateway/internal/logic/version"
 	"simplegateway/internal/pb/versionpb"
 	"simplegateway/internal/svc"
 )

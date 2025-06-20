@@ -5,9 +5,10 @@ package version
 
 import (
 	"context"
-	"simplegateway/simplegateway-go/model/pb/versionpb"
 
 	"github.com/jzero-io/restc"
+
+	"simplegateway/simplegateway-go/model/pb/versionpb"
 )
 
 var (
