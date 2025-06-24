@@ -222,10 +222,10 @@ github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnr
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/jzero-io/desc v1.1.0 h1:V6PvGnYWxfR24iroaJ8R/jlChiBBQ2hJdxhHKkSvAQY=
 github.com/jzero-io/desc v1.1.0/go.mod h1:gav1fZ49+rsEjT/5MUNp6ueyNFuX0lDKGyzIM6NrB+E=
-github.com/jzero-io/jzero v0.41.1 h1:B9VthBy79xjclOmhmlBSRg2wiTazbWDOJHJAeqPburk=
-github.com/jzero-io/jzero v0.41.1/go.mod h1:g5/FCjqb7VMRv/yNiVLwCk9o5SaFltdClazI8ABV5A0=
-github.com/jzero-io/jzero/cmd/jzero v0.41.1 h1:K4Rv3AzglqWbeysrcemYOtOjTPWeD5oWRRMOG9Sl8mM=
-github.com/jzero-io/jzero/cmd/jzero v0.41.1/go.mod h1:/TK/smMnzsux1H7EBApY+sl/fW225rPP8W9lf+PkNi0=
+github.com/jzero-io/jzero v0.41.2 h1:Usn4iiyndX7yEC2g2DpHIr/i0hJ3ODjO3D5myKYYydQ=
+github.com/jzero-io/jzero v0.41.2/go.mod h1:g5/FCjqb7VMRv/yNiVLwCk9o5SaFltdClazI8ABV5A0=
+github.com/jzero-io/jzero/cmd/jzero v0.41.2 h1:CtV1CNW8oHZDxHl4C+bCSIY6UajcdlQbOLbj59sw/qU=
+github.com/jzero-io/jzero/cmd/jzero v0.41.2/go.mod h1:/TK/smMnzsux1H7EBApY+sl/fW225rPP8W9lf+PkNi0=
 github.com/jzero-io/restc v0.7.1 h1:O5fj5xcY2h7fb/rYOu3r0C1s/RZ9eaAFIU1GM3GE3Qw=
 github.com/jzero-io/restc v0.7.1/go.mod h1:88wCepjLz+531f/2qznAWvPgf/5glrZEqpeY0KYW4Ks=
 github.com/kevinburke/ssh_config v1.2.0 h1:x584FjTGwHzMwvHx18PXxbBVzfnxogHaAReU4gf13a4=
