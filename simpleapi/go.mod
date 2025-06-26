@@ -12,7 +12,7 @@ require (
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.26.0
-	github.com/jzero-io/jzero v0.41.4
+	github.com/jzero-io/jzero v0.41.5
 	github.com/jzero-io/restc v0.7.1
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.9.2
@@ -88,7 +88,7 @@ require (
 	github.com/jhump/protoreflect v1.17.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/jzero-io/desc v1.1.0 // indirect
-	github.com/jzero-io/jzero/cmd/jzero v0.41.4 // indirect
+	github.com/jzero-io/jzero/cmd/jzero v0.41.5 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
