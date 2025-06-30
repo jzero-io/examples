@@ -28,3 +28,8 @@ func RegisterZrpc(c config.Config, ctx *svc.ServiceContext) *zrpc.RpcServer {
 
 	return s
 }
+
+func RegisterZrpcServer(grpcServer *grpc.Server, ctx *svc.ServiceContext) {
+    
+		versionpb.RegisterVersionServer(grpcServer, versionsvr.NewVersion(ctx))
+}

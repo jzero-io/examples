@@ -134,8 +134,8 @@ github.com/go-sql-driver/mysql v1.9.0 h1:Y0zIbQXhQKmQgTp44Y1dp3wTXcn804QoTptLZT1
 github.com/go-sql-driver/mysql v1.9.0/go.mod h1:pDetrLJeA3oMujJuvXc8RJoasr589B6A9fwzD3QMrqw=
 github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572 h1:tfuBGBXKqDEevZMzYi5KSi8KkcZtzBcTgAUUtapy0OI=
 github.com/go-task/slim-sprig v0.0.0-20230315185526-52ccab3ef572/go.mod h1:9Pwr4B2jHnOSGXyyzV8ROjYa2ojvAY6HCGYYfMoC3Ls=
-github.com/go-viper/mapstructure/v2 v2.2.1 h1:ZAaOCxANMuZx5RCeg0mBdEZk7DZasvvZIxtHqx8aGss=
-github.com/go-viper/mapstructure/v2 v2.2.1/go.mod h1:oJDH3BJKyqBA2TXFhDsKDGDTlndYOZ6rGS0BRZIxGhM=
+github.com/go-viper/mapstructure/v2 v2.3.0 h1:27XbWsHIqhbdR5TIC911OfYvgSaW93HM+dX7970Q7jk=
+github.com/go-viper/mapstructure/v2 v2.3.0/go.mod h1:oJDH3BJKyqBA2TXFhDsKDGDTlndYOZ6rGS0BRZIxGhM=
 github.com/godbus/dbus/v5 v5.0.4/go.mod h1:xhWf0FNVPg57R7Z0UbKHbJfkEywrmjJnf7w5xrFpKfA=
 github.com/gogo/protobuf v1.3.2 h1:Ov1cvc58UF3b5XjBnZv7+opcTcQFZebYjWzi34vdm4Q=
 github.com/gogo/protobuf v1.3.2/go.mod h1:P1XiOD3dCwIKUDQYPy72D8LYyHL2YPYrpS2s69NZV8Q=
@@ -206,10 +206,10 @@ github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnr
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/jzero-io/desc v1.1.0 h1:V6PvGnYWxfR24iroaJ8R/jlChiBBQ2hJdxhHKkSvAQY=
 github.com/jzero-io/desc v1.1.0/go.mod h1:gav1fZ49+rsEjT/5MUNp6ueyNFuX0lDKGyzIM6NrB+E=
-github.com/jzero-io/jzero v0.41.5 h1:wRE5pLNA3Z/Nfbgt8kbhld8tmJ2eCOGjBbcgKOawQCM=
-github.com/jzero-io/jzero v0.41.5/go.mod h1:g5/FCjqb7VMRv/yNiVLwCk9o5SaFltdClazI8ABV5A0=
-github.com/jzero-io/jzero/cmd/jzero v0.41.5 h1:qbzWC36NeKi/SFNEovmEXHIFSY2jVVyiVHYf9NSLMWU=
-github.com/jzero-io/jzero/cmd/jzero v0.41.5/go.mod h1:/TK/smMnzsux1H7EBApY+sl/fW225rPP8W9lf+PkNi0=
+github.com/jzero-io/jzero v0.41.7 h1:JnvesZ6+ZebKGJRQkV67qinmiT+fnDFG/KSpQCQIPwA=
+github.com/jzero-io/jzero v0.41.7/go.mod h1:pXq9xyuSSBoczRCXowg2ex9hPoElqOZ98/BOEn1AhUs=
+github.com/jzero-io/jzero/cmd/jzero v0.41.7 h1:5HTbIfh+ACOyRjkpP6oAmzy+AKTCMzm5HJzkuOZH/bY=
+github.com/jzero-io/jzero/cmd/jzero v0.41.7/go.mod h1:AMUvY9i4TEiyIk3RJVPKaHFhfCHF+SAeyV0Udq4D8dA=
 github.com/kevinburke/ssh_config v1.2.0 h1:x584FjTGwHzMwvHx18PXxbBVzfnxogHaAReU4gf13a4=
 github.com/kevinburke/ssh_config v1.2.0/go.mod h1:CT57kijsi8u/K/BOFA39wgDQJ9CxiF4nAY/ojJ6r6mM=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
