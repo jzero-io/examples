@@ -1,6 +1,7 @@
 
 hooks:
     before:
+        - go mod tidy
         - go install tool
 
 
