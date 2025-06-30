@@ -13,7 +13,7 @@ require (
 	buf.build/go/protovalidate v0.13.1
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3
-	github.com/jzero-io/jzero v0.41.5
+	github.com/jzero-io/jzero v0.41.7
 	github.com/jzero-io/restc v0.7.1
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.9.2
@@ -71,7 +71,7 @@ require (
 	github.com/go-openapi/spec v0.21.1-0.20250328170532-a3928469592e // indirect
 	github.com/go-openapi/swag v0.23.1 // indirect
 	github.com/go-sql-driver/mysql v1.9.0 // indirect
-	github.com/go-viper/mapstructure/v2 v2.2.1 // indirect
+	github.com/go-viper/mapstructure/v2 v2.3.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.2 // indirect
 	github.com/golang-migrate/migrate/v4 v4.18.3 // indirect
@@ -104,7 +104,7 @@ require (
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/jzero-io/desc v1.1.0 // indirect
-	github.com/jzero-io/jzero/cmd/jzero v0.41.5 // indirect
+	github.com/jzero-io/jzero/cmd/jzero v0.41.7 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
