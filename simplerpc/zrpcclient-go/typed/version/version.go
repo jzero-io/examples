@@ -18,7 +18,6 @@ type (
 	VersionResponse = versionpb.VersionResponse
 
 	Version interface {
-		Version(ctx context.Context, in *VersionRequest, opts ...grpc.CallOption) (*VersionResponse, error)
 	}
 
 	defaultVersion struct {
@@ -30,9 +29,4 @@ func NewVersion(cli zrpc.Client) Version {
 	return &defaultVersion{
 		cli: cli,
 	}
-}
-
-func (m *defaultVersion) Version(ctx context.Context, in *VersionRequest, opts ...grpc.CallOption) (*VersionResponse, error) {
-	client := versionpb.NewVersionClient(m.cli.Conn())
-	return client.Version(ctx, in, opts...)
 }
