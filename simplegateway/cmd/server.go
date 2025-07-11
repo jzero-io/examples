@@ -1,8 +1,6 @@
 package cmd
 
 import (
-	"path/filepath"
-
 	"github.com/common-nighthawk/go-figure"
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
 	"github.com/spf13/cobra"
@@ -10,12 +8,18 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/gateway"
+	"github.com/zeromicro/go-zero/zrpc"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 
 	"simplegateway/desc/pb"
 	"simplegateway/internal/config"
+	"simplegateway/internal/custom"
+	"simplegateway/internal/global"
 	"simplegateway/internal/middleware"
 	"simplegateway/internal/server"
 	"simplegateway/internal/svc"
+	"simplegateway/plugins"
 )
 
 // serverCmd represents the server command
@@ -33,39 +37,45 @@ var serverCmd = &cobra.Command{
 		// set up logger
 		logx.Must(logx.SetUp(c.Log.LogConf))
 
-		// write pb to local
-		c.Gateway.Upstreams[0].ProtoSets, err = pb.WriteToLocal(pb.Embed, pb.WithFileMatchFunc(func(path string) bool {
-			return filepath.Ext(path) == ".pb"
-		}))
-		logx.Must(err)
+		// print banner
+		printBanner(c)
+		// print version
+		printVersion()
 
 		svcCtx := svc.NewServiceContext(cc)
+		global.ServiceContext = *svcCtx
 		run(svcCtx)
 	},
 }
 
 func run(svcCtx *svc.ServiceContext) {
-	c := svcCtx.MustGetConfig()
+	var err error
+	svcCtx.MustGetConfig().Gateway.Upstreams[0].ProtoSets, err = pb.WriteToLocal(pb.Embed)
+	logx.Must(err)
 
-	zrpc := server.RegisterZrpc(c, svcCtx)
-	gw := gateway.MustNewServer(c.Gateway.GatewayConf, middleware.WithHeaderProcessor())
+	zrpcServer := zrpc.MustNewServer(svcCtx.MustGetConfig().Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
+		server.RegisterZrpcServer(grpcServer, svcCtx)
+		// register plugins
+		plugins.LoadPlugins(grpcServer, svcCtx)
+		if svcCtx.MustGetConfig().Zrpc.Mode == service.DevMode || svcCtx.MustGetConfig().Zrpc.Mode == service.TestMode {
+			reflection.Register(grpcServer)
+		}
+	})
+	gatewayServer := gateway.MustNewServer(svcCtx.MustGetConfig().Gateway.GatewayConf, middleware.WithHeaderProcessor())
+
+	ctm := custom.New(zrpcServer, gatewayServer)
+	ctm.Init()
 
 	// register middleware
-	middleware.Register(zrpc, gw)
-
-	// gw add custom routes
-	svcCtx.Custom.AddRoutes(gw)
+	middleware.Register(zrpcServer, gatewayServer)
 
 	group := service.NewServiceGroup()
-	group.Add(zrpc)
-	group.Add(gw)
-	group.Add(svcCtx.Custom)
+	group.Add(zrpcServer)
+	group.Add(gatewayServer)
+	group.Add(ctm)
 
-	printBanner(c)
-	printVersion()
-
-	logx.Infof("Starting rpc server at %s...", c.Zrpc.ListenOn)
-	logx.Infof("Starting gateway server at %s:%d...", c.Gateway.Host, c.Gateway.Port)
+	logx.Infof("Starting rpc server at %s...", svcCtx.MustGetConfig().Zrpc.ListenOn)
+	logx.Infof("Starting gateway server at %s:%d...", svcCtx.MustGetConfig().Gateway.Host, svcCtx.MustGetConfig().Gateway.Port)
 
 	group.Start()
 }
