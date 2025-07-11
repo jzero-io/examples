@@ -85,7 +85,7 @@ require (
 	github.com/jhump/protoreflect v1.17.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/jzero-io/desc v1.1.0 // indirect
-	github.com/jzero-io/jzero/cmd/jzero v0.42.0 // indirect
+	github.com/jzero-io/jzero/cmd/jzero v0.42.1 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
