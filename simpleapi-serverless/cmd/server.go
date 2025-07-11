@@ -10,12 +10,14 @@ import (
 	"github.com/zeromicro/go-zero/rest"
 
 	"simpleapi-serverless/internal/config"
+	"simpleapi-serverless/internal/custom"
+	"simpleapi-serverless/internal/global"
 	"simpleapi-serverless/internal/handler"
 	"simpleapi-serverless/internal/middleware"
 	"simpleapi-serverless/internal/svc"
+	"simpleapi-serverless/plugins"
 )
 
-// serverCmd represents the server command
 var serverCmd = &cobra.Command{
 	Use:   "server",
 	Short: "simpleapi-serverless server",
@@ -24,37 +26,43 @@ var serverCmd = &cobra.Command{
 		cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
 			Type: "yaml",
 		}, subscriber.MustNewFsnotifySubscriber(cfgFile, subscriber.WithUseEnv(true)))
+
 		c, err := cc.GetConfig()
 		logx.Must(err)
 
 		// set up logger
-		logx.Must(logx.SetUp(c.Log.LogConf))
+		if err = logx.SetUp(c.Log.LogConf); err != nil {
+			logx.Must(err)
+		}
+
+		// print banner
+		printBanner(c)
+		// print version
+		printVersion()
 
 		svcCtx := svc.NewServiceContext(cc)
+		svcCtx.Middleware = middleware.NewMiddleware()
+		global.ServiceContext = *svcCtx
 		run(svcCtx)
 	},
 }
 
 func run(svcCtx *svc.ServiceContext) {
-	c := svcCtx.MustGetConfig()
+	server := rest.MustNewServer(svcCtx.MustGetConfig().Rest.RestConf)
 
-	server := rest.MustNewServer(c.Rest.RestConf)
+	ctm := custom.New(server)
+	ctm.Init()
+
+	handler.RegisterHandlers(server, svcCtx)
 	middleware.Register(server)
 
-	// server add api handlers
-	handler.RegisterHandlers(server, svcCtx)
-
-	// server add custom routes
-	svcCtx.Custom.AddRoutes(server)
+	// load plugins
+	plugins.LoadPlugins(server, svcCtx)
 
 	group := service.NewServiceGroup()
 	group.Add(server)
-	group.Add(svcCtx.Custom)
+	group.Add(ctm)
 
-	printBanner(c)
-	printVersion()
-
-	logx.Infof("Starting rest server at %s:%d...", c.Rest.Host, c.Rest.Port)
 	group.Start()
 }
 

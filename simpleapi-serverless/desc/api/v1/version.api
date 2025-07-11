@@ -15,7 +15,7 @@ type VersionResponse {
 }
 
 @server (
-	prefix: /api/v1/simpleapi-serverless
+	prefix: /api/v1
 	group:  version
 )
 service simpleapiServerless {
