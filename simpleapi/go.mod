@@ -12,7 +12,7 @@ require (
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.27.0
-	github.com/jzero-io/jzero v0.42.1
+	github.com/jzero-io/jzero v0.43.0
 	github.com/jzero-io/restc v0.7.1
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.9.2
