@@ -13,7 +13,7 @@ require (
 	buf.build/go/protovalidate v0.13.1
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.3
-	github.com/jzero-io/jzero v0.42.1
+	github.com/jzero-io/jzero v0.43.0
 	github.com/jzero-io/restc v0.7.1
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.9.2
