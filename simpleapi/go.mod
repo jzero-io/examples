@@ -17,7 +17,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.9.2
 	github.com/spf13/cobra v1.9.1
-	github.com/zeromicro/go-zero v1.8.4
+	github.com/zeromicro/go-zero v1.8.5
 )
 
 require (
@@ -41,7 +41,7 @@ require (
 	github.com/cyphar/filepath-securejoin v0.4.1 // indirect
 	github.com/dave/dst v0.27.3 // indirect
 	github.com/eddieowens/opts v0.1.0 // indirect
-	github.com/emicklei/proto v1.14.1 // indirect
+	github.com/emicklei/proto v1.14.2 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/fatih/structtag v1.2.0 // indirect
@@ -128,7 +128,7 @@ require (
 	github.com/yosida95/uritemplate/v3 v3.0.2 // indirect
 	github.com/zeromicro/antlr v0.0.1 // indirect
 	github.com/zeromicro/ddl-parser v1.0.5 // indirect
-	github.com/zeromicro/go-zero/tools/goctl v1.8.4 // indirect
+	github.com/zeromicro/go-zero/tools/goctl v1.8.5 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.15 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.15 // indirect
 	go.etcd.io/etcd/client/v3 v3.5.15 // indirect
