@@ -3,7 +3,7 @@
 package simplegateway_go
 
 import (
-	"github.com/jzero-io/restc"
+	"github.com/jzero-io/jzero/core/restc"
 
 	version "simplegateway/simplegateway-go/typed/version"
 )
