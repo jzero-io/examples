@@ -3,7 +3,7 @@
 package simpleapi_go
 
 import (
-	"github.com/jzero-io/restc"
+	"github.com/jzero-io/jzero/core/restc"
 
 	version "simpleapi/simpleapi-go/typed/version"
 )

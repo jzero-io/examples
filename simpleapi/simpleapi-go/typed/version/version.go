@@ -6,7 +6,7 @@ package version
 import (
 	"context"
 
-	"github.com/jzero-io/restc"
+	"github.com/jzero-io/jzero/core/restc"
 
 	"simpleapi/simpleapi-go/model/version"
 )
@@ -15,14 +15,17 @@ var (
 	_ = context.Background()
 )
 
-type Version interface {
-	// GET:/api/v1/version
-	Version(ctx context.Context, param version.VersionRequest) (*version.VersionResponse, error)
-}
+type (
+	Version interface {
+		// Version
+		// GET:/api/v1/version
+		Version(ctx context.Context, in *version.VersionRequest) (*version.VersionResponse, error)
+	}
 
-type versionClient struct {
-	client restc.Client
-}
+	versionClient struct {
+		client restc.Client
+	}
+)
 
 func NewVersion(c restc.Client) Version {
 	return &versionClient{
@@ -30,7 +33,7 @@ func NewVersion(c restc.Client) Version {
 	}
 }
 
-func (x *versionClient) Version(ctx context.Context, param version.VersionRequest) (*version.VersionResponse, error) {
+func (x *versionClient) Version(ctx context.Context, in *version.VersionRequest) (*version.VersionResponse, error) {
 	var resp *version.VersionResponse
 	err := x.client.Verb("GET").
 		Path(
@@ -38,9 +41,7 @@ func (x *versionClient) Version(ctx context.Context, param version.VersionReques
 		).
 		Params().
 		Do(ctx).
-		Into(&resp, &restc.IntoOptions{
-			WrapCodeMsg: false,
-		})
+		Into(&resp, nil)
 
 	if err != nil {
 		return nil, err
