@@ -200,6 +200,8 @@ github.com/iancoleman/strcase v0.3.0 h1:nTXanmYxhfFAMjZL34Ov6gkzEsSJZ5DbhxWjvSAS
 github.com/iancoleman/strcase v0.3.0/go.mod h1:iwCmte+B7n89clKwxIoIXy/HfoL7AsD47ZCWhYzw7ho=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
+github.com/jackc/pgerrcode v0.0.0-20220416144525-469b46aa5efa h1:s+4MhCQ6YrzisK6hFJUX53drDT4UsSW3DEhKn0ifuHw=
+github.com/jackc/pgerrcode v0.0.0-20220416144525-469b46aa5efa/go.mod h1:a/s9Lp5W7n/DD0VrVoyJ00FbP2ytTPDVOivvn2bMlds=
 github.com/jackc/pgpassfile v1.0.0 h1:/6Hmqy13Ss2zCq62VdNG8tM1wchn8zjSGOBJ6icpsIM=
 github.com/jackc/pgpassfile v1.0.0/go.mod h1:CEx0iS5ambNFdcRtxPj5JhEz+xB6uRky5eyVu/W2HEg=
 github.com/jackc/pgservicefile v0.0.0-20240606120523-5a60cdf6a761 h1:iCEnooe7UlwOQYpKFhBabPMi4aNAfoODPEFNiAnClxo=
@@ -220,10 +222,10 @@ github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnr
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/jzero-io/desc v1.1.0 h1:V6PvGnYWxfR24iroaJ8R/jlChiBBQ2hJdxhHKkSvAQY=
 github.com/jzero-io/desc v1.1.0/go.mod h1:gav1fZ49+rsEjT/5MUNp6ueyNFuX0lDKGyzIM6NrB+E=
-github.com/jzero-io/jzero v0.43.1 h1:W6skocH4/d+C7GY5X0pm2nWZDoWi9MDOTNLeh8E/CJI=
-github.com/jzero-io/jzero v0.43.1/go.mod h1:mBeUDCvfpG39lEhyE3rzp1zGGp5aeuGCWfJfxfJBCik=
-github.com/jzero-io/jzero/cmd/jzero v0.43.1 h1:eDcA7WcceF8j8q5r2hCNl5bJl9kqBFR+od1sEZzlN+c=
-github.com/jzero-io/jzero/cmd/jzero v0.43.1/go.mod h1:AMUvY9i4TEiyIk3RJVPKaHFhfCHF+SAeyV0Udq4D8dA=
+github.com/jzero-io/jzero v0.43.2 h1:TzsTxo7NsQdR2uSwGTG5Y72tp5PQ+0D00Y7I5IpHMJc=
+github.com/jzero-io/jzero v0.43.2/go.mod h1:GItCpZgJoVyGxfGygvwizOuWoUd60qSsVCXWnz/uSoA=
+github.com/jzero-io/jzero/cmd/jzero v0.43.2 h1:dOdJAUReC7N80ViwEsWu8NLgx7La3hWqKCNgO3G+qI0=
+github.com/jzero-io/jzero/cmd/jzero v0.43.2/go.mod h1:uLfHRQxDMi1cD0gxT0Qfp5ADBB3iLPLOSgdwXWAhJ1A=
 github.com/kevinburke/ssh_config v1.2.0 h1:x584FjTGwHzMwvHx18PXxbBVzfnxogHaAReU4gf13a4=
 github.com/kevinburke/ssh_config v1.2.0/go.mod h1:CT57kijsi8u/K/BOFA39wgDQJ9CxiF4nAY/ojJ6r6mM=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
