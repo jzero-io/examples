@@ -82,8 +82,8 @@ github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
 github.com/jaronnie/genius v0.5.2 h1:9wm3yDPwfUwV1NF8SDJJVLCtGGGa9Iu52pscGw6mu14=
 github.com/jaronnie/genius v0.5.2/go.mod h1:8JV/ENGBhpWkUVjxLCWT1MitnYNj1W+IutAdLzfW/H8=
-github.com/jzero-io/jzero v0.50.1 h1:9M6dw5LA01EcPgrn6+o/MaeVk8z7tLLfWYKIKtgPZMk=
-github.com/jzero-io/jzero v0.50.1/go.mod h1:SqAnmak96FICyQ6Y6PHcRO7foHJORBrvNsh0Jv75ySY=
+github.com/jzero-io/jzero v0.50.2 h1:ypATkT9u1rKV6QaJXH7wb3g1dz/0d9JQczWIfuhGXbg=
+github.com/jzero-io/jzero v0.50.2/go.mod h1:SqAnmak96FICyQ6Y6PHcRO7foHJORBrvNsh0Jv75ySY=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/klauspost/compress v1.17.11 h1:In6xLpyWOi1+C7tXUUWv2ot1QvBjxevKAaI6IXrJmUc=
