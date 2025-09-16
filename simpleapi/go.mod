@@ -7,7 +7,7 @@ require (
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.27.0
-	github.com/jzero-io/jzero v0.50.3
+	github.com/jzero-io/jzero v0.51.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.1
@@ -42,7 +42,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0 // indirect
 	github.com/huandu/xstrings v1.5.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/jaronnie/genius v0.5.2 // indirect
+	github.com/jaronnie/genius v0.5.3-0.20250916014018-d3b2c4ccf076 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
@@ -57,6 +57,7 @@ require (
 	github.com/prometheus/client_model v0.6.1 // indirect
 	github.com/prometheus/common v0.62.0 // indirect
 	github.com/prometheus/procfs v0.15.1 // indirect
+	github.com/samber/lo v1.51.0 // indirect
 	github.com/shopspring/decimal v1.4.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.9 // indirect
