@@ -1,0 +1,19 @@
+package svc
+
+import (
+	configurator "github.com/zeromicro/go-zero/core/configcenter"
+
+	"simplerpc/internal/config"
+)
+
+type ServiceContext struct {
+	Config configurator.Configurator[config.Config]
+}
+
+func NewServiceContext(cc configurator.Configurator[config.Config]) *ServiceContext {
+	sc := &ServiceContext{
+		Config: cc,
+	}
+	sc.SetConfigListener()
+	return sc
+}
