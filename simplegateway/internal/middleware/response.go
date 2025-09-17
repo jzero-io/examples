@@ -14,7 +14,7 @@ import (
 type Body struct {
 	Data    any    `json:"data"`
 	Code    int    `json:"code"`
-	Message string `json:"message"`
+	Message string `json:"msg"`
 }
 
 type responseWriter struct {
