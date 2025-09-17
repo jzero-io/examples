@@ -18,16 +18,31 @@
             "description": "",
             "schema": {
               "properties": {
-                "commit": {
-                  "type": "string"
+                "code": {
+                  "description": "business code",
+                  "example": 0,
+                  "type": "integer"
                 },
-                "date": {
-                  "type": "string"
+                "data": {
+                  "properties": {
+                    "commit": {
+                      "type": "string"
+                    },
+                    "date": {
+                      "type": "string"
+                    },
+                    "goVersion": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
                 },
-                "goVersion": {
-                  "type": "string"
-                },
-                "version": {
+                "msg": {
+                  "description": "business message",
+                  "example": "ok",
                   "type": "string"
                 }
               },
