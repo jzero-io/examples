@@ -2,9 +2,18 @@
 package plugins
 
 import (
+	helloworld "helloworld/serverless"
+
 	"github.com/zeromicro/go-zero/rest"
 
 	"simpleapi/internal/svc"
 )
 
-func LoadPlugins(server *rest.Server, svcCtx *svc.ServiceContext) {}
+func LoadPlugins(server *rest.Server, svcCtx *svc.ServiceContext) {
+
+	{
+		serverless := helloworld.New()
+		serverless.HandlerFunc(server, serverless.SvcCtx)
+	}
+
+}
