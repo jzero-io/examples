@@ -5,6 +5,9 @@
 package server
 
 import (
+	"context"
+
+	versionlogic "simplerpc/internal/logic/version"
 	"simplerpc/internal/pb/versionpb"
 	"simplerpc/internal/svc"
 )
@@ -18,4 +21,9 @@ func NewVersion(svcCtx *svc.ServiceContext) *Version {
 	return &Version{
 		svcCtx: svcCtx,
 	}
+}
+
+func (s *Version) Version(ctx context.Context, in *versionpb.VersionRequest) (*versionpb.VersionResponse, error) {
+	l := versionlogic.NewVersion(ctx, s.svcCtx)
+	return l.Version(in)
 }

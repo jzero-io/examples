@@ -135,8 +135,9 @@ const file_v1_version_proto_rawDesc = "" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1c\n" +
 	"\tgoVersion\x18\x02 \x01(\tR\tgoVersion\x12\x16\n" +
 	"\x06commit\x18\x03 \x01(\tR\x06commit\x12\x12\n" +
-	"\x04date\x18\x04 \x01(\tR\x04date2\t\n" +
-	"\aVersionB\x10Z\x0e./pb/versionpbb\x06proto3"
+	"\x04date\x18\x04 \x01(\tR\x04date2M\n" +
+	"\aVersion\x12B\n" +
+	"\aVersion\x12\x19.versionpb.VersionRequest\x1a\x1a.versionpb.VersionResponse\"\x00B\x10Z\x0e./pb/versionpbb\x06proto3"
 
 var (
 	file_v1_version_proto_rawDescOnce sync.Once
@@ -156,8 +157,10 @@ var file_v1_version_proto_goTypes = []any{
 	(*VersionResponse)(nil), // 1: versionpb.VersionResponse
 }
 var file_v1_version_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
+	0, // 0: versionpb.Version.Version:input_type -> versionpb.VersionRequest
+	1, // 1: versionpb.Version.Version:output_type -> versionpb.VersionResponse
+	1, // [1:2] is the sub-list for method output_type
+	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name

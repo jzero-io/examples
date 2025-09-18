@@ -4,6 +4,11 @@
     "title": "v1/version.proto",
     "version": "version not set"
   },
+  "tags": [
+    {
+      "name": "Version"
+    }
+  ],
   "consumes": [
     "application/json"
   ],
@@ -37,6 +42,23 @@
             "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "versionpbVersionResponse": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "goVersion": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
         }
       }
     }
