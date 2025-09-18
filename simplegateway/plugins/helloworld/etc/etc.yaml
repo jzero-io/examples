@@ -1,0 +1,18 @@
+zrpc:
+  listenOn: 0.0.0.0:8000
+  mode: dev
+  name: helloworld.rpc
+gateway:
+  name: helloworld.gw
+  port: 8001
+  upstreams:
+    - grpc:
+        endpoints:
+          - 0.0.0.0:8000
+      name: helloworld.gw
+
+log:
+    serviceName: helloworld
+    encoding: plain
+    level: info
+    mode: console
