@@ -14,6 +14,7 @@ func NewServiceContext(cc configurator.Configurator[config.Config]) *ServiceCont
 	sc := &ServiceContext{
 		Config: cc,
 	}
+
 	sc.SetConfigListener()
 	return sc
 }
