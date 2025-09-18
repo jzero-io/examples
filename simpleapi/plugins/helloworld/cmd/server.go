@@ -1,0 +1,71 @@
+package cmd
+
+import (
+	"github.com/common-nighthawk/go-figure"
+	"github.com/jzero-io/jzero/core/configcenter/subscriber"
+	"github.com/spf13/cobra"
+	configurator "github.com/zeromicro/go-zero/core/configcenter"
+	"github.com/zeromicro/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/service"
+	"github.com/zeromicro/go-zero/rest"
+
+	"helloworld/internal/config"
+	"helloworld/internal/custom"
+	"helloworld/internal/global"
+	"helloworld/internal/handler"
+	"helloworld/internal/middleware"
+	"helloworld/internal/svc"
+)
+
+var serverCmd = &cobra.Command{
+	Use:   "server",
+	Short: "helloworld server",
+	Long:  "helloworld server",
+	Run: func(cmd *cobra.Command, args []string) {
+		cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
+			Type: "yaml",
+		}, subscriber.MustNewFsnotifySubscriber(cfgFile, subscriber.WithUseEnv(true)))
+
+		c, err := cc.GetConfig()
+		logx.Must(err)
+
+		// set up logger
+		if err = logx.SetUp(c.Log.LogConf); err != nil {
+			logx.Must(err)
+		}
+
+		// print banner
+		printBanner(c)
+		// print version
+		printVersion()
+
+		svcCtx := svc.NewServiceContext(cc)
+		svcCtx.Middleware = middleware.NewMiddleware()
+		global.ServiceContext = *svcCtx
+		run(svcCtx)
+	},
+}
+
+func run(svcCtx *svc.ServiceContext) {
+	server := rest.MustNewServer(svcCtx.MustGetConfig().Rest.RestConf)
+
+	ctm := custom.New(server)
+	ctm.Init()
+
+	handler.RegisterHandlers(server, svcCtx)
+	middleware.Register(server)
+
+	group := service.NewServiceGroup()
+	group.Add(server)
+	group.Add(ctm)
+
+	group.Start()
+}
+
+func printBanner(c config.Config) {
+	figure.NewColorFigure(c.Banner.Text, c.Banner.FontName, c.Banner.Color, true).Print()
+}
+
+func init() {
+	rootCmd.AddCommand(serverCmd)
+}
