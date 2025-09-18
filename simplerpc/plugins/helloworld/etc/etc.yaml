@@ -1,0 +1,10 @@
+zrpc:
+    listenOn: 0.0.0.0:8000
+    mode: dev
+    name: helloworld.rpc
+
+log:
+    serviceName: helloworld
+    encoding: plain
+    level: info
+    mode: console
