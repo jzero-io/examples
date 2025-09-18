@@ -1,7 +1,7 @@
 syntax = "v1"
 
 info (
-	go_package:  "version"
+	go_package:  "helloworldversion"
 	version:     "v1"
 	WrapCodeMsg: true
 )
@@ -17,7 +17,7 @@ type VersionResponse {
 
 @server (
 	prefix: /api/v1/helloworld
-	group:  version
+	group:  helloworldversion
 )
 service helloworld {
 	@handler Version

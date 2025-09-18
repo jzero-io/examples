@@ -7,7 +7,7 @@ import (
 
 	"github.com/zeromicro/go-zero/rest"
 
-	version "helloworld/internal/handler/version"
+	helloworldversion "helloworld/internal/handler/helloworldversion"
 	"helloworld/internal/svc"
 )
 
@@ -23,7 +23,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				{
 					Method:  http.MethodGet,
 					Path:    "/version",
-					Handler: version.Version(serverCtx),
+					Handler: helloworldversion.Version(serverCtx),
 				},
 			},
 			rest.WithPrefix("/api/v1/helloworld"),

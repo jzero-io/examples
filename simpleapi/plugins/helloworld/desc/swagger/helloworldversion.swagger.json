@@ -9,7 +9,7 @@
   "paths": {
     "/api/v1/helloworld/version": {
       "get": {
-        "operationId": "versionVersion",
+        "operationId": "helloworldversionVersion",
         "produces": [
           "application/json"
         ],
@@ -60,7 +60,7 @@
         ],
         "summary": "Version",
         "tags": [
-          "version"
+          "helloworldversion"
         ]
       }
     }

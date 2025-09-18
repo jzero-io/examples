@@ -3,8 +3,6 @@ package version
 import (
 	"context"
 	"net/http"
-	"os"
-	"runtime"
 
 	"github.com/zeromicro/go-zero/core/logx"
 
@@ -29,10 +27,7 @@ func NewVersion(ctx context.Context, svcCtx *svc.ServiceContext, r *http.Request
 }
 
 func (l *Version) Version(req *types.VersionRequest) (resp *types.VersionResponse, err error) {
-	return &types.VersionResponse{
-		Version:   os.Getenv("VERSION"),
-		GoVersion: runtime.Version(),
-		Commit:    os.Getenv("COMMIT"),
-		Date:      os.Getenv("DATE"),
-	}, nil
+	// todo: add your logic here and delete this line
+
+	return
 }
