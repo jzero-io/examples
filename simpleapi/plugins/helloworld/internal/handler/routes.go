@@ -7,7 +7,6 @@ import (
 
 	"github.com/zeromicro/go-zero/rest"
 
-	helloworldversion "helloworld/internal/handler/helloworldversion"
 	"helloworld/internal/svc"
 )
 
@@ -16,18 +15,4 @@ var (
 	_ = time.Now()
 )
 
-func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
-	{
-		server.AddRoutes(
-			[]rest.Route{
-				{
-					Method:  http.MethodGet,
-					Path:    "/version",
-					Handler: helloworldversion.Version(serverCtx),
-				},
-			},
-			rest.WithPrefix("/api/v1/helloworld"),
-		)
-	}
-
-}
+func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {}
