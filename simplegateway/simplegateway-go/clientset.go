@@ -5,6 +5,7 @@ package simplegateway_go
 import (
 	"github.com/jzero-io/jzero/core/restc"
 
+	"simplegateway/simplegateway-go/plugins"
 	version "simplegateway/simplegateway-go/typed/version"
 )
 
@@ -12,6 +13,8 @@ type Clientset interface {
 	Direct() restc.Client
 
 	Version() version.Version
+
+	Plugins() plugins.Plugins
 }
 
 type clientset struct {
@@ -19,6 +22,8 @@ type clientset struct {
 	direct restc.Client
 
 	version version.Version
+
+	plugins plugins.Plugins
 }
 
 func (cs *clientset) Direct() restc.Client {
@@ -29,10 +34,15 @@ func (cs *clientset) Version() version.Version {
 	return cs.version
 }
 
+func (cs *clientset) Plugins() plugins.Plugins {
+	return cs.plugins
+}
+
 func NewClientset(cli restc.Client) (Clientset, error) {
 	cs := clientset{
 		direct:  cli,
 		version: version.NewVersion(cli),
+		plugins: plugins.NewPlugins(cli),
 	}
 
 	return &cs, nil
