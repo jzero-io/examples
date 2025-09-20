@@ -6,9 +6,9 @@ import (
 
 type Plugins any
 
-func NewPlugins(c restc.Client) Plugins {
-	return &plugins{}
+type plugins struct {
 }
 
-type plugins struct {
+func NewPlugins(c restc.Client) Plugins {
+	return &plugins{}
 }
