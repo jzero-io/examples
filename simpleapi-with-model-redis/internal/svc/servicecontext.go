@@ -5,9 +5,9 @@ import (
 
 	"github.com/jzero-io/jzero/core/stores/cache"
 	"github.com/jzero-io/jzero/core/stores/modelx"
+	"github.com/jzero-io/jzero/core/stores/redis"
 	"github.com/pkg/errors"
 	configurator "github.com/zeromicro/go-zero/core/configcenter"
-	"github.com/zeromicro/go-zero/core/stores/redis"
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
 
 	"simpleapi-with-model-redis/internal/config"
