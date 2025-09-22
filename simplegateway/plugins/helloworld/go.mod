@@ -5,7 +5,7 @@ go 1.24.3
 require (
 	buf.build/go/protovalidate v1.0.0
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/jzero-io/jzero v0.51.0
+	github.com/jzero-io/jzero v0.60.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.1
@@ -19,7 +19,7 @@ require (
 	cel.dev/expr v0.24.0 // indirect
 	dario.cat/mergo v1.0.2 // indirect
 	github.com/Masterminds/goutils v1.1.1 // indirect
-	github.com/Masterminds/semver/v3 v3.3.1 // indirect
+	github.com/Masterminds/semver/v3 v3.4.0 // indirect
 	github.com/Masterminds/sprig/v3 v3.3.0 // indirect
 	github.com/a8m/envsubst v1.4.3 // indirect
 	github.com/antlr4-go/antlr/v4 v4.13.1 // indirect
@@ -58,7 +58,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0 // indirect
 	github.com/huandu/xstrings v1.5.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/jaronnie/genius v0.5.3-0.20250916014018-d3b2c4ccf076 // indirect
+	github.com/jaronnie/genius v0.6.1 // indirect
 	github.com/jhump/protoreflect v1.17.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect

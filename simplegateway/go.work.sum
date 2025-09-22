@@ -91,8 +91,10 @@ github.com/hashicorp/go-multierror v1.1.1 h1:H5DkEtf6CXdFp0N0Em5UCwQpXMWke8IA0+l
 github.com/hashicorp/go-multierror v1.1.1/go.mod h1:iw975J/qwKPdAO1clOe2L8331t/9/fmwbPZ6JB6eMoM=
 github.com/hashicorp/go-uuid v1.0.3 h1:2gKiV6YVmrJ1i2CKKa9obLvRieoRGviZFL26PcT/Co8=
 github.com/hashicorp/go-uuid v1.0.3/go.mod h1:6SBZvOh/SIDV7/2o3Jml5SYk/TvGqwFJ/bN7x4byOro=
-github.com/huandu/go-sqlbuilder v1.36.1 h1:4S17aR2BPW8L2PeotAD4iVhSMjwzk6CO8ABmp3tMEhY=
-github.com/huandu/go-sqlbuilder v1.36.1/go.mod h1:59Zjq93ndlKI6O5kHmkXQpDgriBAPMKuhByEOy6xYK8=
+github.com/huandu/go-clone v1.7.3 h1:rtQODA+ABThEn6J5LBTppJfKmZy/FwfpMUWa8d01TTQ=
+github.com/huandu/go-clone v1.7.3/go.mod h1:ReGivhG6op3GYr+UY3lS6mxjKp7MIGTknuU5TbTVaXE=
+github.com/huandu/go-sqlbuilder v1.37.0 h1:hXgk2rTnlgFgKsmFpizhe6g/oz1wxef4qk3ixFhK6a0=
+github.com/huandu/go-sqlbuilder v1.37.0/go.mod h1:zdONH67liL+/TvoUMwnZP/sUYGSSvHh9psLe/HpXn8E=
 github.com/iancoleman/strcase v0.3.0 h1:nTXanmYxhfFAMjZL34Ov6gkzEsSJZ5DbhxWjvSASxEI=
 github.com/iancoleman/strcase v0.3.0/go.mod h1:iwCmte+B7n89clKwxIoIXy/HfoL7AsD47ZCWhYzw7ho=
 github.com/imdario/mergo v0.3.6 h1:xTNEAn+kxVO7dTZGu0CegyqKZmoWFI0rF8UxjlB2d28=
