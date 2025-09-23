@@ -214,8 +214,8 @@ github.com/jzero-io/go_fmt v0.0.0-20250905015347-1a45352494b7 h1:XamNaWUxHlOd7yt
 github.com/jzero-io/go_fmt v0.0.0-20250905015347-1a45352494b7/go.mod h1:Wupl/J9DdDywVAOC5ExsbfkET0aYuNLhZPlpBF8+OnE=
 github.com/jzero-io/jzero v0.60.2 h1:gjKfYAZpNVSqe5UdUGWDG21ni+3qKWQxKzhtOl7tUGQ=
 github.com/jzero-io/jzero v0.60.2/go.mod h1:vgZmJ2amXKes5dCl5NJRMfrjtEl9e4m5WV9Pkyg9gHs=
-github.com/jzero-io/jzero/cmd/jzero v0.60.0 h1:/Q0mU4f39RsjTlyAS4RyFp2S+aVmKylb4/ikladyUcc=
-github.com/jzero-io/jzero/cmd/jzero v0.60.0/go.mod h1:jFj4p9w/Ki6/AL8Q8OtoO1xcycBmNkLYSFBZGomHDms=
+github.com/jzero-io/jzero/cmd/jzero v0.60.2 h1:fybGvmF+0v1xUwK1LuOK3S3pGkfiDxhlUevcT4zp5aw=
+github.com/jzero-io/jzero/cmd/jzero v0.60.2/go.mod h1:jFj4p9w/Ki6/AL8Q8OtoO1xcycBmNkLYSFBZGomHDms=
 github.com/kevinburke/ssh_config v1.2.0 h1:x584FjTGwHzMwvHx18PXxbBVzfnxogHaAReU4gf13a4=
 github.com/kevinburke/ssh_config v1.2.0/go.mod h1:CT57kijsi8u/K/BOFA39wgDQJ9CxiF4nAY/ojJ6r6mM=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
