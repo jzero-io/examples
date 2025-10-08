@@ -18,7 +18,7 @@ var (
 type (
 	Version interface {
 		// Version
-		// GET:/api/v1/version
+		// GET:/version
 		Version(ctx context.Context, in *versionpb.VersionRequest) (*versionpb.VersionResponse, error)
 	}
 
@@ -37,7 +37,7 @@ func (x *versionClient) Version(ctx context.Context, in *versionpb.VersionReques
 	var resp *versionpb.VersionResponse
 	err := x.client.Verb("GET").
 		Path(
-			"/api/v1/version",
+			"/version",
 		).
 		Params().
 		Do(ctx).
