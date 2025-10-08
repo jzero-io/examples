@@ -7,7 +7,7 @@ import (
 
 	"github.com/zeromicro/go-zero/rest"
 
-	builtin "simpleapi-with-model-redis/internal/handler/builtin"
+	version "simpleapi-with-model-redis/internal/handler/version"
 	"simpleapi-with-model-redis/internal/svc"
 )
 
@@ -22,15 +22,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			[]rest.Route{
 				{
 					Method:  http.MethodGet,
-					Path:    "/swagger",
-					Handler: builtin.Swagger(serverCtx),
-				},
-				{
-					Method:  http.MethodGet,
 					Path:    "/version",
-					Handler: builtin.Version(serverCtx),
+					Handler: version.Version(serverCtx),
 				},
 			},
+			rest.WithPrefix("/api/v1"),
 		)
 	}
 
