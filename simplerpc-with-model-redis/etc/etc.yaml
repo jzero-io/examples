@@ -1,0 +1,19 @@
+zrpc:
+    listenOn: 0.0.0.0:8000
+    mode: dev
+    name: simplerpc-with-model-redis.rpc
+
+log:
+    serviceName: simplerpc-with-model-redis
+    encoding: plain
+    level: info
+    mode: console
+
+sqlx:
+    driverName: "mysql"
+    dataSource: "root:123456@tcp(127.0.0.1:3306)/simplerpc-with-model-redis?charset=utf8mb4&parseTime=True&loc=Local"
+
+redis:
+    host: "127.0.0.1:6379"
+    type: "node"
+    pass: "123456"
