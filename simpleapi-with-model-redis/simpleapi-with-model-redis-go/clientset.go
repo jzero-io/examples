@@ -5,34 +5,34 @@ package simpleapi_with_model_redis_go
 import (
 	"github.com/jzero-io/jzero/core/restc"
 
-	version "simpleapi-with-model-redis/simpleapi-with-model-redis-go/typed/version"
+	builtin "simpleapi-with-model-redis/simpleapi-with-model-redis-go/typed/builtin"
 )
 
 type Clientset interface {
 	Direct() restc.Client
 
-	Version() version.Version
+	Builtin() builtin.Builtin
 }
 
 type clientset struct {
 	// direct client to request
 	direct restc.Client
 
-	version version.Version
+	builtin builtin.Builtin
 }
 
 func (cs *clientset) Direct() restc.Client {
 	return cs.direct
 }
 
-func (cs *clientset) Version() version.Version {
-	return cs.version
+func (cs *clientset) Builtin() builtin.Builtin {
+	return cs.builtin
 }
 
 func NewClientset(cli restc.Client) (Clientset, error) {
 	cs := clientset{
 		direct:  cli,
-		version: version.NewVersion(cli),
+		builtin: builtin.NewBuiltin(cli),
 	}
 
 	return &cs, nil

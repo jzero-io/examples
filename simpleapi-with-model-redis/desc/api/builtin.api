@@ -1,8 +1,7 @@
 syntax = "v1"
 
 info (
-	go_package:  "version"
-	version:     "v1"
+	go_package:  "builtin"
 	WrapCodeMsg: true
 )
 
@@ -16,11 +15,15 @@ type VersionResponse {
 }
 
 @server (
-	prefix: /api/v1
-	group:  version
+	group:           builtin
+	compact_handler: true
+	compact_logic:   true
 )
 service simpleapiWithModelRedis {
 	@handler Version
 	get /version (VersionRequest) returns (VersionResponse)
+
+	@handler Swagger
+	get /swagger
 }
 

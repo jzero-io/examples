@@ -2,27 +2,11 @@ package svc
 
 import (
 	"github.com/zeromicro/go-zero/core/logx"
-
-	"simpleapi-with-model-redis/internal/config"
 )
 
-func (sc *ServiceContext) GetConfig() (config.Config, error) {
-	return sc.Config.GetConfig()
-}
-
-func (sc *ServiceContext) MustGetConfig() config.Config {
-	c, err := sc.GetConfig()
-	logx.Must(err)
-	return c
-}
-
-func (sc *ServiceContext) SetConfigListener() {
-	sc.Config.AddListener(func() {
-		v, err := sc.GetConfig()
-		if err != nil {
-			logx.Errorf("reload config error: %v", err)
-			return
-		}
+func (svcCtx *ServiceContext) SetConfigListener() {
+	svcCtx.ConfigCenter.AddListener(func() {
+		v := svcCtx.ConfigCenter.MustGetConfig()
 
 		logx.Infof("reload config successfully")
 		switch v.Log.Level {
