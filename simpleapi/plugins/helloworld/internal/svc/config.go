@@ -6,10 +6,14 @@ import (
 
 func (svcCtx *ServiceContext) SetConfigListener() {
 	svcCtx.ConfigCenter.AddListener(func() {
-		v := svcCtx.ConfigCenter.MustGetConfig()
+		c, err := svcCtx.ConfigCenter.GetConfig()
+		if err != nil {
+			logx.Errorf("reload config error: %v", err)
+			return
+		}
 
 		logx.Infof("reload config successfully")
-		switch v.Log.Level {
+		switch c.Log.Level {
 		case "debug":
 			logx.SetLevel(logx.DebugLevel)
 		case "info":
