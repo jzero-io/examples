@@ -1,21 +1,22 @@
 package svc
 
 import (
-	configurator "github.com/zeromicro/go-zero/core/configcenter"
+	"github.com/jzero-io/jzero/core/configcenter"
 
 	"simpleapi/internal/config"
 )
 
 type ServiceContext struct {
-	Config configurator.Configurator[config.Config]
+	ConfigCenter configcenter.ConfigCenter[config.Config]
 	Middleware
 }
 
-func NewServiceContext(cc configurator.Configurator[config.Config]) *ServiceContext {
-	sc := &ServiceContext{
-		Config: cc,
+func NewServiceContext(cc configcenter.ConfigCenter[config.Config]) *ServiceContext {
+	svcCtx := &ServiceContext{
+		ConfigCenter: cc,
 	}
 
-	sc.SetConfigListener()
-	return sc
+	svcCtx.SetConfigListener()
+	svcCtx.Middleware = svcCtx.NewMiddleware()
+	return svcCtx
 }

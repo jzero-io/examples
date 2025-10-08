@@ -2,16 +2,15 @@ package cmd
 
 import (
 	"github.com/common-nighthawk/go-figure"
+	"github.com/jzero-io/jzero/core/configcenter"
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
 	"github.com/spf13/cobra"
-	configurator "github.com/zeromicro/go-zero/core/configcenter"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/rest"
 
 	"helloworld/internal/config"
 	"helloworld/internal/custom"
-	"helloworld/internal/global"
 	"helloworld/internal/handler"
 	"helloworld/internal/middleware"
 	"helloworld/internal/svc"
@@ -22,48 +21,36 @@ var serverCmd = &cobra.Command{
 	Short: "helloworld server",
 	Long:  "helloworld server",
 	Run: func(cmd *cobra.Command, args []string) {
-		cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
+		cc := configcenter.MustNewConfigCenter[config.Config](configcenter.Config{
 			Type: "yaml",
-		}, subscriber.MustNewFsnotifySubscriber(cfgFile, subscriber.WithUseEnv(true)))
-
-		c, err := cc.GetConfig()
-		logx.Must(err)
+		}, subscriber.MustNewFsnotifySubscriber(cmd.Flag("config").Value.String(), subscriber.WithUseEnv(true)))
 
 		// set up logger
-		if err = logx.SetUp(c.Log.LogConf); err != nil {
-			logx.Must(err)
-		}
+		logx.Must(logx.SetUp(cc.MustGetConfig().Log.LogConf))
 
 		// print banner
-		printBanner(c)
+		printBanner(cc.MustGetConfig().Banner)
 		// print version
 		printVersion()
 
 		svcCtx := svc.NewServiceContext(cc)
-		svcCtx.Middleware = middleware.NewMiddleware()
-		global.ServiceContext = *svcCtx
-		run(svcCtx)
+
+		restServer := rest.MustNewServer(svcCtx.ConfigCenter.MustGetConfig().Rest.RestConf)
+		customServer := custom.New()
+
+		handler.RegisterHandlers(restServer, svcCtx)
+		middleware.Register(restServer)
+
+		group := service.NewServiceGroup()
+		group.Add(restServer)
+		group.Add(customServer)
+
+		group.Start()
 	},
 }
 
-func run(svcCtx *svc.ServiceContext) {
-	server := rest.MustNewServer(svcCtx.MustGetConfig().Rest.RestConf)
-
-	ctm := custom.New(server)
-	ctm.Init()
-
-	handler.RegisterHandlers(server, svcCtx)
-	middleware.Register(server)
-
-	group := service.NewServiceGroup()
-	group.Add(server)
-	group.Add(ctm)
-
-	group.Start()
-}
-
-func printBanner(c config.Config) {
-	figure.NewColorFigure(c.Banner.Text, c.Banner.FontName, c.Banner.Color, true).Print()
+func printBanner(c config.BannerConf) {
+	figure.NewColorFigure(c.Text, c.FontName, c.Color, true).Print()
 }
 
 func init() {

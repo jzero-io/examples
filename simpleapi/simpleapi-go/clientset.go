@@ -6,13 +6,13 @@ import (
 	"github.com/jzero-io/jzero/core/restc"
 
 	"simpleapi/simpleapi-go/plugins"
-	version "simpleapi/simpleapi-go/typed/version"
+	builtin "simpleapi/simpleapi-go/typed/builtin"
 )
 
 type Clientset interface {
 	Direct() restc.Client
 
-	Version() version.Version
+	Builtin() builtin.Builtin
 
 	Plugins() plugins.Plugins
 }
@@ -21,7 +21,7 @@ type clientset struct {
 	// direct client to request
 	direct restc.Client
 
-	version version.Version
+	builtin builtin.Builtin
 
 	plugins plugins.Plugins
 }
@@ -30,8 +30,8 @@ func (cs *clientset) Direct() restc.Client {
 	return cs.direct
 }
 
-func (cs *clientset) Version() version.Version {
-	return cs.version
+func (cs *clientset) Builtin() builtin.Builtin {
+	return cs.builtin
 }
 
 func (cs *clientset) Plugins() plugins.Plugins {
@@ -41,7 +41,7 @@ func (cs *clientset) Plugins() plugins.Plugins {
 func NewClientset(cli restc.Client) (Clientset, error) {
 	cs := clientset{
 		direct:  cli,
-		version: version.NewVersion(cli),
+		builtin: builtin.NewBuiltin(cli),
 		plugins: plugins.NewPlugins(cli),
 	}
 
