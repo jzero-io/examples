@@ -4,6 +4,7 @@ import (
 	"github.com/common-nighthawk/go-figure"
 	"github.com/jzero-io/jzero/core/configcenter"
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
+	"github.com/jzero-io/jzero/core/swaggerv2"
 	"github.com/spf13/cobra"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
@@ -15,7 +16,6 @@ import (
 	"simplegateway-with-model-redis/desc/pb"
 	"simplegateway-with-model-redis/internal/config"
 	"simplegateway-with-model-redis/internal/custom"
-	"simplegateway-with-model-redis/internal/global"
 	"simplegateway-with-model-redis/internal/middleware"
 	"simplegateway-with-model-redis/internal/server"
 	"simplegateway-with-model-redis/internal/svc"
@@ -40,13 +40,15 @@ var serverCmd = &cobra.Command{
 		// print version
 		printVersion()
 
+		// create service context
 		svcCtx := svc.NewServiceContext(cc)
-		global.ServiceContext = *svcCtx
 
 		var err error
+		// write protosets to local
 		cc.MustGetConfig().Gateway.Upstreams[0].ProtoSets, err = pb.WriteToLocal(pb.Embed)
 		logx.Must(err)
 
+		// create zrpc server
 		zrpcServer := zrpc.MustNewServer(cc.MustGetConfig().Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
 			server.RegisterZrpcServer(grpcServer, svcCtx)
 			// register plugins
@@ -55,16 +57,21 @@ var serverCmd = &cobra.Command{
 				reflection.Register(grpcServer)
 			}
 		})
+		// create gateway server
 		gatewayServer := gateway.MustNewServer(cc.MustGetConfig().Gateway.GatewayConf, middleware.WithHeaderProcessor())
+		// register swagger routes
+		swaggerv2.RegisterRoutes(gatewayServer.Server)
+		// // create custom server
+		customServer := custom.New()
 
-		ctm := custom.New(zrpcServer, gatewayServer)
-		ctm.Init()
 		// register middleware
 		middleware.Register(zrpcServer, gatewayServer)
+
 		group := service.NewServiceGroup()
 		group.Add(zrpcServer)
 		group.Add(gatewayServer)
-		group.Add(ctm)
+		group.Add(customServer)
+
 		logx.Infof("Starting rpc server at %s...", cc.MustGetConfig().Zrpc.ListenOn)
 		logx.Infof("Starting gateway server at %s:%d...", cc.MustGetConfig().Gateway.Host, cc.MustGetConfig().Gateway.Port)
 		group.Start()
