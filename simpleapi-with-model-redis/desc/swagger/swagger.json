@@ -5,7 +5,7 @@
   ],
   "info": {},
   "paths": {
-    "/api/v1/version": {
+    "/version": {
       "get": {
         "operationId": "versionVersion",
         "produces": [
