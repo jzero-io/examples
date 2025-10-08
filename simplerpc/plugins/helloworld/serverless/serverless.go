@@ -8,7 +8,6 @@ import (
 	"google.golang.org/grpc"
 
 	"helloworld/internal/config"
-	"helloworld/internal/global"
 	"helloworld/internal/server"
 	"helloworld/internal/svc"
 )
@@ -24,7 +23,6 @@ func New() *Serverless {
 	}, subscriber.MustNewFsnotifySubscriber(filepath.Join("plugins", "helloworld", "etc", "etc.yaml"), subscriber.WithUseEnv(true)))
 
 	svcCtx := svc.NewServiceContext(cc)
-	global.ServiceContext = *svcCtx
 
 	return &Serverless{
 		SvcCtx:             svcCtx,

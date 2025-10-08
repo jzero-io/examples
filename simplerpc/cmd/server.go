@@ -13,7 +13,6 @@ import (
 
 	"simplerpc/internal/config"
 	"simplerpc/internal/custom"
-	"simplerpc/internal/global"
 	"simplerpc/internal/middleware"
 	"simplerpc/internal/server"
 	"simplerpc/internal/svc"
@@ -36,9 +35,9 @@ var serverCmd = &cobra.Command{
 		printBanner(cc.MustGetConfig().Banner)
 		printVersion()
 
+		// create service context
 		svcCtx := svc.NewServiceContext(cc)
-		global.ServiceContext = *svcCtx
-
+		// create zrpc server
 		zrpcServer := zrpc.MustNewServer(cc.MustGetConfig().Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
 			server.RegisterZrpcServer(grpcServer, svcCtx)
 			// register plugins
@@ -47,15 +46,14 @@ var serverCmd = &cobra.Command{
 				reflection.Register(grpcServer)
 			}
 		})
-
-		ctm := custom.New(zrpcServer)
-		ctm.Init()
-
+		// create custom server
+		customServer := custom.New()
+		// register middleware
 		middleware.Register(zrpcServer)
 
 		group := service.NewServiceGroup()
 		group.Add(zrpcServer)
-		group.Add(ctm)
+		group.Add(customServer)
 
 		logx.Infof("Starting rpc server at %s...", cc.MustGetConfig().Zrpc.ListenOn)
 		group.Start()
