@@ -1,0 +1,44 @@
+package config
+
+import (
+	"github.com/jzero-io/jzero/core/stores/redis"
+	"github.com/zeromicro/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/stores/sqlx"
+	"github.com/zeromicro/go-zero/gateway"
+	"github.com/zeromicro/go-zero/zrpc"
+)
+
+type Config struct {
+	Zrpc    ZrpcConf
+	Gateway GatewayConf
+	Log     LogConf
+	Sqlx    SqlxConf
+	Redis   RedisConf
+	Banner  BannerConf
+}
+
+type ZrpcConf struct {
+	zrpc.RpcServerConf
+}
+
+type GatewayConf struct {
+	gateway.GatewayConf
+}
+
+type LogConf struct {
+	logx.LogConf
+}
+
+type SqlxConf struct {
+	sqlx.SqlConf
+}
+
+type RedisConf struct {
+	redis.RedisConf
+}
+
+type BannerConf struct {
+	Text     string `json:",default=JZERO"`
+	Color    string `json:",default=green"`
+	FontName string `json:",default=starwars,options=big|larry3d|starwars|standard"`
+}

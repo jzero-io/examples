@@ -1,0 +1,27 @@
+zrpc:
+  listenOn: 0.0.0.0:8000
+  mode: dev
+  name: simplegateway-with-model-redis.rpc
+gateway:
+  name: simplegateway-with-model-redis.gw
+  port: 8001
+  upstreams:
+    - grpc:
+        endpoints:
+          - 0.0.0.0:8000
+      name: simplegateway-with-model-redis.gw
+
+log:
+    serviceName: simplegateway-with-model-redis
+    encoding: plain
+    level: info
+    mode: console
+
+sqlx:
+    driverName: "mysql"
+    dataSource: "root:123456@tcp(127.0.0.1:3306)/simplegateway-with-model-redis?charset=utf8mb4&parseTime=True&loc=Local"
+
+redis:
+    host: "127.0.0.1:6379"
+    type: "node"
+    pass: "123456"
