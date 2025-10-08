@@ -1,7 +1,8 @@
 syntax = "v1"
 
 info (
-	go_package:  "builtin"
+	go_package:  "version"
+	version:     "v1"
 	WrapCodeMsg: true
 )
 
@@ -15,15 +16,11 @@ type VersionResponse {
 }
 
 @server (
-	group:           builtin
-	compact_handler: true
-	compact_logic:   true
+	prefix: /api/v1
+	group:  version
 )
 service simpleapi {
 	@handler Version
 	get /version (VersionRequest) returns (VersionResponse)
-
-	@handler Swagger
-	get /swagger
 }
 

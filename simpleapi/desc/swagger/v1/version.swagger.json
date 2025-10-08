@@ -4,38 +4,12 @@
     "application/json"
   ],
   "info": {
-    "version": "1.0"
+    "version": "v1"
   },
   "paths": {
-    "/swagger": {
+    "/api/v1/version": {
       "get": {
-        "operationId": "builtinSwagger",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {}
-          }
-        },
-        "schemes": [
-          "https"
-        ],
-        "security": [
-          {
-            "apiKey": []
-          }
-        ],
-        "summary": "Swagger",
-        "tags": [
-          "builtin"
-        ]
-      }
-    },
-    "/version": {
-      "get": {
-        "operationId": "builtinVersion",
+        "operationId": "versionVersion",
         "produces": [
           "application/json"
         ],
@@ -86,7 +60,7 @@
         ],
         "summary": "Version",
         "tags": [
-          "builtin"
+          "version"
         ]
       }
     }
