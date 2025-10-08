@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "v1/version.proto",
+    "title": "version.proto",
     "version": "version not set"
   },
   "tags": [
