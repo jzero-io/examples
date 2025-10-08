@@ -1,24 +1,9 @@
 package custom
 
-import (
-	"github.com/zeromicro/go-zero/gateway"
-	"github.com/zeromicro/go-zero/zrpc"
-)
+type Custom struct{}
 
-type Custom struct {
-	ZrpcServer    *zrpc.RpcServer
-	GatewayServer *gateway.Server
-}
-
-func New(zrpcServer *zrpc.RpcServer, gatewayServer *gateway.Server) *Custom {
-	return &Custom{
-		ZrpcServer:    zrpcServer,
-		GatewayServer: gatewayServer,
-	}
-}
-
-func (c *Custom) Init() {
-	c.AddRoutes(c.GatewayServer)
+func New() *Custom {
+	return &Custom{}
 }
 
 // Start Please add custom logic here.

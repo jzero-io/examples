@@ -10,7 +10,6 @@ import (
 
 	"helloworld/desc/pb"
 	"helloworld/internal/config"
-	"helloworld/internal/global"
 	"helloworld/internal/server"
 	"helloworld/internal/svc"
 )
@@ -27,7 +26,6 @@ func New() *Serverless {
 	}, subscriber.MustNewFsnotifySubscriber(filepath.Join("plugins", "helloworld", "etc", "etc.yaml"), subscriber.WithUseEnv(true)))
 
 	svcCtx := svc.NewServiceContext(cc)
-	global.ServiceContext = *svcCtx
 
 	// get protoSets
 	protoSets, err := pb.WriteToLocal(pb.Embed)
