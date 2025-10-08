@@ -3,8 +3,8 @@ package serverless
 import (
 	"path/filepath"
 
+	"github.com/jzero-io/jzero/core/configcenter"
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
-	configurator "github.com/zeromicro/go-zero/core/configcenter"
 	"google.golang.org/grpc"
 
 	"helloworld/internal/config"
@@ -19,7 +19,7 @@ type Serverless struct {
 }
 
 func New() *Serverless {
-	cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
+	cc := configcenter.MustNewConfigCenter[config.Config](configcenter.Config{
 		Type: "yaml",
 	}, subscriber.MustNewFsnotifySubscriber(filepath.Join("plugins", "helloworld", "etc", "etc.yaml"), subscriber.WithUseEnv(true)))
 

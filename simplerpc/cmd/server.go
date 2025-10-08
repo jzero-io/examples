@@ -2,9 +2,9 @@ package cmd
 
 import (
 	"github.com/common-nighthawk/go-figure"
+	"github.com/jzero-io/jzero/core/configcenter"
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
 	"github.com/spf13/cobra"
-	configurator "github.com/zeromicro/go-zero/core/configcenter"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/zrpc"
@@ -26,49 +26,44 @@ var serverCmd = &cobra.Command{
 	Short: "simplerpc server",
 	Long:  "simplerpc server",
 	Run: func(cmd *cobra.Command, args []string) {
-		cc := configurator.MustNewConfigCenter[config.Config](configurator.Config{
+		cc := configcenter.MustNewConfigCenter[config.Config](configcenter.Config{
 			Type: "yaml",
-		}, subscriber.MustNewFsnotifySubscriber(cfgFile, subscriber.WithUseEnv(true)))
-		c, err := cc.GetConfig()
-		logx.Must(err)
+		}, subscriber.MustNewFsnotifySubscriber(cmd.Flag("config").Value.String(), subscriber.WithUseEnv(true)))
 
 		// set up logger
-		logx.Must(logx.SetUp(c.Log.LogConf))
+		logx.Must(logx.SetUp(cc.MustGetConfig().Log.LogConf))
 
-		printBanner(c)
+		printBanner(cc.MustGetConfig().Banner)
 		printVersion()
 
 		svcCtx := svc.NewServiceContext(cc)
 		global.ServiceContext = *svcCtx
-		run(svcCtx)
+
+		zrpcServer := zrpc.MustNewServer(cc.MustGetConfig().Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
+			server.RegisterZrpcServer(grpcServer, svcCtx)
+			// register plugins
+			plugins.LoadPlugins(grpcServer, svcCtx)
+			if cc.MustGetConfig().Zrpc.Mode == service.DevMode || cc.MustGetConfig().Zrpc.Mode == service.TestMode {
+				reflection.Register(grpcServer)
+			}
+		})
+
+		ctm := custom.New(zrpcServer)
+		ctm.Init()
+
+		middleware.Register(zrpcServer)
+
+		group := service.NewServiceGroup()
+		group.Add(zrpcServer)
+		group.Add(ctm)
+
+		logx.Infof("Starting rpc server at %s...", cc.MustGetConfig().Zrpc.ListenOn)
+		group.Start()
 	},
 }
 
-func run(svcCtx *svc.ServiceContext) {
-	zrpcServer := zrpc.MustNewServer(svcCtx.MustGetConfig().Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
-		server.RegisterZrpcServer(grpcServer, svcCtx)
-		// register plugins
-		plugins.LoadPlugins(grpcServer, svcCtx)
-		if svcCtx.MustGetConfig().Zrpc.Mode == service.DevMode || svcCtx.MustGetConfig().Zrpc.Mode == service.TestMode {
-			reflection.Register(grpcServer)
-		}
-	})
-
-	ctm := custom.New(zrpcServer)
-	ctm.Init()
-
-	middleware.Register(zrpcServer)
-
-	group := service.NewServiceGroup()
-	group.Add(zrpcServer)
-	group.Add(ctm)
-
-	logx.Infof("Starting rpc server at %s...", svcCtx.MustGetConfig().Zrpc.ListenOn)
-	group.Start()
-}
-
-func printBanner(c config.Config) {
-	figure.NewColorFigure(c.Banner.Text, c.Banner.FontName, c.Banner.Color, true).Print()
+func printBanner(c config.BannerConf) {
+	figure.NewColorFigure(c.Text, c.FontName, c.Color, true).Print()
 }
 
 func init() {

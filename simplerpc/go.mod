@@ -7,13 +7,13 @@ tool github.com/jzero-io/jzero/cmd/jzero
 require (
 	buf.build/go/protovalidate v1.0.0
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/jzero-io/jzero v0.60.4
+	github.com/jzero-io/jzero v0.61.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.1
-	github.com/zeromicro/go-zero v1.9.0
+	github.com/zeromicro/go-zero v1.9.1
 	google.golang.org/grpc v1.75.0
-	google.golang.org/protobuf v1.36.9
+	google.golang.org/protobuf v1.36.10
 )
 
 require (
@@ -69,8 +69,8 @@ require (
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/gookit/color v1.6.0 // indirect
-	github.com/grafana/pyroscope-go v1.2.4 // indirect
-	github.com/grafana/pyroscope-go/godeltaprof v0.1.8 // indirect
+	github.com/grafana/pyroscope-go v1.2.7 // indirect
+	github.com/grafana/pyroscope-go/godeltaprof v0.1.9 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.27.2 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
@@ -91,7 +91,7 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/jzero-io/desc v1.1.0 // indirect
 	github.com/jzero-io/go_fmt v0.0.0-20250905015347-1a45352494b7 // indirect
-	github.com/jzero-io/jzero/cmd/jzero v0.60.4 // indirect
+	github.com/jzero-io/jzero/cmd/jzero v0.61.0 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/lib/pq v1.10.9 // indirect
@@ -115,7 +115,7 @@ require (
 	github.com/prometheus/client_model v0.6.1 // indirect
 	github.com/prometheus/common v0.62.0 // indirect
 	github.com/prometheus/procfs v0.15.1 // indirect
-	github.com/redis/go-redis/v9 v9.14.0 // indirect
+	github.com/redis/go-redis/v9 v9.15.0 // indirect
 	github.com/rinchsan/gosimports v0.3.8 // indirect
 	github.com/sagikazarmark/locafero v0.11.0 // indirect
 	github.com/samber/lo v1.51.0 // indirect
