@@ -10,7 +10,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.1
-	github.com/zeromicro/go-zero v1.9.1
+	github.com/zeromicro/go-zero v1.9.2
 	google.golang.org/genproto/googleapis/api v0.0.0-20251007200510-49b9836ed3ff
 	google.golang.org/grpc v1.76.0
 	google.golang.org/protobuf v1.36.10
