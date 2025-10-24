@@ -91,7 +91,7 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/jzero-io/desc v1.1.0 // indirect
 	github.com/jzero-io/go_fmt v0.0.0-20250905015347-1a45352494b7 // indirect
-	github.com/jzero-io/jzero/cmd/jzero v0.64.2 // indirect
+	github.com/jzero-io/jzero/cmd/jzero v0.64.3 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/lib/pq v1.10.9 // indirect
