@@ -1,5 +1,5 @@
-buf.build/go/hyperpb v0.1.0 h1:utndCev4u1XvvCqcpmqLnYuaqTvVlLSFDc87mW7iQKA=
-buf.build/go/hyperpb v0.1.0/go.mod h1:EZWL//pO7VKbCxzZU0JlTzFDGmfN5reHshsFHOu3AKI=
+buf.build/go/hyperpb v0.1.3 h1:wiw2F7POvAe2VA2kkB0TAsFwj91lXbFrKM41D3ZgU1w=
+buf.build/go/hyperpb v0.1.3/go.mod h1:IHXAM5qnS0/Fsnd7/HGDghFNvUET646WoHmq1FDZXIE=
 cloud.google.com/go v0.112.1 h1:uJSeirPke5UNZHIb4SxfZklVSiWWVqW4oXlETwZziwM=
 cloud.google.com/go v0.112.1/go.mod h1:+Vbu+Y1UU+I1rjmzeMOb/8RfkKJK2Gyxi1X6jJCZLo4=
 cloud.google.com/go/compute/metadata v0.7.0 h1:PBWF+iiAerVNe8UCHxdOt6eHLVc3ydFeOCw78U8ytSU=
