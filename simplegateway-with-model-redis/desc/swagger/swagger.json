@@ -32,7 +32,7 @@
       },
       "type": "object"
     },
-    "versionpbVersionResponse": {
+    "versionVersionResponse": {
       "properties": {
         "commit": {
           "type": "string"
@@ -59,7 +59,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/versionpbVersionResponse"
+              "$ref": "#/definitions/versionVersionResponse"
             }
           },
           "default": {

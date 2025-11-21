@@ -23,7 +23,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/versionpbVersionResponse"
+              "$ref": "#/definitions/versionVersionResponse"
             }
           },
           "default": {
@@ -68,7 +68,7 @@
         }
       }
     },
-    "versionpbVersionResponse": {
+    "versionVersionResponse": {
       "type": "object",
       "properties": {
         "version": {
