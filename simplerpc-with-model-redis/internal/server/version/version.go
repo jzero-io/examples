@@ -8,13 +8,13 @@ import (
 	"context"
 
 	versionlogic "simplerpc-with-model-redis/internal/logic/version"
-	"simplerpc-with-model-redis/internal/pb/versionpb"
 	"simplerpc-with-model-redis/internal/svc"
+	"simplerpc-with-model-redis/internal/types/version"
 )
 
 type Version struct {
 	svcCtx *svc.ServiceContext
-	versionpb.UnimplementedVersionServer
+	version.UnimplementedVersionServer
 }
 
 func NewVersion(svcCtx *svc.ServiceContext) *Version {
@@ -23,7 +23,7 @@ func NewVersion(svcCtx *svc.ServiceContext) *Version {
 	}
 }
 
-func (s *Version) Version(ctx context.Context, in *versionpb.VersionRequest) (*versionpb.VersionResponse, error) {
+func (s *Version) Version(ctx context.Context, in *version.VersionRequest) (*version.VersionResponse, error) {
 	l := versionlogic.NewVersion(ctx, s.svcCtx)
 	return l.Version(in)
 }

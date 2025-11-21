@@ -5,8 +5,8 @@ import (
 
 	"github.com/zeromicro/go-zero/core/logx"
 
-	"simplerpc-with-model-redis/internal/pb/versionpb"
 	"simplerpc-with-model-redis/internal/svc"
+	"simplerpc-with-model-redis/internal/types/version"
 )
 
 type Version struct {
@@ -23,8 +23,8 @@ func NewVersion(ctx context.Context, svcCtx *svc.ServiceContext) *Version {
 	}
 }
 
-func (l *Version) Version(in *versionpb.VersionRequest) (*versionpb.VersionResponse, error) {
+func (l *Version) Version(in *version.VersionRequest) (*version.VersionResponse, error) {
 	// todo: add your logic here and delete this line
 
-	return &versionpb.VersionResponse{}, nil
+	return &version.VersionResponse{}, nil
 }

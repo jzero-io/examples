@@ -7,15 +7,15 @@ package version
 import (
 	"context"
 
-	"simplerpc-with-model-redis/zrpcclient-go/model/pb/versionpb"
+	"simplerpc-with-model-redis/zrpcclient-go/model/types/version"
 
 	"github.com/zeromicro/go-zero/zrpc"
 	"google.golang.org/grpc"
 )
 
 type (
-	VersionRequest  = versionpb.VersionRequest
-	VersionResponse = versionpb.VersionResponse
+	VersionRequest  = version.VersionRequest
+	VersionResponse = version.VersionResponse
 
 	Version interface {
 		Version(ctx context.Context, in *VersionRequest, opts ...grpc.CallOption) (*VersionResponse, error)
@@ -33,6 +33,6 @@ func NewVersion(cli zrpc.Client) Version {
 }
 
 func (m *defaultVersion) Version(ctx context.Context, in *VersionRequest, opts ...grpc.CallOption) (*VersionResponse, error) {
-	client := versionpb.NewVersionClient(m.cli.Conn())
+	client := version.NewVersionClient(m.cli.Conn())
 	return client.Version(ctx, in, opts...)
 }

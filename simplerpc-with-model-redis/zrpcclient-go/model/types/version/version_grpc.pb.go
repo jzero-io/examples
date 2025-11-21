@@ -4,7 +4,7 @@
 // - protoc             v6.32.0
 // source: version.proto
 
-package versionpb
+package version
 
 import (
 	context "context"
@@ -19,7 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Version_Version_FullMethodName = "/versionpb.Version/Version"
+	Version_Version_FullMethodName = "/version.Version/Version"
 )
 
 // VersionClient is the client API for Version service.
@@ -108,7 +108,7 @@ func _Version_Version_Handler(srv interface{}, ctx context.Context, dec func(int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Version_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "versionpb.Version",
+	ServiceName: "version.Version",
 	HandlerType: (*VersionServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
