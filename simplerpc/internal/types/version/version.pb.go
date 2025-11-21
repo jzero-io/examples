@@ -4,7 +4,7 @@
 // 	protoc        v6.32.0
 // source: version.proto
 
-package versionpb
+package version
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -129,15 +129,15 @@ var File_version_proto protoreflect.FileDescriptor
 
 const file_version_proto_rawDesc = "" +
 	"\n" +
-	"\rversion.proto\x12\tversionpb\"\x10\n" +
+	"\rversion.proto\x12\aversion\"\x10\n" +
 	"\x0eVersionRequest\"u\n" +
 	"\x0fVersionResponse\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1c\n" +
 	"\tgoVersion\x18\x02 \x01(\tR\tgoVersion\x12\x16\n" +
 	"\x06commit\x18\x03 \x01(\tR\x06commit\x12\x12\n" +
-	"\x04date\x18\x04 \x01(\tR\x04date2M\n" +
-	"\aVersion\x12B\n" +
-	"\aVersion\x12\x19.versionpb.VersionRequest\x1a\x1a.versionpb.VersionResponse\"\x00B\x10Z\x0e./pb/versionpbb\x06proto3"
+	"\x04date\x18\x04 \x01(\tR\x04date2I\n" +
+	"\aVersion\x12>\n" +
+	"\aVersion\x12\x17.version.VersionRequest\x1a\x18.version.VersionResponse\"\x00B\x11Z\x0f./types/versionb\x06proto3"
 
 var (
 	file_version_proto_rawDescOnce sync.Once
@@ -153,12 +153,12 @@ func file_version_proto_rawDescGZIP() []byte {
 
 var file_version_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_version_proto_goTypes = []any{
-	(*VersionRequest)(nil),  // 0: versionpb.VersionRequest
-	(*VersionResponse)(nil), // 1: versionpb.VersionResponse
+	(*VersionRequest)(nil),  // 0: version.VersionRequest
+	(*VersionResponse)(nil), // 1: version.VersionResponse
 }
 var file_version_proto_depIdxs = []int32{
-	0, // 0: versionpb.Version.Version:input_type -> versionpb.VersionRequest
-	1, // 1: versionpb.Version.Version:output_type -> versionpb.VersionResponse
+	0, // 0: version.Version.Version:input_type -> version.VersionRequest
+	1, // 1: version.Version.Version:output_type -> version.VersionResponse
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

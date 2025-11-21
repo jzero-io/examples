@@ -32,7 +32,7 @@
       },
       "type": "object"
     },
-    "versionpbVersionResponse": {
+    "versionVersionResponse": {
       "properties": {
         "commit": {
           "type": "string"

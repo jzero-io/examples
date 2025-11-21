@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-package versionpb;
-option go_package = "./pb/versionpb";
+package version;
+option go_package = "./types/version";
 
 message VersionRequest {}
 

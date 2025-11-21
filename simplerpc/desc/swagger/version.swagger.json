@@ -45,7 +45,7 @@
         }
       }
     },
-    "versionpbVersionResponse": {
+    "versionVersionResponse": {
       "type": "object",
       "properties": {
         "version": {
