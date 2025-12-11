@@ -22,7 +22,7 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			[]rest.Route{
 				{
 					Method:  http.MethodGet,
-					Path:    "/version",
+					Path:    "/api/version",
 					Handler: version.Version(serverCtx),
 				},
 			},
