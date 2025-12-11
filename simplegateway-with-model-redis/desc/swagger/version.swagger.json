@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/version": {
+    "/api/version": {
       "get": {
         "operationId": "Version_Version",
         "responses": {
