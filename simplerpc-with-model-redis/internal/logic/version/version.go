@@ -1,4 +1,4 @@
-package versionlogic
+package version
 
 import (
 	"context"
