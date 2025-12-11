@@ -137,10 +137,9 @@ const file_version_proto_rawDesc = "" +
 	"\aversion\x18\x01 \x01(\tR\aversion\x12\x1c\n" +
 	"\tgoVersion\x18\x02 \x01(\tR\tgoVersion\x12\x16\n" +
 	"\x06commit\x18\x03 \x01(\tR\x06commit\x12\x12\n" +
-	"\x04date\x18\x04 \x01(\tR\x04date2Y\n" +
-	"\aVersion\x12N\n" +
-	"\aVersion\x12\x17.version.VersionRequest\x1a\x18.version.VersionResponse\"\x10\x82\xd3\xe4\x93\x02\n" +
-	"\x12\b/versionB\x11Z\x0f./types/versionb\x06proto3"
+	"\x04date\x18\x04 \x01(\tR\x04date2]\n" +
+	"\aVersion\x12R\n" +
+	"\aVersion\x12\x17.version.VersionRequest\x1a\x18.version.VersionResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\f/api/versionB\x11Z\x0f./types/versionb\x06proto3"
 
 var (
 	file_version_proto_rawDescOnce sync.Once

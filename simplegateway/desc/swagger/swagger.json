@@ -52,7 +52,7 @@
   },
   "info": {},
   "paths": {
-    "/version": {
+    "/api/version": {
       "get": {
         "operationId": "Version_Version",
         "responses": {
