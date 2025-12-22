@@ -17,7 +17,7 @@ type VersionResponse {
 @server (
 	group: version
 )
-service Simpleapi {
+service simpleapi {
 	@handler Version
 	get /api/version (VersionRequest) returns (VersionResponse)
 }
