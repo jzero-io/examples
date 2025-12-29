@@ -5,7 +5,7 @@ go 1.24.3
 require (
 	buf.build/go/protovalidate v1.1.0
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/grpc-ecosystem/grpc-gateway/v2 v2.27.3
+	github.com/grpc-ecosystem/grpc-gateway/v2 v2.27.4
 	github.com/jzero-io/jzero v0.65.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
@@ -110,13 +110,13 @@ require (
 	golang.org/x/crypto v0.44.0 // indirect
 	golang.org/x/exp v0.0.0-20250813145105-42675adae3e6 // indirect
 	golang.org/x/net v0.47.0 // indirect
-	golang.org/x/oauth2 v0.32.0 // indirect
-	golang.org/x/sync v0.18.0 // indirect
+	golang.org/x/oauth2 v0.34.0 // indirect
+	golang.org/x/sync v0.19.0 // indirect
 	golang.org/x/sys v0.38.0 // indirect
 	golang.org/x/term v0.37.0 // indirect
-	golang.org/x/text v0.31.0 // indirect
+	golang.org/x/text v0.32.0 // indirect
 	golang.org/x/time v0.10.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20251213004720-97cd9d5aeac2 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20251222181119-0a764e51fe1b // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
