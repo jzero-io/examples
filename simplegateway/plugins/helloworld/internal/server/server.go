@@ -10,11 +10,17 @@ import (
 
 	"helloworld/internal/config"
 	"helloworld/internal/svc"
+
+	helloworldsvr "helloworld/internal/server/helloworld"
+
+	"helloworld/internal/types/helloworld"
 )
 
 // RegisterZrpc Deprecated: use RegisterZrpcServer instead.
 func RegisterZrpc(c config.Config, ctx *svc.ServiceContext) *zrpc.RpcServer {
 	s := zrpc.MustNewServer(c.Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
+	    
+		helloworld.RegisterHelloworldServer(grpcServer, helloworldsvr.NewHelloworld(ctx))
 
 		if c.Zrpc.Mode == service.DevMode || c.Zrpc.Mode == service.TestMode {
 			reflection.Register(grpcServer)
@@ -25,5 +31,6 @@ func RegisterZrpc(c config.Config, ctx *svc.ServiceContext) *zrpc.RpcServer {
 }
 
 func RegisterZrpcServer(grpcServer *grpc.Server, ctx *svc.ServiceContext) {
-
+    
+		helloworld.RegisterHelloworldServer(grpcServer, helloworldsvr.NewHelloworld(ctx))
 }

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package helloworld;
+
+option go_package = "./types/helloworld";
+
+message CreateRequest {}
+
+message CreateResponse {}
+
+service Helloworld {
+    rpc Create(CreateRequest) returns(CreateResponse) {};
+}

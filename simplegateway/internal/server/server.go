@@ -11,8 +11,10 @@ import (
 	"simplegateway/internal/config"
 	"simplegateway/internal/svc"
 
+	usersvr "simplegateway/internal/server/user"
 	versionsvr "simplegateway/internal/server/version"
 
+	"simplegateway/internal/types/user"
 	"simplegateway/internal/types/version"
 )
 
@@ -20,6 +22,7 @@ import (
 func RegisterZrpc(c config.Config, ctx *svc.ServiceContext) *zrpc.RpcServer {
 	s := zrpc.MustNewServer(c.Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
 	    
+		user.RegisterUserServer(grpcServer, usersvr.NewUser(ctx))
 		version.RegisterVersionServer(grpcServer, versionsvr.NewVersion(ctx))
 
 		if c.Zrpc.Mode == service.DevMode || c.Zrpc.Mode == service.TestMode {
@@ -32,5 +35,6 @@ func RegisterZrpc(c config.Config, ctx *svc.ServiceContext) *zrpc.RpcServer {
 
 func RegisterZrpcServer(grpcServer *grpc.Server, ctx *svc.ServiceContext) {
     
+		user.RegisterUserServer(grpcServer, usersvr.NewUser(ctx))
 		version.RegisterVersionServer(grpcServer, versionsvr.NewVersion(ctx))
 }

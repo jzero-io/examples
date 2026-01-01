@@ -3,6 +3,39 @@
   "consumes": [
     "application/json"
   ],
+  "definitions": {
+    "helloworldCreateResponse": {
+      "type": "object"
+    },
+    "protobufAny": {
+      "additionalProperties": {},
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "rpcStatus": {
+      "properties": {
+        "code": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "details": {
+          "items": {
+            "$ref": "#/definitions/protobufAny",
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
   "info": {},
   "produces": [
     "application/json"

@@ -4,6 +4,9 @@
     "application/json"
   ],
   "definitions": {
+    "helloworldCreateResponse": {
+      "type": "object"
+    },
     "protobufAny": {
       "additionalProperties": {},
       "properties": {
@@ -32,6 +35,12 @@
       },
       "type": "object"
     },
+    "userCreateRequest": {
+      "type": "object"
+    },
+    "userCreateResponse": {
+      "type": "object"
+    },
     "versionVersionResponse": {
       "properties": {
         "commit": {
@@ -52,6 +61,38 @@
   },
   "info": {},
   "paths": {
+    "/api/user": {
+      "post": {
+        "operationId": "User_Create",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/userCreateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/userCreateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "User"
+        ]
+      }
+    },
     "/api/version": {
       "get": {
         "operationId": "Version_Version",
