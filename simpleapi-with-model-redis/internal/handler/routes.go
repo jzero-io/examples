@@ -7,6 +7,7 @@ import (
 
 	"github.com/zeromicro/go-zero/rest"
 
+	user "simpleapi-with-model-redis/internal/handler/user"
 	version "simpleapi-with-model-redis/internal/handler/version"
 	"simpleapi-with-model-redis/internal/svc"
 )
@@ -17,6 +18,18 @@ var (
 )
 
 func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
+	{
+		server.AddRoutes(
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/",
+					Handler: user.Create(serverCtx),
+				},
+			},
+			rest.WithPrefix("/api/user"),
+		)
+	}
 	{
 		server.AddRoutes(
 			[]rest.Route{

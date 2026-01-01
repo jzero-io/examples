@@ -6,10 +6,16 @@ import (
 	"github.com/eddieowens/opts"
 	"github.com/jzero-io/jzero/core/stores/modelx"
 	"github.com/zeromicro/go-zero/core/stores/sqlx"
+
+	"simpleapi-with-model-redis/internal/model/user"
 )
 
-type Model struct{}
+type Model struct {
+	User user.UserModel
+}
 
 func NewModel(conn sqlx.SqlConn, op ...opts.Opt[modelx.ModelOpts]) Model {
-	return Model{}
+	return Model{
+		User: user.NewUserModel(conn, op...),
+	}
 }
