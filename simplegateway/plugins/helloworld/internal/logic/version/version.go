@@ -7,8 +7,8 @@ import (
 
 	"github.com/zeromicro/go-zero/core/logx"
 
-	"simplegateway/internal/svc"
-	"simplegateway/internal/types/version"
+	"helloworld/internal/svc"
+	"helloworld/internal/types/version"
 )
 
 type Version struct {
