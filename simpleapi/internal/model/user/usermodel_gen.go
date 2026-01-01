@@ -254,9 +254,7 @@ func (m *customUserModel) BulkInsert(ctx context.Context, session sqlx.Session, 
 
 	sb := sqlbuilder.InsertInto(m.table)
 	sb.Cols(userRowsExpectAutoSet)
-	for _, data := range datas {
-		sb.Values()
-	}
+
 	statement, args := sb.BuildWithFlavor(m.flavor)
 
 	var err error

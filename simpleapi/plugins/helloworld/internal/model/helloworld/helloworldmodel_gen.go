@@ -254,9 +254,7 @@ func (m *customHelloworldModel) BulkInsert(ctx context.Context, session sqlx.Ses
 
 	sb := sqlbuilder.InsertInto(m.table)
 	sb.Cols(helloworldRowsExpectAutoSet)
-	for _, data := range datas {
-		sb.Values()
-	}
+
 	statement, args := sb.BuildWithFlavor(m.flavor)
 
 	var err error
