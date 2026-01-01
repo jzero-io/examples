@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "./types/user";
+
+message CreateRequest {}
+
+message CreateResponse {}
+
+service User {
+    rpc Create(CreateRequest) returns(CreateResponse) {};
+}
