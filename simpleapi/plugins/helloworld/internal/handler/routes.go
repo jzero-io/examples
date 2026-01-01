@@ -7,6 +7,7 @@ import (
 
 	"github.com/zeromicro/go-zero/rest"
 
+	helloworld "helloworld/internal/handler/helloworld"
 	"helloworld/internal/svc"
 )
 
@@ -15,4 +16,18 @@ var (
 	_ = time.Now()
 )
 
-func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {}
+func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
+	{
+		server.AddRoutes(
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/",
+					Handler: helloworld.Create(serverCtx),
+				},
+			},
+			rest.WithPrefix("/api/helloworld"),
+		)
+	}
+
+}

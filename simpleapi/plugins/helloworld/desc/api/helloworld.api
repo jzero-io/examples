@@ -1,0 +1,19 @@
+syntax = "v1"
+
+info (
+	go_package: "helloworld"
+)
+
+type CreateRequest {}
+
+type CreateResponse {}
+
+@server (
+	prefix: /api/helloworld
+	group:  helloworld
+)
+service helloworld {
+	@handler Create
+	post / (CreateRequest) returns (CreateResponse)
+}
+

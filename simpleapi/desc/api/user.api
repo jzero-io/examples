@@ -1,0 +1,19 @@
+syntax = "v1"
+
+info (
+	go_package: "user"
+)
+
+type CreateRequest {}
+
+type CreateResponse {}
+
+@server (
+	prefix: /api/user
+	group:  user
+)
+service simpleapi {
+	@handler Create
+	post / (CreateRequest) returns (CreateResponse)
+}
+
