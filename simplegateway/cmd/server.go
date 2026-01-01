@@ -43,10 +43,10 @@ var serverCmd = &cobra.Command{
 		// create service context
 		svcCtx := svc.NewServiceContext(cc)
 
-		var err error
-		// write protosets to local
-		cc.MustGetConfig().Gateway.Upstreams[0].ProtoSets, err = pb.WriteToLocal(pb.Embed)
+		// write protoSets to local
+		protoSets, err := pb.WriteToLocal(pb.Embed)
 		logx.Must(err)
+		cc.MustGetConfig().Gateway.Upstreams[0].ProtoSets = protoSets
 
 		// create zrpc server
 		zrpcServer := zrpc.MustNewServer(cc.MustGetConfig().Zrpc.RpcServerConf, func(grpcServer *grpc.Server) {
