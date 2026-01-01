@@ -4,6 +4,9 @@
     "application/json"
   ],
   "definitions": {
+    "helloworldCreateResponse": {
+      "type": "object"
+    },
     "protobufAny": {
       "additionalProperties": {},
       "properties": {
