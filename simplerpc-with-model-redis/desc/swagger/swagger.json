@@ -32,6 +32,9 @@
       },
       "type": "object"
     },
+    "userCreateResponse": {
+      "type": "object"
+    },
     "versionVersionResponse": {
       "properties": {
         "commit": {
