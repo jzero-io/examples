@@ -9,7 +9,7 @@ require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/eddieowens/opts v0.1.0
 	github.com/huandu/go-sqlbuilder v1.38.2
-	github.com/jzero-io/jzero v1.0.2-0.20260105022922-772cc6c4d931
+	github.com/jzero-io/jzero v1.0.2-0.20260106094711-3f5fabeceabd
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.1
