@@ -8,7 +8,7 @@ require (
 	github.com/eddieowens/opts v0.1.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.27.3
 	github.com/huandu/go-sqlbuilder v1.38.2
-	github.com/jzero-io/jzero v1.0.2-0.20260106094711-3f5fabeceabd
+	github.com/jzero-io/jzero v1.1.1-0.20260112035209-ec86615c9bb6
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.2
@@ -143,7 +143,7 @@ require (
 	modernc.org/libc v1.67.0 // indirect
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.11.0 // indirect
-	modernc.org/sqlite v1.42.2 // indirect
+	modernc.org/sqlite v1.43.0 // indirect
 	sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.4.1 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
