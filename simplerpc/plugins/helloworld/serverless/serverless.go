@@ -7,9 +7,9 @@ import (
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
 	"google.golang.org/grpc"
 
-	"helloworld/internal/config"
-	"helloworld/internal/server"
-	"helloworld/internal/svc"
+	"simplerpc/plugins/helloworld/internal/config"
+	"simplerpc/plugins/helloworld/internal/server"
+	"simplerpc/plugins/helloworld/internal/svc"
 )
 
 type Serverless struct {

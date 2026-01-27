@@ -8,12 +8,12 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
-	"helloworld/internal/config"
-	"helloworld/internal/svc"
+	"simplerpc/plugins/helloworld/internal/config"
+	"simplerpc/plugins/helloworld/internal/svc"
 
-	helloworldsvr "helloworld/internal/server/helloworld"
+	helloworldsvr "simplerpc/plugins/helloworld/internal/server/helloworld"
 
-	"helloworld/internal/types/helloworld"
+	"simplerpc/plugins/helloworld/internal/types/helloworld"
 )
 
 // RegisterZrpc Deprecated: use RegisterZrpcServer instead.

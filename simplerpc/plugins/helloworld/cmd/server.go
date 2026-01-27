@@ -11,11 +11,11 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
-	"helloworld/internal/config"
-	"helloworld/internal/custom"
-	"helloworld/internal/middleware"
-	"helloworld/internal/server"
-	"helloworld/internal/svc"
+	"simplerpc/plugins/helloworld/internal/config"
+	"simplerpc/plugins/helloworld/internal/custom"
+	"simplerpc/plugins/helloworld/internal/middleware"
+	"simplerpc/plugins/helloworld/internal/server"
+	"simplerpc/plugins/helloworld/internal/svc"
 )
 
 // serverCmd represents the server command
