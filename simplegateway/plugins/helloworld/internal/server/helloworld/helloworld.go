@@ -7,9 +7,9 @@ package server
 import (
 	"context"
 
-	helloworldlogic "helloworld/internal/logic/helloworld"
-	"helloworld/internal/svc"
-	"helloworld/internal/types/helloworld"
+	helloworldlogic "simplegateway/plugins/helloworld/internal/logic/helloworld"
+	"simplegateway/plugins/helloworld/internal/svc"
+	"simplegateway/plugins/helloworld/internal/types/helloworld"
 )
 
 type Helloworld struct {

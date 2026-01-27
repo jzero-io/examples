@@ -1,7 +1,7 @@
 package main
 
 import (
-	"helloworld/cmd"
+	"simplegateway/plugins/helloworld/cmd"
 )
 
 func main() {

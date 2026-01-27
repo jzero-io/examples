@@ -5,8 +5,8 @@ import (
 
 	"github.com/zeromicro/go-zero/core/logx"
 
-	"helloworld/internal/svc"
-	"helloworld/internal/types/helloworld"
+	"simplegateway/plugins/helloworld/internal/svc"
+	"simplegateway/plugins/helloworld/internal/types/helloworld"
 )
 
 type Create struct {

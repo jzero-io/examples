@@ -3,7 +3,7 @@ package svc
 import (
 	"github.com/jzero-io/jzero/core/configcenter"
 
-	"helloworld/internal/config"
+	"simplegateway/plugins/helloworld/internal/config"
 )
 
 type ServiceContext struct {

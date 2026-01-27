@@ -8,10 +8,10 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 	"google.golang.org/grpc"
 
-	"helloworld/desc/pb"
-	"helloworld/internal/config"
-	"helloworld/internal/server"
-	"helloworld/internal/svc"
+	"simplegateway/plugins/helloworld/desc/pb"
+	"simplegateway/plugins/helloworld/internal/config"
+	"simplegateway/plugins/helloworld/internal/server"
+	"simplegateway/plugins/helloworld/internal/svc"
 )
 
 type Serverless struct {

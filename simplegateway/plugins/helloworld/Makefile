@@ -16,7 +16,7 @@ ARCH = `go env GOARCH`
 
 .PHONY: build
 build:
-	@go build -ldflags "-X 'helloworld/cmd.Date=$(DATE)' -X 'helloworld/cmd.Version=$(VERSION)' -X 'helloworld/cmd.Commit=$(COMMIT)'" -o $(APP) main.go
+	@go build -ldflags "-X 'simplegateway/plugins/helloworld/cmd.Date=$(DATE)' -X 'simplegateway/plugins/helloworld/cmd.Version=$(VERSION)' -X 'simplegateway/plugins/helloworld/cmd.Commit=$(COMMIT)'" -o $(APP) main.go
 
 .PHONY: docker
 docker:

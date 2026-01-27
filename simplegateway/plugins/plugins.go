@@ -2,11 +2,10 @@
 package plugins
 
 import (
-	helloworld "helloworld/serverless"
-
 	"google.golang.org/grpc"
 
 	"simplegateway/internal/svc"
+	helloworld "simplegateway/plugins/helloworld/serverless"
 )
 
 func LoadPlugins(grpcServer *grpc.Server, svcCtx *svc.ServiceContext) {

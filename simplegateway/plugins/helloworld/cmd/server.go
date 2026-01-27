@@ -13,12 +13,12 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
-	"helloworld/desc/pb"
-	"helloworld/internal/config"
-	"helloworld/internal/custom"
-	"helloworld/internal/middleware"
-	"helloworld/internal/server"
-	"helloworld/internal/svc"
+	"simplegateway/plugins/helloworld/desc/pb"
+	"simplegateway/plugins/helloworld/internal/config"
+	"simplegateway/plugins/helloworld/internal/custom"
+	"simplegateway/plugins/helloworld/internal/middleware"
+	"simplegateway/plugins/helloworld/internal/server"
+	"simplegateway/plugins/helloworld/internal/svc"
 )
 
 // serverCmd represents the server command
