@@ -10,11 +10,11 @@ import (
 	"github.com/zeromicro/go-zero/core/service"
 	"github.com/zeromicro/go-zero/rest"
 
-	"helloworld/internal/config"
-	"helloworld/internal/custom"
-	"helloworld/internal/handler"
-	"helloworld/internal/middleware"
-	"helloworld/internal/svc"
+	"simpleapi/plugins/helloworld/internal/config"
+	"simpleapi/plugins/helloworld/internal/custom"
+	"simpleapi/plugins/helloworld/internal/handler"
+	"simpleapi/plugins/helloworld/internal/middleware"
+	"simpleapi/plugins/helloworld/internal/svc"
 )
 
 var serverCmd = &cobra.Command{

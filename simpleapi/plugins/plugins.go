@@ -2,11 +2,10 @@
 package plugins
 
 import (
-	helloworld "helloworld/serverless"
-
 	"github.com/zeromicro/go-zero/rest"
 
 	"simpleapi/internal/svc"
+	helloworld "simpleapi/plugins/helloworld/serverless"
 )
 
 func LoadPlugins(server *rest.Server, svcCtx *svc.ServiceContext) {

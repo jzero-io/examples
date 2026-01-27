@@ -7,8 +7,8 @@ import (
 
 	"github.com/zeromicro/go-zero/rest"
 
-	helloworld "helloworld/internal/handler/helloworld"
-	"helloworld/internal/svc"
+	helloworld "simpleapi/plugins/helloworld/internal/handler/helloworld"
+	"simpleapi/plugins/helloworld/internal/svc"
 )
 
 var (

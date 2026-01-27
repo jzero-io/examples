@@ -7,9 +7,9 @@ import (
 
 	"github.com/zeromicro/go-zero/rest/httpx"
 
-	"helloworld/internal/logic/helloworld"
-	"helloworld/internal/svc"
-	types "helloworld/internal/types/helloworld"
+	"simpleapi/plugins/helloworld/internal/logic/helloworld"
+	"simpleapi/plugins/helloworld/internal/svc"
+	types "simpleapi/plugins/helloworld/internal/types/helloworld"
 )
 
 func Create(svcCtx *svc.ServiceContext) http.HandlerFunc {

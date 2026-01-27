@@ -7,9 +7,9 @@ import (
 	"github.com/jzero-io/jzero/core/configcenter/subscriber"
 	"github.com/zeromicro/go-zero/rest"
 
-	"helloworld/internal/config"
-	"helloworld/internal/handler"
-	"helloworld/internal/svc"
+	"simpleapi/plugins/helloworld/internal/config"
+	"simpleapi/plugins/helloworld/internal/handler"
+	"simpleapi/plugins/helloworld/internal/svc"
 )
 
 type Serverless struct {

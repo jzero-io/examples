@@ -3,7 +3,7 @@ package svc
 import (
 	"github.com/zeromicro/go-zero/core/logx"
 
-	"helloworld/internal/config"
+	"simpleapi/plugins/helloworld/internal/config"
 )
 
 func (svcCtx *ServiceContext) GetConfig() (config.Config, error) {
