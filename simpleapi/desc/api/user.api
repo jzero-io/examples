@@ -9,8 +9,9 @@ type CreateRequest {}
 type CreateResponse {}
 
 @server (
-	prefix: /api/user
-	group:  user
+	prefix:          /api/user
+	group:           user
+	compact_handler: true
 )
 service simpleapi {
 	@handler Create

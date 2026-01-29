@@ -9,8 +9,9 @@ type CreateRequest {}
 type CreateResponse {}
 
 @server (
-	prefix: /api/helloworld
-	group:  helloworld
+	prefix:          /api/helloworld
+	group:           helloworld
+	compact_handler: true
 )
 service helloworld {
 	@handler Create
