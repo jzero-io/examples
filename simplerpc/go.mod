@@ -7,7 +7,7 @@ tool github.com/jzero-io/jzero/cmd/jzero
 require (
 	buf.build/go/protovalidate v1.1.0
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/jzero-io/jzero v1.2.1-0.20260202134343-e8096448bc97
+	github.com/jzero-io/jzero v1.2.2-0.20260203063913-3ffbba08db5e
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.1
@@ -87,7 +87,7 @@ require (
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/jzero-io/desc v1.2.0 // indirect
 	github.com/jzero-io/go_fmt v0.0.0-20250905015347-1a45352494b7 // indirect
-	github.com/jzero-io/jzero/cmd/jzero v1.2.0 // indirect
+	github.com/jzero-io/jzero/cmd/jzero v1.2.1 // indirect
 	github.com/kevinburke/ssh_config v1.2.0 // indirect
 	github.com/klauspost/compress v1.18.1 // indirect
 	github.com/logrusorgru/aurora v2.0.3+incompatible // indirect
