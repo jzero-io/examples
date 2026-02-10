@@ -14,7 +14,8 @@ type Config struct {
 	Log     LogConf
 	Sqlx    SqlxConf
 	Redis   RedisConf
-	Banner  BannerConf
+
+	Banner BannerConf
 }
 
 type ZrpcConf struct {
