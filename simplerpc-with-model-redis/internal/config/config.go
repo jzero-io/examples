@@ -8,10 +8,11 @@ import (
 )
 
 type Config struct {
-	Zrpc   ZrpcConf
-	Log    LogConf
-	Sqlx   SqlxConf
-	Redis  RedisConf
+	Zrpc  ZrpcConf
+	Log   LogConf
+	Sqlx  SqlxConf
+	Redis RedisConf
+
 	Banner BannerConf
 }
 
