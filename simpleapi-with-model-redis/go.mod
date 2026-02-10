@@ -7,8 +7,7 @@ require (
 	github.com/eddieowens/opts v0.1.0
 	github.com/go-playground/validator/v10 v10.30.1
 	github.com/huandu/go-sqlbuilder v1.39.0
-	github.com/jzero-io/jzero v1.2.2-0.20260210034936-1c20fa17e640
-	github.com/pkg/errors v0.9.1
+	github.com/jzero-io/jzero v1.2.2-0.20260210080447-c42d4a84a06e
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.2
 	github.com/zeromicro/go-zero v1.9.3
@@ -64,6 +63,7 @@ require (
 	github.com/openzipkin/zipkin-go v0.4.3 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.2.4 // indirect
+	github.com/pkg/errors v0.9.1 // indirect
 	github.com/prometheus/client_golang v1.21.1 // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
 	github.com/prometheus/common v0.62.0 // indirect
