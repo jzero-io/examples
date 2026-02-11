@@ -7,7 +7,7 @@ require (
 	github.com/eddieowens/opts v0.1.0
 	github.com/go-playground/validator/v10 v10.30.1
 	github.com/huandu/go-sqlbuilder v1.39.0
-	github.com/jzero-io/jzero v1.2.2-0.20260210080447-c42d4a84a06e
+	github.com/jzero-io/jzero v1.2.2-0.20260211022854-4a73fb720b79
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.2
 	github.com/zeromicro/go-zero v1.9.3
@@ -109,5 +109,5 @@ require (
 	modernc.org/libc v1.67.6 // indirect
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.11.0 // indirect
-	modernc.org/sqlite v1.44.3 // indirect
+	modernc.org/sqlite v1.45.0 // indirect
 )
