@@ -133,8 +133,8 @@ github.com/jackc/puddle/v2 v2.2.2 h1:PR8nw+E/1w0GLuRFSmiioY6UooMp6KJv0/61nB7icHo
 github.com/jackc/puddle/v2 v2.2.2/go.mod h1:vriiEXHvEE654aYKXXjOvZM39qJ0q+azkZFrfEOc3H4=
 github.com/jaronnie/genius v0.6.1 h1:Uc5DkO9YuyqcQLEz6jjpWF9dwHX7UKwOFVjZEdtYlHc=
 github.com/jaronnie/genius v0.6.1/go.mod h1:FHpApD8c1nRZGJvIoD+1H7VydBvVOoTU95CcdAo38bY=
-github.com/jzero-io/jzero v1.2.2-0.20260212113949-fd6605bad067 h1:LPVaZ4LOgmySJC7s3tKNPxtZLRqy6gNKSeQsmsm9gYk=
-github.com/jzero-io/jzero v1.2.2-0.20260212113949-fd6605bad067/go.mod h1:0QhD5Lkb662p6IKc9KpaJ2bX/Sv99aw5Zolzw5pE6t4=
+github.com/jzero-io/jzero v1.2.2-0.20260212115936-037ff5744937 h1:IhJ/a57n4SrGQyv40xGr15eFzkM6IkUXPyrBkvR0H9s=
+github.com/jzero-io/jzero v1.2.2-0.20260212115936-037ff5744937/go.mod h1:0QhD5Lkb662p6IKc9KpaJ2bX/Sv99aw5Zolzw5pE6t4=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/klauspost/compress v1.18.1 h1:bcSGx7UbpBqMChDtsF28Lw6v/G94LPrrbMbdC3JH2co=
