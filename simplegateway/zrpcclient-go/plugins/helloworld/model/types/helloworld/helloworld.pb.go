@@ -7,6 +7,8 @@
 package helloworld
 
 import (
+	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2/options"
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -98,12 +100,12 @@ var File_helloworld_proto protoreflect.FileDescriptor
 const file_helloworld_proto_rawDesc = "" +
 	"\n" +
 	"\x10helloworld.proto\x12\n" +
-	"helloworld\"\x0f\n" +
+	"helloworld\x1a\x1cgoogle/api/annotations.proto\x1a;grpc-gateway/protoc-gen-openapiv2/options/annotations.proto\"\x0f\n" +
 	"\rCreateRequest\"\x10\n" +
-	"\x0eCreateResponse2O\n" +
+	"\x0eCreateResponse2i\n" +
 	"\n" +
-	"Helloworld\x12A\n" +
-	"\x06Create\x12\x19.helloworld.CreateRequest\x1a\x1a.helloworld.CreateResponse\"\x00B\x14Z\x12./types/helloworldb\x06proto3"
+	"Helloworld\x12[\n" +
+	"\x06Create\x12\x19.helloworld.CreateRequest\x1a\x1a.helloworld.CreateResponse\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*\"\x0f/api/helloworldB\x14Z\x12./types/helloworldb\x06proto3"
 
 var (
 	file_helloworld_proto_rawDescOnce sync.Once

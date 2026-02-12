@@ -15,8 +15,44 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
+  "paths": {
+    "/api/helloworld": {
+      "post": {
+        "operationId": "Helloworld_Create",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/helloworldCreateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/helloworldCreateRequest"
+            }
+          }
+        ],
+        "tags": [
+          "Helloworld"
+        ]
+      }
+    }
+  },
   "definitions": {
+    "helloworldCreateRequest": {
+      "type": "object"
+    },
     "helloworldCreateResponse": {
       "type": "object"
     },

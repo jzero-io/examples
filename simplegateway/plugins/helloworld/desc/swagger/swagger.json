@@ -4,6 +4,9 @@
     "application/json"
   ],
   "definitions": {
+    "helloworldCreateRequest": {
+      "type": "object"
+    },
     "helloworldCreateResponse": {
       "type": "object"
     },
@@ -37,6 +40,40 @@
     }
   },
   "info": {},
+  "paths": {
+    "/api/helloworld": {
+      "post": {
+        "operationId": "Helloworld_Create",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/helloworldCreateRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/helloworldCreateResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "Helloworld"
+        ]
+      }
+    }
+  },
   "produces": [
     "application/json"
   ],
