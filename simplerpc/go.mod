@@ -7,7 +7,7 @@ tool github.com/jzero-io/jzero/cmd/jzero
 require (
 	buf.build/go/protovalidate v1.1.2
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
-	github.com/jzero-io/jzero v1.2.2-0.20260212113949-fd6605bad067
+	github.com/jzero-io/jzero v1.2.2-0.20260212115936-037ff5744937
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.1
