@@ -6,8 +6,8 @@ require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/eddieowens/opts v0.1.0
 	github.com/go-playground/validator/v10 v10.30.1
-	github.com/huandu/go-sqlbuilder v1.39.0
-	github.com/jzero-io/jzero v1.2.2-0.20260211022854-4a73fb720b79
+	github.com/huandu/go-sqlbuilder v1.39.1
+	github.com/jzero-io/jzero v1.2.2-0.20260212113949-fd6605bad067
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.2
 	github.com/zeromicro/go-zero v1.9.3
