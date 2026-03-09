@@ -7,7 +7,7 @@ require (
 	github.com/eddieowens/opts v0.1.0
 	github.com/go-playground/validator/v10 v10.30.1
 	github.com/huandu/go-sqlbuilder v1.39.1
-	github.com/jzero-io/jzero v1.2.2-0.20260305014901-e9b04b2c964f
+	github.com/jzero-io/jzero v1.2.2-0.20260309031805-0276bddd7a86
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.2
 	github.com/zeromicro/go-zero v1.10.0
@@ -70,7 +70,7 @@ require (
 	github.com/prometheus/procfs v0.16.1 // indirect
 	github.com/redis/go-redis/v9 v9.17.3 // indirect
 	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
-	github.com/samber/lo v1.52.0 // indirect
+	github.com/samber/lo v1.53.0 // indirect
 	github.com/shopspring/decimal v1.4.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.9 // indirect
