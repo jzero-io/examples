@@ -13,7 +13,7 @@ type CreateResponse {}
 	group:           user
 	compact_handler: true
 )
-service simpleapiWithModelRedis {
+service user {
 	@handler Create
 	post / (CreateRequest) returns (CreateResponse)
 }
