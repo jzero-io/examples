@@ -8,8 +8,3 @@ type CreateRequest struct {
 
 type CreateResponse struct {
 }
-	Version   string `json:"version"`
-	GoVersion string `json:"goVersion"`
-	Commit    string `json:"commit"`
-	Date      string `json:"date"`
-}
