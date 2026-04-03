@@ -3,8 +3,12 @@
 
 package types
 
-type CreateRequest struct {
+type VersionRequest struct {
 }
 
-type CreateResponse struct {
+type VersionResponse struct {
+	Version   string `json:"version"`
+	GoVersion string `json:"goVersion"`
+	Commit    string `json:"commit"`
+	Date      string `json:"date"`
 }
