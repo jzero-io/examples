@@ -7,7 +7,7 @@ require (
 	github.com/eddieowens/opts v0.1.0
 	github.com/go-playground/validator/v10 v10.30.2
 	github.com/huandu/go-sqlbuilder v1.40.1
-	github.com/jzero-io/jzero v1.3.1-0.20260402034422-6db6e5b796d2
+	github.com/jzero-io/jzero v1.3.1-0.20260403033439-dd13b14d07c4
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.2
 	github.com/zeromicro/go-zero v1.10.1
