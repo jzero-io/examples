@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/go-playground/validator/v10 v10.30.2
-	github.com/jzero-io/jzero v1.3.1-0.20260407055142-8b65e3b459ba
+	github.com/jzero-io/jzero v1.3.1-0.20260407071644-4861426af087
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.2
 	github.com/zeromicro/go-zero v1.10.1
