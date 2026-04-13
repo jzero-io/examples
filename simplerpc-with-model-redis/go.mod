@@ -8,8 +8,8 @@ require (
 	buf.build/go/protovalidate v1.1.3
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/eddieowens/opts v0.1.0
-	github.com/huandu/go-sqlbuilder v1.40.1
-	github.com/jzero-io/jzero v1.3.1-0.20260409014235-d4cc247a223a
+	github.com/huandu/go-sqlbuilder v1.40.2
+	github.com/jzero-io/jzero v1.3.1-0.20260413032526-a98044bea474
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.1
@@ -182,7 +182,7 @@ require (
 	modernc.org/libc v1.70.0 // indirect
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.11.0 // indirect
-	modernc.org/sqlite v1.48.1 // indirect
+	modernc.org/sqlite v1.48.2 // indirect
 	sigs.k8s.io/json v0.0.0-20241014173422-cfa47c3a1cc8 // indirect
 	sigs.k8s.io/randfill v1.0.0 // indirect
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.0 // indirect
