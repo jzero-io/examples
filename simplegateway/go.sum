@@ -125,8 +125,8 @@ github.com/josharian/intern v1.0.0 h1:vlS4z54oSdjm0bgjRigI+G1HpF+tI+9rE5LLzOg8Hm
 github.com/josharian/intern v1.0.0/go.mod h1:5DoeVV0s6jJacbCEi61lwdGj/aVlrQvzHFFd8Hwg//Y=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
-github.com/jzero-io/jzero v1.3.1-0.20260421093358-219079a515e9 h1:w4PfFAD7NbekqOEQbB9Bt4xvmp8k/x753R7F4p0u+Z8=
-github.com/jzero-io/jzero v1.3.1-0.20260421093358-219079a515e9/go.mod h1:N/Mjovr/3kruK6g8wgRNkNYbg+KRdRZanHZ7Sqvj8/E=
+github.com/jzero-io/jzero v1.3.1-0.20260422024536-53f448131edc h1:lwpAu9Ul076cAQOqfp5cRI1DMvgIu43RveBKLw0Jzsw=
+github.com/jzero-io/jzero v1.3.1-0.20260422024536-53f448131edc/go.mod h1:N/Mjovr/3kruK6g8wgRNkNYbg+KRdRZanHZ7Sqvj8/E=
 github.com/kisielk/errcheck v1.5.0/go.mod h1:pFxgyoBC7bSaBwPgfKdkLd5X25qrDl4LWUI2bnpBCr8=
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/klauspost/compress v1.18.1 h1:bcSGx7UbpBqMChDtsF28Lw6v/G94LPrrbMbdC3JH2co=
