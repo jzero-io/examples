@@ -8,7 +8,7 @@ require (
 	github.com/eddieowens/opts v0.1.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.28.0
 	github.com/huandu/go-sqlbuilder v1.40.2
-	github.com/jzero-io/jzero v1.3.1-0.20260422064224-78f0ff9ab543
+	github.com/jzero-io/jzero v1.3.1-0.20260422065516-e7e11bc59952
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.2
