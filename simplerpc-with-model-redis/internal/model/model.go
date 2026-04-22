@@ -15,7 +15,6 @@ type Model struct {
 }
 
 func NewModel(conn sqlx.SqlConn, op ...opts.Opt[modelx.ModelOpts]) Model {
-
 	return Model{
 		User: user.NewUserModel(conn, op...),
 	}
