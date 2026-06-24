@@ -6,8 +6,8 @@ require (
 	github.com/common-nighthawk/go-figure v0.0.0-20210622060536-734e95fb86be
 	github.com/eddieowens/opts v0.1.0
 	github.com/go-playground/validator/v10 v10.30.3
-	github.com/huandu/go-sqlbuilder v1.41.0
-	github.com/jzero-io/jzero v1.4.1-0.20260624065432-3210f9e3333f
+	github.com/huandu/go-sqlbuilder v1.42.1
+	github.com/jzero-io/jzero v1.4.1-0.20260624065459-dc7901185248
 	github.com/spf13/cast v1.10.0
 	github.com/spf13/cobra v1.10.2
 	github.com/zeromicro/go-zero v1.10.1
@@ -106,8 +106,8 @@ require (
 	google.golang.org/protobuf v1.36.11 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	modernc.org/libc v1.72.3 // indirect
+	modernc.org/libc v1.73.4 // indirect
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.11.0 // indirect
-	modernc.org/sqlite v1.52.0 // indirect
+	modernc.org/sqlite v1.53.0 // indirect
 )
